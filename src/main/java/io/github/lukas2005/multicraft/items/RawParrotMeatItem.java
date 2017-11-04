@@ -1,11 +1,11 @@
 package io.github.lukas2005.multicraft.items;
 
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 
-public class RawParrotMeatItem extends Item {
+public class RawParrotMeatItem extends ItemFood {
 
     public RawParrotMeatItem() {
-        super();
+        super(1, true);
     }
 
 }
