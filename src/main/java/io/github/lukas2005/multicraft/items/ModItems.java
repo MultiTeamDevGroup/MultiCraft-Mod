@@ -16,7 +16,8 @@ public class ModItems {
         registerItem(new CookedParrotMeatItem(), "cooked_parrot_meat");
 
         // Materials
-        registerItem(new LlamaFurItem(), "llama_fur");
+        registerItem(new Item(), "llama_fur");
+        registerItem(new Item(), "bat_wing");
 
         // Armor
         registerItem(new FurCostumeArmor.FurCostumeHelmet(), "fur_costume_helmet");
