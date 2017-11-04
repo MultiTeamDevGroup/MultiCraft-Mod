@@ -2,6 +2,7 @@ package io.github.lukas2005.multicraft;
 
 import io.github.lukas2005.multicraft.items.ModItems;
 import io.github.lukas2005.multicraft.proxy.IProxy;
+import net.minecraft.item.ItemArmor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
