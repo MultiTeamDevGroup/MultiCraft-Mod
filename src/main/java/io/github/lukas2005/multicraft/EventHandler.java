@@ -3,6 +3,7 @@ package io.github.lukas2005.multicraft;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -18,7 +19,7 @@ public class EventHandler {
     }
 
     @SubscribeEvent
-    public static void onDrop(EntityLivingDrop) {
+    public static void onDrop(LivingDropsEvent e) {
 
     }
 
