@@ -44,7 +44,7 @@ public enum EnumColor implements IStringSerializable
 
     public String getName()
     {
-        return this.name;
+        return this.name.toLowerCase().replace(' ', '_');
     }
 
     private final String name;

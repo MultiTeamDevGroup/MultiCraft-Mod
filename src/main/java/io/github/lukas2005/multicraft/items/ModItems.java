@@ -1,6 +1,7 @@
 package io.github.lukas2005.multicraft.items;
 
 import io.github.lukas2005.multicraft.Reference;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 
@@ -16,9 +17,9 @@ public class ModItems {
         registerItem(new CookedParrotMeatItem(), "cooked_parrot_meat");
 
         // Materials
-        registerItem(new Item(), "llama_fur");
-        registerItem(new Item(), "bat_wing");
-        registerItem(new Item(), "ender_pearl_piece");
+        registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "llama_fur");
+        registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "bat_wing");
+        registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "ender_pearl_piece");
 
         // Armor
         registerItem(new FurCostumeArmor.FurCostumeHelmet(), "fur_costume_helmet");

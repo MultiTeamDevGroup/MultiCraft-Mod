@@ -11,7 +11,7 @@ public class ModBlocks {
     public static HashMap<String, Block> ModBlocks = new HashMap<>();
 
     public static void init() {
-        registerBlock(new ColoredPlank(), "colored_plank");
+        registerBlock(new ColoredPlank(), "colored_planks");
     }
 
     private static void registerBlock(Block block, String name) {

@@ -19,8 +19,6 @@ public class EventHandler {
     public static void registerBlock(RegistryEvent.Register<Block> e) {
         for (Block block : ModBlocks.ModBlocks.values()) {
             e.getRegistry().register(block);
-            ItemBlock item = new ItemBlock(block);
-            e.getRegistry().register(block);
 
             Main.proxy.registerBlockRender(block);
         }
@@ -31,6 +29,10 @@ public class EventHandler {
         for (Item item : ModItems.ModItems.values()) {
             e.getRegistry().register(item);
             Main.proxy.registerItemRender(item);
+        }
+
+        for (Block block : ModBlocks.ModBlocks.values()) {
+            e.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
         }
 
         ModCrafting.init();
