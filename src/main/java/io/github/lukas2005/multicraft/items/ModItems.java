@@ -37,6 +37,6 @@ public class ModItems {
     }
 
     public static Item getItem(String itemName) {
-        return  ModItems.get("item."+Reference.MOD_ID+"."+itemName);
+        return ModItems.get("item."+Reference.MOD_ID+"."+itemName);
     }
 }
