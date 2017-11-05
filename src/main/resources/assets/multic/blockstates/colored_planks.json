@@ -4,7 +4,7 @@
 		"model": "minecraft:cube_all"
 	},
 	"variants": {
-		"variant": {
+		"color": {
 			"black": {
 				"textures": {
 					"all": "multic:blocks/colored_planks/colored_planks_black"
