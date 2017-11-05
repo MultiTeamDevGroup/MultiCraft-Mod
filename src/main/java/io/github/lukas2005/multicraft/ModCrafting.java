@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -30,7 +31,7 @@ public class ModCrafting {
         ItemStack potionItemStack = new ItemStack(Items.SPLASH_POTION);
         potionItemStack.setTagCompound(nbt);
 
-        Utils.addPotionEffectToItem(potionItemStack, Potion.getPotionById(25), 1 , 600);
+        Utils.addPotionEffectToItem(potionItemStack, 25, 1 , 600);
 
         addShapelessRecipe(potionItemStack, ModItems.getItem("bat_wing"), Items.DRAGON_BREATH);
 
@@ -40,9 +41,9 @@ public class ModCrafting {
         nbt.setTag("display", displayNBT);
 
         ItemStack lingeringPotionItemStack = new ItemStack(Items.LINGERING_POTION);
-        potionItemStack.setTagCompound(nbt);
+        lingeringPotionItemStack.setTagCompound(nbt);
 
-        Utils.addPotionEffectToItem(lingeringPotionItemStack, Potion.getPotionById(25), 1 , 600);
+        Utils.addPotionEffectToItem(lingeringPotionItemStack, 25, 1 , 600);
 
         addShapelessRecipe(lingeringPotionItemStack, potionItemStack, new ItemStack(Items.DRAGON_BREATH));
 
@@ -100,9 +101,9 @@ public class ModCrafting {
         nbt.setTag("display", displayNBT);
 
         ItemStack tippedArrowItemStack = new ItemStack(Items.TIPPED_ARROW, 8);
-        potionItemStack.setTagCompound(nbt);
+        tippedArrowItemStack.setTagCompound(nbt);
 
-        Utils.addPotionEffectToItem(tippedArrowItemStack, Potion.getPotionById(25), 1 , 600);
+        Utils.addPotionEffectToItem(tippedArrowItemStack, 25, 1 , 600);
 
         addShapedRecipe(tippedArrowItemStack,
                 "AAA",

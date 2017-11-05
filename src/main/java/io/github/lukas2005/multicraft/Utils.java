@@ -12,11 +12,15 @@ import java.util.Collection;
 
 public class Utils {
 
-    // 600 = (0:30) 1800 = (1:30)
-    public static void addPotionEffectToItem(ItemStack item, Potion potion, int amplifier, int duration) {
-        ArrayList<PotionEffect> effects = new ArrayList<>();
-        effects.add(new PotionEffect(potion, amplifier, duration));
-        PotionUtils.appendEffects(item, effects);
+    public static void addPotionEffectToItem(ItemStack item, int id, int amplifier, int duration) {
+        NBTTagCompound nbt = item.hasTagCompound() ? item.getTagCompound() : new NBTTagCompound();
+        NBTTagList customEffectsList = new NBTTagList();
+        NBTTagCompound potionNbt = new NBTTagCompound();
+        potionNbt.setInteger("Id", id);
+        potionNbt.setInteger("Amplifier", amplifier);
+        potionNbt.setInteger("Duration", duration); // 600 = (0:30) 1800 = (1:30)
+        customEffectsList.appendTag(potionNbt);
+        nbt.setTag("CustomPotionEffects", customEffectsList);
     }
 
 }
