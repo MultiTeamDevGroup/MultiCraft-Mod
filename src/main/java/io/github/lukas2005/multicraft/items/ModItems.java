@@ -18,6 +18,7 @@ public class ModItems {
         // Materials
         registerItem(new Item(), "llama_fur");
         registerItem(new Item(), "bat_wing");
+        registerItem(new Item(), "ender_pearl_piece");
 
         // Armor
         registerItem(new FurCostumeArmor.FurCostumeHelmet(), "fur_costume_helmet");

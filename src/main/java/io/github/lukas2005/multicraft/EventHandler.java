@@ -31,6 +31,12 @@ public class EventHandler {
             case("net.minecraft.entity.passive.EntityParrot"):
                 e.getEntityLiving().dropItem(ModItems.getItem("raw_parrot_meat"), 1);
                 break;
+            case("net.minecraft.entity.passive.EntityBat"):
+                e.getEntityLiving().dropItem(ModItems.getItem("bat_wing"), 1);
+                break;
+            case("net.minecraft.entity.monster.EntityEndermite"):
+                e.getEntityLiving().dropItem(ModItems.getItem("ender_pearl_piece"), 1);
+                break;
             case("net.minecraft.entity.passive.EntityLlama"):
                 for (EntityItem eItem : e.getDrops()) {
                     if (eItem.getItem().getItem() == Items.LEATHER) eItem.setDead();
