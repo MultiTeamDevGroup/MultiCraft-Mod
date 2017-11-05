@@ -15,13 +15,11 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.EnumMap;
-
-public class ColoredPlank extends Block {
+public class ColoredPlanks extends Block {
 
     public static final PropertyEnum<EnumColor> COLOR = PropertyEnum.create("color", EnumColor.class);
 
-    public ColoredPlank() {
+    public ColoredPlanks() {
         super(Material.WOOD);
     }
 

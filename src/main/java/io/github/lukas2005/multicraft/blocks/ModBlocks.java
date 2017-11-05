@@ -2,6 +2,7 @@ package io.github.lukas2005.multicraft.blocks;
 
 import io.github.lukas2005.multicraft.Reference;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.HashMap;
@@ -11,7 +12,11 @@ public class ModBlocks {
     public static HashMap<String, Block> ModBlocks = new HashMap<>();
 
     public static void init() {
-        registerBlock(new ColoredPlank(), "colored_planks");
+        // Building Blocks
+        registerBlock(new ColoredPlanks().setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "colored_planks");
+
+        // Tree Blocks
+        //registerBlock();
     }
 
     private static void registerBlock(Block block, String name) {

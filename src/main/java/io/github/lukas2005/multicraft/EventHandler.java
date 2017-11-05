@@ -7,6 +7,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -19,8 +20,6 @@ public class EventHandler {
     public static void registerBlock(RegistryEvent.Register<Block> e) {
         for (Block block : ModBlocks.ModBlocks.values()) {
             e.getRegistry().register(block);
-
-            Main.proxy.registerBlockRender(block);
         }
     }
 
@@ -28,7 +27,6 @@ public class EventHandler {
     public static void registerItem(RegistryEvent.Register<Item> e) {
         for (Item item : ModItems.ModItems.values()) {
             e.getRegistry().register(item);
-            Main.proxy.registerItemRender(item);
         }
 
         for (Block block : ModBlocks.ModBlocks.values()) {
@@ -36,6 +34,17 @@ public class EventHandler {
         }
 
         ModCrafting.init();
+    }
+
+    @SubscribeEvent
+    public static void registerModels(ModelRegistryEvent e) {
+        for (Item item : ModItems.ModItems.values()) {
+            Main.proxy.registerItemRender(item);
+        }
+
+        for (Block block : ModBlocks.ModBlocks.values()) {
+            Main.proxy.registerBlockRender(block);
+        }
     }
 
     @SubscribeEvent
