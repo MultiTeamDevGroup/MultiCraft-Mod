@@ -5,21 +5,21 @@ import net.minecraft.util.IStringSerializable;
 public enum EnumColor implements IStringSerializable
 {
     BLACK("Black"),
-    BLUE("Blue"),
-    BROWN("Brown"),
-    CYAN("Cyan"),
-    GREY("Grey"),
+    RED("Red"),
     GREEN("Green"),
-    LIGHT_BLUE("Light blue"),
-    LIGHT_GREY("Light grey"),
+    BROWN("Brown"),
+    BLUE("Blue"),
+    PURPLE("Purple"),
+    CYAN("Cyan"),
+    LIGHT_GRAY("Light gray"),
+    GRAY("Gray"),
+    PINK("Pink"),
     LIME("Lime"),
+    YELLOW("Yellow"),
+    LIGHT_BLUE("Light blue"),
     MAGENTA("Magenta"),
     ORANGE("Orange"),
-    PINK("Pink"),
-    PURPLE("Purple"),
-    RED("Red"),
-    WHITE("White"),
-    YELLOW("Yellow");
+    WHITE("White");
 
     public int getMetadata()
     {
@@ -49,7 +49,7 @@ public enum EnumColor implements IStringSerializable
 
     private final String name;
 
-    private EnumColor(String i_name)
+    EnumColor(String i_name)
     {
         this.name = i_name;
     }
