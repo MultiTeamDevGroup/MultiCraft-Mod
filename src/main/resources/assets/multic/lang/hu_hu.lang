@@ -1,10 +1,17 @@
-item.multic.bat_wing.name=Denevér szárny
+# Food
 item.multic.raw_parrot_meat.name=Nyers papagáj hús
 item.multic.cooked_parrot_meat.name=Sült papagáj hús
+
+# Materials
+item.multic.bat_wing.name=Denevér szárny
 item.multic.ender_peral_piece.name=Véggyöngy darab
 item.multic.llama_fur.name=Láma bunda
+
+# Armor
 item.multic.fur_costume_helmet.name=Bunda sapka
 item.multic.fur_costume_chestplaet.name=Bunda kabát
 item.multic.fur_costume_leggings.name=Bunda nadrág
 item.multic.fur_costume_boots.name=Bunda bakancs
+
+# Weapons
 item.multic.hammer.name=Kalapács

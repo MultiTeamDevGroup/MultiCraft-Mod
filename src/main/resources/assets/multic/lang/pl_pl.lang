@@ -1,22 +1,18 @@
-<<<<<<< HEAD:src/main/resources/assets/multic/lang/en_us.lang
-item.multic.bat_wing.name=Bat wing
-item.multic.raw_parrot_meat.name=Raw parrot meat
-item.multic.cooked_parrot_meat.name=Cooked parrot meat
-item.multic.ender_peral_piece.name=Ender peral piece
-item.multic.llama_fur.name=Llama fur
-item.multic.fur_costume_helmet.name=Fur costume helmet
-item.multic.fur_costume_chestplaet.name=Fur costume chestplate
-item.multic.fur_costume.name=Fur costume leggings
-item.multic.fur_costume.name=Fur costume boots
-=======
-item.multic.bat_wing.name=Bat wing
-item.multic.raw_parrot_meat.name=Raw parrot meat
-item.multic.cooked_parrot_meat.name=Cooked parrot meat
-item.multic.ender_peral_piece.name=Ender peral piece
-item.multic.llama_fur.name=Llama fur
-item.multic.fur_costume_helmet.name=Fur costume helmet
-item.multic.fur_costume_chestplaet.name=Fur costume chestplate
-item.multic.fur_costume_leggings.name=Fur costume leggings
-item.multic.fur_costume_boots.name=Fur costume boots
->>>>>>> origin/master:en_US.lang
-item.multic.hammer.name=Hammer
+
+# Food
+item.multic.raw_parrot_meat.name=Surowe mięso papugi
+item.multic.cooked_parrot_meat.name=Upieczone mięso papugi
+
+# Materials
+item.multic.bat_wing.name=Skrzydło nietoperza
+item.multic.ender_peral_piece.name=Kawałek oka kresu
+item.multic.llama_fur.name=Futro lamy
+
+# Armor
+item.multic.fur_costume_helmet.name=Futrzana czapka
+item.multic.fur_costume_chestplaet.name=Futrzany napierśnik
+item.multic.fur_costume.name=Futrzane spodnie
+item.multic.fur_costume.name=Futrzane buty
+
+# Weapons
+item.multic.hammer.name=Młot
