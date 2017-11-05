@@ -25,6 +25,9 @@ public class ModItems {
         registerItem(new FurCostumeArmor.FurCostumeChestplate(), "fur_costume_chestplate");
         registerItem(new FurCostumeArmor.FurCostumeLeggings(), "fur_costume_leggings");
         registerItem(new FurCostumeArmor.FurCostumeBoots(), "fur_costume_boots");
+
+        // Weapon
+        registerItem(new Hammer(), "hammer");
     }
 
     private static void registerItem(Item item, String name) {

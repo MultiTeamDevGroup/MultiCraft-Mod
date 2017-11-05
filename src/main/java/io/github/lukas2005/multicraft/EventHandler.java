@@ -9,8 +9,6 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import java.util.ArrayList;
-
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class EventHandler {
 

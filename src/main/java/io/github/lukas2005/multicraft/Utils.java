@@ -11,7 +11,7 @@ public class Utils {
         potionNbt.setInteger("Id", id);
         potionNbt.setInteger("Amplifier", amplifier);
         potionNbt.setInteger("Duration", duration); // 600 = (0:30) 1800 = (1:30)
-        customEffectsList.set(0, potionNbt);
+        customEffectsList.appendTag(potionNbt);
         nbt.setTag("CustomPotionEffects", customEffectsList);
         return nbt;
     }

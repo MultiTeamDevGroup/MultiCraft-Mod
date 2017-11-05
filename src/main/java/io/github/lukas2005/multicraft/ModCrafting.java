@@ -6,10 +6,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.potion.PotionType;
-import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -40,7 +36,18 @@ public class ModCrafting {
                          "F F",
                          "   ", 'F', ModItems.getItem("llama_fur"));
 
+        addShapedRecipe(new ItemStack(Items.ENDER_PEARL),
+                "PPP",
+                        "PPP",
+                        "PPP", 'P', ModItems.getItem("ender_pearl_piece"));
+
+        addShapedRecipe(new ItemStack(ModItems.getItem("hammer")),
+                " I ",
+                        " SI",
+                        "S  ", 'S', Items.STICK, 'I', Items.IRON_INGOT);
+
         // Crafting (Shapeless)
+        // TODO: Fix this recipe
         addShapelessRecipe(new ItemStack(Items.POTIONITEM, 1, 8260), ModItems.getItem("bat_wing"), Items.POTIONITEM);
 
         NBTTagCompound levitationPotionNbt = new NBTTagCompound();
