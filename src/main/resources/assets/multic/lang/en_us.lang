@@ -1,10 +1,17 @@
-item.multic.bat_wing.name=Bat wing
+# Food
 item.multic.raw_parrot_meat.name=Raw parrot meat
 item.multic.cooked_parrot_meat.name=Cooked parrot meat
+
+# Materials
+item.multic.bat_wing.name=Bat wing
 item.multic.ender_pearl_piece.name=Ender peral piece
 item.multic.llama_fur.name=Llama fur
+
+# Armor
 item.multic.fur_costume_helmet.name=Fur costume helmet
 item.multic.fur_costume_chestplate.name=Fur costume chestplate
 item.multic.fur_costume_leggings.name=Fur costume leggings
 item.multic.fur_costume_boots.name=Fur costume boots
+
+# Weapon
 item.multic.hammer.name=Hammer
