@@ -1,5 +1,7 @@
 package io.github.lukas2005.multicraft.proxy;
 
+import io.github.lukas2005.multicraft.EnumColor;
+import io.github.lukas2005.multicraft.blocks.ColoredPlanks;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -29,8 +31,18 @@ public class ClientProxy implements IProxy {
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
     }
 
+    /**
+     *
+     * @param block
+     */
     @Override
     public void registerBlockRender(Block block) {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+        if (block instanceof ColoredPlanks) {
+            for (EnumColor color : EnumColor.values()) {
+                ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), color.getMetadata(), new ModelResourceLocation(block.getRegistryName(), "color="+color.getName()));
+            }
+        } else {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+        }
     }
 }
