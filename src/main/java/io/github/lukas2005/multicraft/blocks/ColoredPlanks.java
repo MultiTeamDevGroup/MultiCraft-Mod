@@ -44,11 +44,6 @@ public class ColoredPlanks extends Block {
     }
 
     @Override
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        return worldIn.setBlockState(pos, state.cycleProperty(COLOR));
-    }
-
-    @Override
     public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
         for (EnumColor color : EnumColor.values()) {
             items.add(new ItemStack(this, 1, color.getMetadata()));
