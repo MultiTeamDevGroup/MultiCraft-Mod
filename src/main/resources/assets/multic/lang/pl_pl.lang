@@ -5,12 +5,12 @@ item.multic.cooked_parrot_meat.name=Upieczone mięso papugi
 
 # Materials
 item.multic.bat_wing.name=Skrzydło nietoperza
-item.multic.ender_peral_piece.name=Kawałek oka kresu
+item.multic.ender_pearl_piece.name=Kawałek oka kresu
 item.multic.llama_fur.name=Futro lamy
 
 # Armor
 item.multic.fur_costume_helmet.name=Futrzana czapka
-item.multic.fur_costume_chestplaet.name=Futrzany napierśnik
+item.multic.fur_costume_chestplate.name=Futrzany napierśnik
 item.multic.fur_costume.name=Futrzane spodnie
 item.multic.fur_costume.name=Futrzane buty
 
