@@ -2,6 +2,7 @@ package io.github.lukas2005.multicraft;
 
 import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.items.ModItems;
+import jdk.nashorn.internal.ir.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -109,6 +110,11 @@ public class ModCrafting {
                 "AAA",
                         "ALA",
                         "AAA", 'A', Items.ARROW, 'L', lingeringPotionItemStack);
+
+        addShapedRecipe(new ItemStack(ModItems.getItem("iron_shield")),
+                "WIW",
+                        "IGI",
+                        "WIW", 'W', Blocks.PLANKS, 'I', Items.IRON_INGOT, 'G', Items.GOLD_INGOT);
 
         // Brewing
 
