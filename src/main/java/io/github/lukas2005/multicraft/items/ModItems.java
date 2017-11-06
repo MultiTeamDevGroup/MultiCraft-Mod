@@ -3,6 +3,8 @@ package io.github.lukas2005.multicraft.items;
 import io.github.lukas2005.multicraft.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemShield;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.HashMap;
@@ -29,6 +31,11 @@ public class ModItems {
 
         // Weapon
         registerItem(new Hammer(), "hammer");
+
+        // Shield
+        registerItem(new CustomShield(400), "iron_shield");
+        registerItem(new CustomShield(500), "golden_shield");
+        registerItem(new CustomShield(700), "diamond_shield");
     }
 
     private static void registerItem(Item item, String name) {

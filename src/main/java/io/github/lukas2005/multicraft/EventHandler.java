@@ -1,5 +1,6 @@
 package io.github.lukas2005.multicraft;
 
+import io.github.lukas2005.multicraft.blocks.ColoredPlanks;
 import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.block.Block;
@@ -7,6 +8,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
@@ -30,7 +32,16 @@ public class EventHandler {
         }
 
         for (Block block : ModBlocks.ModBlocks.values()) {
-            e.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
+            if (block instanceof ColoredPlanks) {
+                e.getRegistry().register(new ItemBlock(block){
+                    @Override
+                    public int getMetadata(int damage) {
+                        return damage;
+                    }
+                }.setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
+            } else {
+                e.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
+            }
         }
 
         ModCrafting.init();
