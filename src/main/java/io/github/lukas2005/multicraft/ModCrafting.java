@@ -108,13 +108,18 @@ public class ModCrafting {
 
         addShapedRecipe(tippedArrowItemStack,
                 "AAA",
-                        "ALA",
-                        "AAA", 'A', Items.ARROW, 'L', lingeringPotionItemStack);
+                        "APA",
+                        "AAA", 'A', Items.ARROW, 'P', lingeringPotionItemStack);
 
         addShapedRecipe(new ItemStack(ModItems.getItem("iron_shield")),
                 "WIW",
                         "IGI",
                         "WIW", 'W', Blocks.PLANKS, 'I', Items.IRON_INGOT, 'G', Items.GOLD_INGOT);
+
+        addShapedRecipe(new ItemStack(ModItems.getItem("golden_shield")),
+                "GDG",
+                        "GIG",
+                        "IGI", 'D', Items.DIAMOND, 'I', Items.IRON_INGOT, 'G', Items.GOLD_INGOT);
 
         // Brewing
 
