@@ -38,7 +38,7 @@ public class EventHandler {
                     public int getMetadata(int damage) {
                         return damage;
                     }
-                }.setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
+                }.setHasSubtypes(true).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
             } else {
                 e.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
             }
