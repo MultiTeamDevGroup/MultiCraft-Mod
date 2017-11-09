@@ -26,7 +26,7 @@ public class ModCrafting {
 
         NBTTagCompound nbt = new NBTTagCompound();
         NBTTagCompound displayNBT = new NBTTagCompound();
-        displayNBT.setString("Name", "Splash Potion of Levitation");
+        displayNBT.setString("LocName", "Splash Potion of Levitation");
         nbt.setTag("display", displayNBT);
 
         ItemStack potionItemStack = new ItemStack(Items.SPLASH_POTION);
@@ -38,7 +38,7 @@ public class ModCrafting {
 
         nbt = new NBTTagCompound();
         displayNBT = new NBTTagCompound();
-        displayNBT.setString("Name", "Lingering Potion of Levitation");
+        displayNBT.setString("LocName", "Lingering Potion of Levitation");
         nbt.setTag("display", displayNBT);
 
         ItemStack lingeringPotionItemStack = new ItemStack(Items.LINGERING_POTION);
@@ -91,7 +91,7 @@ public class ModCrafting {
 
         nbt = new NBTTagCompound();
         displayNBT = new NBTTagCompound();
-        displayNBT.setString("Name", "Tipped Arrow of Levitation");
+        displayNBT.setString("LocName", "Tipped Arrow of Levitation");
         nbt.setTag("display", displayNBT);
 
         ItemStack tippedArrowItemStack = new ItemStack(Items.TIPPED_ARROW, 8);
