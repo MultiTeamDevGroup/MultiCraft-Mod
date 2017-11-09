@@ -7,6 +7,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.potion.PotionUtils;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -21,6 +22,19 @@ public class Utils {
         potionNbt.setInteger("Duration", duration); // 600 = (0:30) 1800 = (1:30)
         customEffectsList.appendTag(potionNbt);
         nbt.setTag("CustomPotionEffects", customEffectsList);
+    }
+
+    public static Field getField(Class clazz, String fieldName) throws NoSuchFieldException {
+        try {
+            return clazz.getDeclaredField(fieldName);
+        } catch (NoSuchFieldException e) {
+            Class superClass = clazz.getSuperclass();
+            if (superClass != null) {
+                return getField(superClass, fieldName);
+            } else {
+                throw e;
+            }
+        }
     }
 
 }
