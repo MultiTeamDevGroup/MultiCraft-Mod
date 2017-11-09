@@ -15,3 +15,23 @@ item.multic.fur_costume_boots.name=Fur costume boots
 
 # Weapon
 item.multic.hammer.name=Hammer
+item.multic.iron_shield.name=Iron shield
+item.multic.golden_shield.name=Golden shield
+
+# Blocks
+tile.multic.colored_planks.white.name=White planks
+tile.multic.colored_planks.orange.name=Orange planks
+tile.multic.colored_planks.magenta.name=Magenta planks
+tile.multic.colored_planks.light_blue.name=Light blue planks
+tile.multic.colored_planks.yellow.name=Yellow planks
+tile.multic.colored_planks.lime.name=Lime planks
+tile.multic.colored_planks.pink.name=Pink planks
+tile.multic.colored_planks.gray.name=Gray planks
+tile.multic.colored_planks.liht_gray.name=Light gray planks
+tile.multic.colored_planks.cyan.name=Cyan planks
+tile.multic.colored_planks.purple.name=Purple planks
+tile.multic.colored_planks.blue.name=Blue planks
+tile.multic.colored_planks.brown.name=Brown planks
+tile.multic.colored_planks.green.name=Green planks
+tile.multic.colored_planks.red.name=Red planks
+tile.multic.colored_planks.black.name=Black planks
