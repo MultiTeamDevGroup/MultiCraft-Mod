@@ -89,13 +89,6 @@ public class ModCrafting {
                         " SI",
                         "S  ", 'S', Items.STICK, 'I', Items.IRON_INGOT);
 
-        for (EnumColor color : EnumColor.values()) {
-            addShapedRecipe(new ItemStack(ModBlocks.getBlock("colored_planks"), 8, color.getMetadata()),
-                    "PPP",
-                            "PCP",
-                            "PPP", 'P', Blocks.PLANKS, 'C', new ItemStack(Items.DYE, 1, color.getMetadata()));
-        }
-
         nbt = new NBTTagCompound();
         displayNBT = new NBTTagCompound();
         displayNBT.setString("Name", "Tipped Arrow of Levitation");

@@ -9,6 +9,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
@@ -56,6 +57,11 @@ public class EventHandler {
         for (Block block : ModBlocks.ModBlocks.values()) {
             Main.proxy.registerBlockRender(block);
         }
+    }
+
+    @SubscribeEvent
+    public static void registerIRecipes(RegistryEvent.Register<IRecipe> e) {
+        e.getRegistry().register(new ColoredPlanksRecipe().setRegistryName(Reference.MOD_ID, "planks_recipe"));
     }
 
     @SubscribeEvent
