@@ -91,7 +91,6 @@ public class EventHandler {
 
             if (is.getItem() == Items.DYE) {
                 if (e.getTarget() instanceof EntityShulker) {
-                    System.out.println("DYED BOX");
                     if (!e.getWorld().isRemote) {
                         is.setCount(is.getCount() - 1);
                         EntityShulker sh = (EntityShulker) e.getTarget();
