@@ -12,14 +12,14 @@ import net.minecraft.world.World;
 public class ColoredPlanksRecipe extends net.minecraftforge.registries.IForgeRegistryEntry.Impl<IRecipe> implements IRecipe {
     @Override
     public boolean matches(InventoryCrafting inv, World worldIn) {
-        if (inv.getStackInSlot(0).getItem() == Item.getItemFromBlock(Blocks.PLANKS) ||
-                inv.getStackInSlot(1).getItem() == Item.getItemFromBlock(Blocks.PLANKS) ||
-                inv.getStackInSlot(2).getItem() == Item.getItemFromBlock(Blocks.PLANKS) ||
-                inv.getStackInSlot(3).getItem() == Item.getItemFromBlock(Blocks.PLANKS) ||
-                inv.getStackInSlot(4).getItem() == Items.DYE ||
-                inv.getStackInSlot(5).getItem() == Item.getItemFromBlock(Blocks.PLANKS) ||
-                inv.getStackInSlot(6).getItem() == Item.getItemFromBlock(Blocks.PLANKS) ||
-                inv.getStackInSlot(7).getItem() == Item.getItemFromBlock(Blocks.PLANKS) ||
+        if (inv.getStackInSlot(0).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
+                inv.getStackInSlot(1).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
+                inv.getStackInSlot(2).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
+                inv.getStackInSlot(3).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
+                inv.getStackInSlot(4).getItem() == Items.DYE &&
+                inv.getStackInSlot(5).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
+                inv.getStackInSlot(6).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
+                inv.getStackInSlot(7).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
                 inv.getStackInSlot(8).getItem() == Item.getItemFromBlock(Blocks.PLANKS)) {
             return true;
         }
