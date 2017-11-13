@@ -1,6 +1,7 @@
 package io.github.lukas2005.multicraft.items;
 
 import io.github.lukas2005.multicraft.Reference;
+import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -27,6 +28,14 @@ public class Hammer extends ItemSword {
             IBlockState state = worldIn.getBlockState(pos);
 
             worldIn.setBlockState(pos, Blocks.CONCRETE_POWDER.getStateFromMeta(Blocks.CONCRETE.getMetaFromState(state)));
+            ItemStack is = player.getHeldItem(hand);
+            is.damageItem(1, player);
+
+            return EnumActionResult.SUCCESS;
+        } else if (worldIn.getBlockState(pos).getBlock() == Blocks.STONE) {
+            IBlockState state = worldIn.getBlockState(pos);
+
+            worldIn.setBlockState(pos, ModBlocks.getBlock("rock_path").getDefaultState());
             ItemStack is = player.getHeldItem(hand);
             is.damageItem(1, player);
 

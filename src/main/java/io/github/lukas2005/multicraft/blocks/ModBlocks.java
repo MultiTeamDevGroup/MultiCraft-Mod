@@ -2,6 +2,7 @@ package io.github.lukas2005.multicraft.blocks;
 
 import io.github.lukas2005.multicraft.Reference;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.ResourceLocation;
 
@@ -14,6 +15,7 @@ public class ModBlocks {
     public static void init() {
         // Building Blocks
         registerBlock(new ColoredPlanks().setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "colored_planks");
+        registerBlock(new BlockPath(Material.ROCK).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "rock_path");
 
         // Tree Blocks
         //registerBlock();
