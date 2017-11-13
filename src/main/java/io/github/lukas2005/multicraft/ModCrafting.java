@@ -121,7 +121,7 @@ public class ModCrafting {
                         "F F",
                         "F F", 'F', ModItems.getItem("chain"));
 
-        addShapedRecipe(new ItemStack(Items.CHAINMAIL_BOOTS),
+        addShapedRecipe(new ItemStack(ModItems.getItem("chain")),
                 " I ",
                         "I I",
                         " I ", 'I', Items.IRON_INGOT);
