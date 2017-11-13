@@ -9,6 +9,7 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
@@ -17,12 +18,16 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import java.util.Random;
+
 public class ColoredPlanks extends Block {
 
     public static final PropertyEnum<EnumColor> COLOR = PropertyEnum.create("color", EnumColor.class);
 
     public ColoredPlanks() {
         super(Material.WOOD);
+        setHardness(2);
+        setResistance(15);
     }
 
     @Override
@@ -65,6 +70,11 @@ public class ColoredPlanks extends Block {
         for (EnumColor color : EnumColor.values()) {
             items.add(new ItemStack(this, 1, color.getMetadata()));
         }
+    }
+
+    @Override
+    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+        drops.add(new ItemStack(this, 1, state.getValue(COLOR).getMetadata()));
     }
 
     @Override

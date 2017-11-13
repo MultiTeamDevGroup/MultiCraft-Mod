@@ -15,7 +15,7 @@ public class ModBlocks {
     public static void init() {
         // Building Blocks
         registerBlock(new ColoredPlanks().setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "colored_planks");
-        registerBlock(new BlockPath(Material.ROCK).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "rock_path");
+        registerBlock(new BlockPath(Material.ROCK).setResistance(30).setHardness(3).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "rock_path");
 
         // Tree Blocks
         //registerBlock();
