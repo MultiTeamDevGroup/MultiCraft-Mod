@@ -122,9 +122,9 @@ public class ModCrafting {
                         "F F", 'F', ModItems.getItem("chain"));
 
         addShapedRecipe(new ItemStack(ModItems.getItem("chain")),
-                " I ",
-                        "I I",
-                        " I ", 'I', Items.IRON_INGOT);
+                "I I",
+                        " I ",
+                        "I I", 'I', Items.IRON_NUGGET);
 
         nbt = new NBTTagCompound();
         displayNBT = new NBTTagCompound();
