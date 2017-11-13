@@ -1,15 +1,16 @@
 package io.github.lukas2005.multicraft;
 
+import com.google.common.collect.BiMap;
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.potion.PotionUtils;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.registries.ForgeRegistry;
+import net.minecraftforge.registries.IForgeRegistry;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Collection;
 
 public class Utils {
 

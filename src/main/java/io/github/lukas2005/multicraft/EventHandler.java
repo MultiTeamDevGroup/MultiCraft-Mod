@@ -18,14 +18,20 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntityShulkerBox;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.storage.ExtendedBlockStorage;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.Side;
 
 import java.lang.reflect.Field;
 import java.math.BigInteger;
@@ -80,6 +86,26 @@ public class EventHandler {
     public static void registerIRecipes(RegistryEvent.Register<IRecipe> e) {
         e.getRegistry().register(new ColoredPlanksRecipe().setRegistryName(Reference.MOD_ID, "planks_recipe"));
     }
+
+//    @SubscribeEvent
+//    public static void onServerTick(TickEvent.PlayerTickEvent e) {
+//        if (e.phase == TickEvent.Phase.END) {
+//            if (e.side == Side.SERVER) {
+//                BlockPos playerPos = new BlockPos(e.player.posX, e.player.posY, e.player.posZ);
+//                Chunk playerChunk = e.player.world.getChunkFromBlockCoords(playerPos);
+//                for (int x = 0; x < 15; x++) {
+//                    for (int z = 0; z < 15; z++) {
+//                        for (int y = 0; y < 127; y++) {
+//                            IBlockState state = playerChunk.getBlockState(x,y,z);
+//                            if (state.getBlock() == Blocks.SNOW_LAYER) {
+//                                playerChunk.setBlockState(new BlockPos(x,y,z), Blocks.ICE.getDefaultState());
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     @SubscribeEvent
     public static void onPlayerInteract(PlayerInteractEvent event) {
