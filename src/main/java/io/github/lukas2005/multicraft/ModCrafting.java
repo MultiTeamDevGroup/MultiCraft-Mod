@@ -89,6 +89,43 @@ public class ModCrafting {
                         " SI",
                         "S  ", 'S', Items.STICK, 'I', Items.IRON_INGOT);
 
+
+
+        addShapedRecipe(new ItemStack(Items.CHAINMAIL_HELMET),
+                "FFF",
+                        "F F",
+                        "   ", 'F', ModItems.getItem("chain"));
+        addShapedRecipe(new ItemStack(Items.CHAINMAIL_HELMET),
+                "   ",
+                        "FFF",
+                        "F F", 'F', ModItems.getItem("chain"));
+
+
+        addShapedRecipe(new ItemStack(Items.CHAINMAIL_CHESTPLATE),
+                "F F",
+                        "FFF",
+                        "FFF", 'F', ModItems.getItem("chain"));
+
+        addShapedRecipe(new ItemStack(Items.CHAINMAIL_LEGGINGS),
+                "FFF",
+                        "F F",
+                        "F F", 'F', ModItems.getItem("chain"));
+
+        addShapedRecipe(new ItemStack(Items.CHAINMAIL_BOOTS),
+                "F F",
+                        "F F",
+                        "   ", 'F', ModItems.getItem("chain"));
+
+        addShapedRecipe(new ItemStack(Items.CHAINMAIL_BOOTS),
+                "   ",
+                        "F F",
+                        "F F", 'F', ModItems.getItem("chain"));
+
+        addShapedRecipe(new ItemStack(Items.CHAINMAIL_BOOTS),
+                " I ",
+                        "I I",
+                        " I ", 'I', Items.IRON_INGOT);
+
         nbt = new NBTTagCompound();
         displayNBT = new NBTTagCompound();
         displayNBT.setString("LocName", "Tipped Arrow of Levitation");
