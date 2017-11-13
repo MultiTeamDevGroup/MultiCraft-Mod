@@ -14,7 +14,7 @@ import java.util.HashMap;
 @SideOnly(Side.CLIENT)
 public class RenderSheep extends RenderLiving<EntitySheep>
 {
-    private static final HashMap<EnumDyeColor, ResourceLocation> SHEARED_SHEEP_TEXTURES = new HashMap<>();
+   // private static final HashMap<EnumDyeColor, ResourceLocation> SHEARED_SHEEP_TEXTURES = new HashMap<>();
 
     public RenderSheep(RenderManager p_i47195_1_)
     {
@@ -27,16 +27,9 @@ public class RenderSheep extends RenderLiving<EntitySheep>
      */
     protected ResourceLocation getEntityTexture(EntitySheep entity)
     {
-        return SHEARED_SHEEP_TEXTURES.get(entity.getFleeceColor());
-    }
-
-    static {
-        SHEARED_SHEEP_TEXTURES.put(EnumDyeColor.WHITE, new ResourceLocation("textures/entity/sheep/sheep.png"));
-        for (EnumDyeColor color : EnumDyeColor.values()) {
-            if (color != EnumDyeColor.WHITE) {
-                SHEARED_SHEEP_TEXTURES.put(color, new ResourceLocation(Reference.MOD_ID,"textures/entity/sheep/sheep_"+color.getDyeColorName()+".png"));
-            }
-        }
+        EnumDyeColor color = entity.getFleeceColor();
+        return color == EnumDyeColor.WHITE ? new ResourceLocation("textures/entity/sheep/sheep.png") : new ResourceLocation("textures/entity/sheep/sheep_"+color.getDyeColorName()+".png");
+        //return SHEARED_SHEEP_TEXTURES.get(entity.getFleeceColor());
     }
 
 }
