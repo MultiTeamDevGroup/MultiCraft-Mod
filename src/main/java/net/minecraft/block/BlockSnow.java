@@ -1,7 +1,5 @@
-package io.github.lukas2005.multicraft.blocks;
+package net.minecraft.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
@@ -25,19 +23,21 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.awt.*;
 import java.util.Random;
 
-public class MyBlockSnow extends BlockFalling
+public class BlockSnow extends BlockFalling
 {
     public static final PropertyInteger LAYERS = PropertyInteger.create("layers", 1, 8);
     protected static final AxisAlignedBB[] SNOW_AABB = new AxisAlignedBB[] {new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.0D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.375D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.625D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.75D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.875D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D)};
 
-    protected MyBlockSnow()
+    protected BlockSnow()
     {
         super(Material.SNOW);
         this.setDefaultState(this.blockState.getBaseState().withProperty(LAYERS, Integer.valueOf(1)));
         this.setTickRandomly(true);
         this.setCreativeTab(CreativeTabs.DECORATIONS);
+        System.out.println("CUSTOM SNOW BLOCK!");
     }
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
@@ -104,28 +104,29 @@ public class MyBlockSnow extends BlockFalling
         }
     }
 
-    /**
-     * Called when a neighboring block was changed and marks that this state should perform any checks during a neighbor
-     * change. Cases may include when redstone power is updated, cactus blocks popping off due to a neighboring solid
-     * block, etc.
-     */
-    public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
-    {
-        this.checkAndDropBlock(worldIn, pos, state);
-    }
-
-    private boolean checkAndDropBlock(World worldIn, BlockPos pos, IBlockState state)
-    {
-        if (!this.canPlaceBlockAt(worldIn, pos))
-        {
-            worldIn.setBlockToAir(pos);
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
+//    /**
+//     * Called when a neighboring block was changed and marks that this state should perform any checks during a neighbor
+//     * change. Cases may include when redstone power is updated, cactus blocks popping off due to a neighboring solid
+//     * block, etc.
+//     */
+//    public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
+//    {
+//        super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
+//        this.checkAndDropBlock(worldIn, pos, state);
+//    }
+//
+//    private boolean checkAndDropBlock(World worldIn, BlockPos pos, IBlockState state)
+//    {
+//        if (!this.canPlaceBlockAt(worldIn, pos))
+//        {
+//            worldIn.setBlockToAir(pos);
+//            return false;
+//        }
+//        else
+//        {
+//            return true;
+//        }
+//    }
 
     /**
      * Spawns the block's drops in the world. By the time this is called the Block has possibly been set to air via
@@ -155,6 +156,7 @@ public class MyBlockSnow extends BlockFalling
 
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
+        super.updateTick(worldIn, pos, state, rand);
         if (worldIn.getLightFor(EnumSkyBlock.BLOCK, pos) > 11)
         {
             worldIn.setBlockToAir(pos);
@@ -189,6 +191,11 @@ public class MyBlockSnow extends BlockFalling
     public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
     {
         return ((Integer)worldIn.getBlockState(pos).getValue(LAYERS)).intValue() == 1;
+    }
+
+    @Override
+    public int getDustColor(IBlockState state) {
+        return Color.WHITE.getRGB();
     }
 
     /**
