@@ -23,6 +23,7 @@ public class ModItems {
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "bat_wing");
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "ender_pearl_piece");
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "chain");
+        registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "polar_bear_leather");
 
         // Armor
         registerItem(new FurCostumeArmor.FurCostumeHelmet(), "fur_costume_helmet");

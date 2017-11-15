@@ -37,7 +37,6 @@ public class BlockSnow extends BlockFalling
         this.setDefaultState(this.blockState.getBaseState().withProperty(LAYERS, Integer.valueOf(1)));
         this.setTickRandomly(true);
         this.setCreativeTab(CreativeTabs.DECORATIONS);
-        System.out.println("CUSTOM SNOW BLOCK!");
     }
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
