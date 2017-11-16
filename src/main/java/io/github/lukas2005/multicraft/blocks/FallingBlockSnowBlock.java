@@ -6,6 +6,7 @@ import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
@@ -19,6 +20,8 @@ public class FallingBlockSnowBlock extends BlockFalling
         super(Material.CRAFTED_SNOW);
         this.setTickRandomly(true);
         this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+        this.setRegistryName(Blocks.SNOW.getRegistryName());
+        this.setUnlocalizedName(Blocks.SNOW.getUnlocalizedName().substring(5));
     }
 
     /**
