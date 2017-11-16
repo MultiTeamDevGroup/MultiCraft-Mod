@@ -6,6 +6,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.HashMap;
@@ -37,10 +39,15 @@ public class ModBlocks {
     }
 
     private static void registerBlockSubstitution(Block toReplace, Block blockReplacement) {
+        Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(toReplace.getRegistryName().getResourceDomain()));
+
         blockReplacement.setRegistryName(toReplace.getRegistryName());
         blockReplacement.setUnlocalizedName(toReplace.getUnlocalizedName());
+
         System.out.println(blockReplacement);
         BlockSubstitutions.put(toReplace, blockReplacement);
+
+        Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Reference.MOD_ID));
     }
 
     public static Block getBlock(String itemName) {
