@@ -26,8 +26,6 @@ public class ModBlocks {
         //registerBlock();
 
         // Substitutions
-        System.out.println(new FallingBlockSnow());
-
         registerBlockSubstitution(Blocks.SNOW_LAYER, new FallingBlockSnow());
         registerBlockSubstitution(Blocks.SNOW, new FallingBlockSnowBlock());
     }

@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class FallingBlockSnowBlock extends BlockFalling
 {
-    protected FallingBlockSnowBlock()
+    public FallingBlockSnowBlock()
     {
         super(Material.CRAFTED_SNOW);
         this.setTickRandomly(true);
