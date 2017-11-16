@@ -5,6 +5,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Loader;
 
 import java.util.HashMap;
 
@@ -30,20 +32,6 @@ public class ModBlocks {
         ModBlocks.put(block.getUnlocalizedName(), block);
     }
 
-<<<<<<< HEAD
-    private static void registerBlockSubstitution(Block toReplace, Block blockReplacement) {
-        Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(toReplace.getRegistryName().getResourceDomain()));
-
-        blockReplacement.setRegistryName(toReplace.getRegistryName());
-        blockReplacement.setUnlocalizedName(toReplace.getUnlocalizedName());
-
-        BlockSubstitutions.put(toReplace, blockReplacement);
-
-        Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Reference.MOD_ID));
-    }
-
-=======
->>>>>>> origin/master
     public static Block getBlock(String itemName) {
         return ModBlocks.get("tile."+Reference.MOD_ID+"."+itemName);
     }

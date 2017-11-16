@@ -39,12 +39,9 @@ public class FallingBlockSnow extends BlockFalling
         this.setDefaultState(this.blockState.getBaseState().withProperty(LAYERS, Integer.valueOf(1)));
         this.setTickRandomly(true);
         this.setCreativeTab(CreativeTabs.DECORATIONS);
-<<<<<<< HEAD
-        System.out.println(this);
-=======
+
         this.setRegistryName(Blocks.SNOW_LAYER.getRegistryName());
         this.setUnlocalizedName(Blocks.SNOW_LAYER.getUnlocalizedName().substring(5));
->>>>>>> origin/master
     }
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
