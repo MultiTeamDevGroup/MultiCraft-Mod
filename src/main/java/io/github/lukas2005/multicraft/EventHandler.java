@@ -41,6 +41,7 @@ public class EventHandler {
 
     @SubscribeEvent
     public static void registerBlock(RegistryEvent.Register<Block> e) {
+        ModBlocks.init();
         for (Block block : ModBlocks.ModBlocks.values()) {
             e.getRegistry().register(block);
         }
@@ -55,6 +56,7 @@ public class EventHandler {
 
     @SubscribeEvent
     public static void registerItem(RegistryEvent.Register<Item> e) {
+        ModItems.init();
         for (Item item : ModItems.ModItems.values()) {
             e.getRegistry().register(item);
         }
