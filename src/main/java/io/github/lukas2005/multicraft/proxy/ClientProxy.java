@@ -2,11 +2,14 @@ package io.github.lukas2005.multicraft.proxy;
 
 import io.github.lukas2005.multicraft.EnumColor;
 import io.github.lukas2005.multicraft.blocks.ColoredPlanks;
+import io.github.lukas2005.multicraft.entity.render.CustomRenderSheep;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -14,6 +17,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class ClientProxy implements IProxy {
     @Override
     public void preInit(FMLPreInitializationEvent e) {
+        RenderingRegistry.registerEntityRenderingHandler(EntitySheep.class, new CustomRenderSheep.Factory());
     }
 
     @Override

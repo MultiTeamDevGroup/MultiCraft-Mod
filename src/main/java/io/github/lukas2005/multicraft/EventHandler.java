@@ -4,7 +4,11 @@ import io.github.lukas2005.multicraft.blocks.ColoredPlanks;
 import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelSheep1;
+import net.minecraft.client.model.ModelSheep2;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderSheep;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.monster.EntityPolarBear;
@@ -12,6 +16,7 @@ import net.minecraft.entity.monster.EntityShulker;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.entity.passive.EntityParrot;
+import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -22,23 +27,22 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.tileentity.TileEntityShulkerBox;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.chunk.Chunk;
-import net.minecraft.world.chunk.storage.ExtendedBlockStorage;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
+import net.minecraftforge.fml.common.ModClassLoader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.registries.ForgeRegistry;
 
 import java.lang.reflect.Field;
 import java.math.BigInteger;
@@ -51,6 +55,13 @@ public class EventHandler {
         for (Block block : ModBlocks.ModBlocks.values()) {
             e.getRegistry().register(block);
         }
+
+        for (Block toReplace : ModBlocks.BlockSubstitutions.keySet()) {
+            Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(toReplace.getRegistryName().getResourceDomain()));
+            e.getRegistry().register(ModBlocks.BlockSubstitutions.get(toReplace));
+        }
+        Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Reference.MOD_ID));
+
     }
 
     @SubscribeEvent
@@ -108,37 +119,49 @@ public class EventHandler {
     }
 
     @SubscribeEvent
-    public static void onPlayerInteract(PlayerInteractEvent event) {
-        if (event instanceof PlayerInteractEvent.EntityInteract) {
-            PlayerInteractEvent.EntityInteract e = (PlayerInteractEvent.EntityInteract) event;
-            EntityPlayer player = e.getEntityPlayer();
+    public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract e) {
+        ItemStack is = e.getItemStack();
 
-            ItemStack is = e.getItemStack();
-
+        if (e.getTarget() instanceof EntityShulker) {
             if (is.getItem() == Items.DYE) {
-                if (e.getTarget() instanceof EntityShulker) {
-                    if (!e.getWorld().isRemote) {
-                        is.setCount(is.getCount() - 1);
-                        EntityShulker sh = (EntityShulker) e.getTarget();
-                        sh.getColor();
+                is.setCount(is.getCount() - 1);
+                EntityShulker sh = (EntityShulker) e.getTarget();
+
+                try {
+                    Class<? extends EntityShulker> shulkerClass = sh.getClass();
+
+                    Field dataManagerField;
+                    Field colorField;
+                    try {
+                        dataManagerField = Utils.getField(shulkerClass, "dataManager");
+                    } catch (Exception ex) {
                         try {
-                            Class<EntityShulker> shulkerClass = (Class<EntityShulker>) sh.getClass();
-
-                            Field dataManagerField = Utils.getField(shulkerClass,"dataManager");
-                            Field colorField = shulkerClass.getDeclaredField("COLOR");
-
-                            dataManagerField.setAccessible(true);
-                            colorField.setAccessible(true);
-
-                            EntityDataManager dataManager = (EntityDataManager) dataManagerField.get(sh);
-                            DataParameter<Byte> COLOR = (DataParameter<Byte>) colorField.get(sh);
-
-                            final BigInteger bi = BigInteger.valueOf(is.getMetadata());
-                            final byte[] bytes = bi.toByteArray();
-
-                            dataManager.set(COLOR, bytes[0]);
-                        } catch (Exception ex) { ex.printStackTrace(); }
+                            dataManagerField = shulkerClass.getDeclaredField("field_70180_af");
+                        } catch (Exception ex1) {
+                            throw ex1;
+                        }
                     }
+                    try {
+                        colorField = shulkerClass.getDeclaredField("COLOR");
+                    } catch (Exception ex) {
+                        try {
+                            colorField = shulkerClass.getDeclaredField("field_190770_bw");
+                        } catch (Exception ex1) {
+                            throw ex1;
+                        }
+                    }
+                    dataManagerField.setAccessible(true);
+                    colorField.setAccessible(true);
+
+                    EntityDataManager dataManager = (EntityDataManager) dataManagerField.get(sh);
+                    DataParameter<Byte> COLOR = (DataParameter<Byte>) colorField.get(sh);
+
+                    final BigInteger bi = BigInteger.valueOf(EnumDyeColor.byDyeDamage(is.getItemDamage()).getMetadata());
+                    final byte[] bytes = bi.toByteArray();
+
+                    dataManager.set(COLOR, bytes[0]);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
             }
         }
