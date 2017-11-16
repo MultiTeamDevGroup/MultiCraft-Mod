@@ -26,12 +26,10 @@ public class ModBlocks {
         //registerBlock();
 
         // Substitutions
-        Block fallingBlockSnow = new FallingBlockSnow();
-        System.out.println(fallingBlockSnow);
-        registerBlockSubstitution(Blocks.SNOW_LAYER, fallingBlockSnow);
-        Block fallingBlockSnowBlock = new FallingBlockSnowBlock();
-        System.out.println(fallingBlockSnowBlock);
-        registerBlockSubstitution(Blocks.SNOW, fallingBlockSnowBlock);
+        System.out.println(new FallingBlockSnow());
+
+        registerBlockSubstitution(Blocks.SNOW_LAYER, new FallingBlockSnow());
+        registerBlockSubstitution(Blocks.SNOW, new FallingBlockSnowBlock());
     }
 
     private static void registerBlock(Block block, String name) {
