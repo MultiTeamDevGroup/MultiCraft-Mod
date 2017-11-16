@@ -26,8 +26,12 @@ public class ModBlocks {
         //registerBlock();
 
         // Substitutions
-        registerBlockSubstitution(Blocks.SNOW_LAYER, new FallingBlockSnow());
-        registerBlockSubstitution(Blocks.SNOW, new FallingBlockSnowBlock());
+        Block fallingBlockSnow = new FallingBlockSnow();
+        System.out.println(fallingBlockSnow);
+        registerBlockSubstitution(Blocks.SNOW_LAYER, fallingBlockSnow);
+        Block fallingBlockSnowBlock = new FallingBlockSnowBlock();
+        System.out.println(fallingBlockSnowBlock);
+        registerBlockSubstitution(Blocks.SNOW, fallingBlockSnowBlock);
     }
 
     private static void registerBlock(Block block, String name) {
@@ -39,6 +43,7 @@ public class ModBlocks {
     private static void registerBlockSubstitution(Block toReplace, Block blockReplacement) {
         blockReplacement.setRegistryName(toReplace.getRegistryName());
         blockReplacement.setUnlocalizedName(toReplace.getUnlocalizedName());
+        System.out.println(blockReplacement);
         BlockSubstitutions.put(toReplace, blockReplacement);
     }
 

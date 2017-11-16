@@ -58,6 +58,7 @@ public class EventHandler {
 
         for (Block toReplace : ModBlocks.BlockSubstitutions.keySet()) {
             Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(toReplace.getRegistryName().getResourceDomain()));
+            System.out.println(ModBlocks.BlockSubstitutions.get(toReplace));
             e.getRegistry().register(ModBlocks.BlockSubstitutions.get(toReplace));
         }
         Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Reference.MOD_ID));
