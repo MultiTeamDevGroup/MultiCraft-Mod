@@ -1,6 +1,8 @@
 package io.github.lukas2005.multicraft;
 
 import io.github.lukas2005.multicraft.blocks.ColoredPlanks;
+import io.github.lukas2005.multicraft.blocks.FallingBlockSnow;
+import io.github.lukas2005.multicraft.blocks.FallingBlockSnowBlock;
 import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.block.Block;
@@ -46,12 +48,12 @@ public class EventHandler {
             e.getRegistry().register(block);
         }
 
-        for (Block toReplace : ModBlocks.BlockSubstitutions.keySet()) {
-            Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(toReplace.getRegistryName().getResourceDomain()));
-            e.getRegistry().register(ModBlocks.BlockSubstitutions.get(toReplace));
-        }
+        Loader.instance().setActiveModContainer(null); //this is for vanilla minecraft ONLY
+        e.getRegistry().registerAll(
+               new FallingBlockSnow(),
+               new FallingBlockSnowBlock()
+        );
         Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Reference.MOD_ID));
-
     }
 
     @SubscribeEvent
