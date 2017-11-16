@@ -44,7 +44,6 @@ public class ModBlocks {
         blockReplacement.setRegistryName(toReplace.getRegistryName());
         blockReplacement.setUnlocalizedName(toReplace.getUnlocalizedName());
 
-        System.out.println(blockReplacement);
         BlockSubstitutions.put(toReplace, blockReplacement);
 
         Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Reference.MOD_ID));
