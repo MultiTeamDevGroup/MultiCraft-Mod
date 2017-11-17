@@ -2,6 +2,7 @@ package io.github.lukas2005.multicraft.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
+import net.minecraft.block.BlockSnow;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
@@ -16,6 +17,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.EnumSkyBlock;
@@ -165,6 +167,18 @@ public class FallingBlockSnow extends BlockFalling
         {
             worldIn.setBlockToAir(pos);
         }
+    }
+
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+        if (playerIn.getHeldItem(hand).getItem() == Item.getItemFromBlock(Blocks.SNOW_LAYER)) {
+
+            IBlockState newState = state.cycleProperty(LAYERS);
+            if (isTopSolid(newState)) return false;
+
+            return worldIn.setBlockState(pos, newState);
+        }
+        return false;
     }
 
     @SideOnly(Side.CLIENT)
