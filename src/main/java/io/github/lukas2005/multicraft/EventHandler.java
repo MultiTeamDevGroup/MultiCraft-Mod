@@ -116,47 +116,57 @@ public class EventHandler {
         ItemStack is = e.getItemStack();
 
         if (e.getTarget() instanceof EntityShulker) {
+            EntityShulker sh = (EntityShulker) e.getTarget();
             if (is.getItem() == Items.DYE) {
                 is.setCount(is.getCount() - 1);
-                EntityShulker sh = (EntityShulker) e.getTarget();
 
+                changeShulkerColor(sh, EnumDyeColor.byDyeDamage(is.getItemDamage()));
+            } else if (is.getItem() == Items.POTIONITEM) {
+                is.setCount(0);
+                e.getEntityPlayer().addItemStackToInventory(new ItemStack(Items.GLASS_BOTTLE));
+
+                changeShulkerColor(sh, EnumDyeColor.PURPLE);
+
+            }
+        }
+    }
+
+    public static void changeShulkerColor(EntityShulker sh, EnumDyeColor color) {
+        try {
+            Class<? extends EntityShulker> shulkerClass = sh.getClass();
+
+            Field dataManagerField;
+            Field colorField;
+            try {
+                dataManagerField = Utils.getField(shulkerClass, "dataManager");
+            } catch (Exception ex) {
                 try {
-                    Class<? extends EntityShulker> shulkerClass = sh.getClass();
-
-                    Field dataManagerField;
-                    Field colorField;
-                    try {
-                        dataManagerField = Utils.getField(shulkerClass, "dataManager");
-                    } catch (Exception ex) {
-                        try {
-                            dataManagerField = shulkerClass.getDeclaredField("field_70180_af");
-                        } catch (Exception ex1) {
-                            throw ex1;
-                        }
-                    }
-                    try {
-                        colorField = shulkerClass.getDeclaredField("COLOR");
-                    } catch (Exception ex) {
-                        try {
-                            colorField = shulkerClass.getDeclaredField("field_190770_bw");
-                        } catch (Exception ex1) {
-                            throw ex1;
-                        }
-                    }
-                    dataManagerField.setAccessible(true);
-                    colorField.setAccessible(true);
-
-                    EntityDataManager dataManager = (EntityDataManager) dataManagerField.get(sh);
-                    DataParameter<Byte> COLOR = (DataParameter<Byte>) colorField.get(sh);
-
-                    final BigInteger bi = BigInteger.valueOf(EnumDyeColor.byDyeDamage(is.getItemDamage()).getMetadata());
-                    final byte[] bytes = bi.toByteArray();
-
-                    dataManager.set(COLOR, bytes[0]);
-                } catch (Exception ex) {
-                    ex.printStackTrace();
+                    dataManagerField = Utils.getField(shulkerClass, "field_70180_af");
+                } catch (Exception ex1) {
+                    throw ex1;
                 }
             }
+            try {
+                colorField = Utils.getField(shulkerClass, "COLOR");
+            } catch (Exception ex) {
+                try {
+                    colorField = Utils.getField(shulkerClass, "field_190770_bw");
+                } catch (Exception ex1) {
+                    throw ex1;
+                }
+            }
+            dataManagerField.setAccessible(true);
+            colorField.setAccessible(true);
+
+            EntityDataManager dataManager = (EntityDataManager) dataManagerField.get(sh);
+            DataParameter<Byte> COLOR = (DataParameter<Byte>) colorField.get(sh);
+
+            final BigInteger bi = BigInteger.valueOf(color.getMetadata());
+            final byte[] bytes = bi.toByteArray();
+
+            dataManager.set(COLOR, bytes[0]);
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 
