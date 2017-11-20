@@ -174,7 +174,7 @@ public class FallingBlockSnow extends BlockFalling
         if (playerIn.getHeldItem(hand).getItem() == Item.getItemFromBlock(Blocks.SNOW_LAYER)) {
 
             IBlockState newState = state.cycleProperty(LAYERS);
-            if (isTopSolid(newState)) return false;
+            if (((Integer)state.getValue(LAYERS)).intValue() == 9) return false;
 
             return worldIn.setBlockState(pos, newState);
         }

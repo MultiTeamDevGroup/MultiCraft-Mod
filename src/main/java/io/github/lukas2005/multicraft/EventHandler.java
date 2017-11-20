@@ -1,9 +1,6 @@
 package io.github.lukas2005.multicraft;
 
-import io.github.lukas2005.multicraft.blocks.ColoredPlanks;
-import io.github.lukas2005.multicraft.blocks.FallingBlockSnow;
-import io.github.lukas2005.multicraft.blocks.FallingBlockSnowBlock;
-import io.github.lukas2005.multicraft.blocks.ModBlocks;
+import io.github.lukas2005.multicraft.blocks.*;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
@@ -50,8 +47,9 @@ public class EventHandler {
 
         Loader.instance().setActiveModContainer(null); //this is for vanilla minecraft ONLY
         e.getRegistry().registerAll(
-               new FallingBlockSnow(),
-               new FallingBlockSnowBlock()
+            new FallingBlockSnow(),
+            new FallingBlockSnowBlock(),
+            new CustomCraftingTable()
         );
         Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Reference.MOD_ID));
     }
