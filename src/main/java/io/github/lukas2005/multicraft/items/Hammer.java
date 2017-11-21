@@ -24,19 +24,30 @@ public class Hammer extends ItemSword {
 
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+        IBlockState state = worldIn.getBlockState(pos);
+        ItemStack is = player.getHeldItem(hand);
+
         if (worldIn.getBlockState(pos).getBlock() == Blocks.CONCRETE) {
-            IBlockState state = worldIn.getBlockState(pos);
 
             worldIn.setBlockState(pos, Blocks.CONCRETE_POWDER.getStateFromMeta(Blocks.CONCRETE.getMetaFromState(state)));
-            ItemStack is = player.getHeldItem(hand);
             is.damageItem(1, player);
 
             return EnumActionResult.SUCCESS;
         } else if (worldIn.getBlockState(pos).getBlock() == Blocks.STONE) {
-            IBlockState state = worldIn.getBlockState(pos);
 
             worldIn.setBlockState(pos, ModBlocks.getBlock("rock_path").getDefaultState());
-            ItemStack is = player.getHeldItem(hand);
+            is.damageItem(1, player);
+
+            return EnumActionResult.SUCCESS;
+        } else if (worldIn.getBlockState(pos).getBlock() == Blocks.SNOW) {
+
+            worldIn.setBlockState(pos, Blocks.ICE.getDefaultState());
+            is.damageItem(1, player);
+
+            return EnumActionResult.SUCCESS;
+        } else if (worldIn.getBlockState(pos).getBlock() == Blocks.SNOW) {
+
+            worldIn.setBlockState(pos, Blocks.PACKED_ICE.getDefaultState());
             is.damageItem(1, player);
 
             return EnumActionResult.SUCCESS;
