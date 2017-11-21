@@ -1,0 +1,40 @@
+# Food
+item.multic.raw_parrot_meat.name=Rauw papegaai vlees
+item.multic.cooked_parrot_meat.name=Gekookt papegaai vlees
+
+# Materials
+item.multic.bat_wing.name=Vleermuis vleugel
+item.multic.ender_pearl_piece.name=Ender parel stuk
+item.multic.llama_fur.name=Lama vacht
+item.multic.chain.name=Ketting
+item.multic.polar_bear_leather.name=Ijsbeer vacht
+
+# Armor
+item.multic.fur_costume_helmet.name=Vacht kostuum helm
+item.multic.fur_costume_chestplate.name=Vacht kostuum borststuk
+item.multic.fur_costume_leggings.name=Vacht kostuum broek
+item.multic.fur_costume_boots.name=Vacht kostuum botten
+
+# Weapon
+item.multic.hammer.name=Hamer
+item.multic.iron_shield.name=Ijzer schild
+item.multic.golden_shield.name=Gouden schild
+
+# Blocks
+tile.multic.colored_planks.white.name=Witte planken
+tile.multic.colored_planks.orange.name=Oranje planken
+tile.multic.colored_planks.magenta.name=Magenta planken
+tile.multic.colored_planks.light_blue.name=Licht blauwe planken
+tile.multic.colored_planks.yellow.name=Gele planken
+tile.multic.colored_planks.lime.name=Lime planken
+tile.multic.colored_planks.pink.name=Roze planken
+tile.multic.colored_planks.gray.name=Grijze planken
+tile.multic.colored_planks.light_gray.name=Licht grijze planken
+tile.multic.colored_planks.cyan.name=Cyan planken
+tile.multic.colored_planks.purple.name=Paarse planken
+tile.multic.colored_planks.blue.name=Blauwe planken
+tile.multic.colored_planks.brown.name=Bruine planken
+tile.multic.colored_planks.green.name=Groene planken
+tile.multic.colored_planks.red.name=Rode planked
+tile.multic.colored_planks.black.name=Zwarte planken
+tile.multic.rock_path.name=Andesite pad
