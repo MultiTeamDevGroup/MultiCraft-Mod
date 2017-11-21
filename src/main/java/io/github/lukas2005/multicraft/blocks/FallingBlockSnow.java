@@ -174,7 +174,9 @@ public class FallingBlockSnow extends BlockFalling
         if (playerIn.getHeldItem(hand).getItem() == Item.getItemFromBlock(Blocks.SNOW_LAYER)) {
 
             IBlockState newState = state.cycleProperty(LAYERS);
-            if (((Integer)state.getValue(LAYERS)).intValue() == 9) return false;
+            System.out.println(state.getValue(LAYERS).intValue());
+            if (state.getValue(LAYERS).intValue() == 7) return worldIn.setBlockState(pos, Blocks.SNOW.getDefaultState());
+
 
             return worldIn.setBlockState(pos, newState);
         }
@@ -191,7 +193,7 @@ public class FallingBlockSnow extends BlockFalling
         else
         {
             IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
-            return iblockstate.getBlock() == this && ((Integer)iblockstate.getValue(LAYERS)).intValue() >= ((Integer)blockState.getValue(LAYERS)).intValue() ? false : super.shouldSideBeRendered(blockState, blockAccess, pos, side);
+            return iblockstate.getBlock() == this && (iblockstate.getValue(LAYERS).intValue() >= blockState.getValue(LAYERS).intValue() ? false : super.shouldSideBeRendered(blockState, blockAccess, pos, side));
         }
     }
 

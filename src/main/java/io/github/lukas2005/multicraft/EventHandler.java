@@ -3,6 +3,7 @@ package io.github.lukas2005.multicraft;
 import io.github.lukas2005.multicraft.blocks.*;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.monster.EntityPolarBear;
@@ -12,6 +13,7 @@ import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.entity.passive.EntityParrot;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -19,7 +21,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -101,9 +105,13 @@ public class EventHandler {
         if (e.phase == TickEvent.Phase.END) {
             if (e.side == Side.SERVER) {
                 BlockPos playerPos = new BlockPos(e.player.posX, e.player.posY, e.player.posZ);
-
                 if (e.player.world.getBlockState(playerPos).getBlock() == Blocks.DEADBUSH) {
                     e.player.attackEntityFrom(DamageSource.CACTUS, 0.5f);
+                }
+            } else if (e.side == Side.CLIENT) {
+                if ((e.player.motionX > 0 || e.player.motionZ > 0 || e.player.motionY > 0) && e.player.isCollidedVertically) {
+                    e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
+                    //e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
                 }
             }
         }
@@ -112,6 +120,11 @@ public class EventHandler {
     @SubscribeEvent
     public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract e) {
         ItemStack is = e.getItemStack();
+
+        if (is.getItem() == Items.GLOWSTONE_DUST && e.getTarget() instanceof EntityLivingBase) {
+            is.setCount(is.getCount() - 1);
+            ((EntityLivingBase) e.getTarget()).addPotionEffect(new PotionEffect(MobEffects.GLOWING,5 * 60 * 20,1));
+        }
 
         if (e.getTarget() instanceof EntityShulker) {
             EntityShulker sh = (EntityShulker) e.getTarget();
@@ -182,11 +195,8 @@ public class EventHandler {
             for (EntityItem eItem : e.getDrops()) {
                 if (eItem.getItem().getItem() == Items.LEATHER) eItem.setDead();
             }
-            int amount = 2;
-            int randomInt = Main.random.nextInt(100);
-            if (randomInt < 60) amount = 2;
-            if (randomInt > 60 && randomInt < 80) amount = 3;
-            if (randomInt > 80 && randomInt <= 100) amount = 4;
+            float rand = Main.random.nextFloat();
+            int amount = rand > 0.8F ? 4 : rand > 0.6F ? 3 : 2;
             e.getEntityLiving().dropItem(ModItems.getItem("llama_fur"), amount);
         }
     }
