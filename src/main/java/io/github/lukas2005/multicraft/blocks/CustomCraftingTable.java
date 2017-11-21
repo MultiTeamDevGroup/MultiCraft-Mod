@@ -2,7 +2,7 @@ package io.github.lukas2005.multicraft.blocks;
 
 import io.github.lukas2005.multicraft.entity.tileentity.TileEntityCraftingTable;
 import io.github.lukas2005.multicraft.inventory.CustomContainerWorkbench;
-import net.minecraft.block.BlockContainer;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -23,14 +23,25 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class CustomCraftingTable extends BlockContainer
+public class CustomCraftingTable extends Block
 {
-    protected CustomCraftingTable()
+    public CustomCraftingTable()
     {
         super(Material.WOOD);
         this.setCreativeTab(CreativeTabs.DECORATIONS);
         setRegistryName(Blocks.CRAFTING_TABLE.getRegistryName());
-        setUnlocalizedName(Blocks.CRAFTING_TABLE.getUnlocalizedName());
+        setUnlocalizedName(Blocks.CRAFTING_TABLE.getUnlocalizedName().substring(5));
+    }
+
+    @Nullable
+    @Override
+    public TileEntity createTileEntity(World world, IBlockState state) {
+        return new TileEntityCraftingTable();
+    }
+
+    @Override
+    public boolean hasTileEntity(IBlockState state) {
+        return true;
     }
 
     /**
@@ -44,12 +55,6 @@ public class CustomCraftingTable extends BlockContainer
             playerIn.addStat(StatList.CRAFTING_TABLE_INTERACTION);
         }
         return true;
-    }
-
-    @Nullable
-    @Override
-    public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new TileEntityCraftingTable();
     }
 
     public static class InterfaceCraftingTable implements IInteractionObject
