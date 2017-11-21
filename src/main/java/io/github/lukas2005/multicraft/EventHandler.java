@@ -108,11 +108,10 @@ public class EventHandler {
                 if (e.player.world.getBlockState(playerPos).getBlock() == Blocks.DEADBUSH) {
                     e.player.attackEntityFrom(DamageSource.CACTUS, 0.5f);
                 }
-            } else if (e.side == Side.CLIENT) {
-                if ((e.player.motionX > 0 || e.player.motionZ > 0 || e.player.motionY > 0) && e.player.isCollidedVertically) {
-                    e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
-                    //e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
-                }
+            } else if (e.side == Side.CLIENT) { }
+            if ((e.player.motionX > 0 || e.player.motionZ > 0 || e.player.motionY > 0) && e.player.isCollidedVertically) {
+                e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
+                //e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
             }
         }
     }
