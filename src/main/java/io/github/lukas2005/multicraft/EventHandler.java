@@ -52,8 +52,8 @@ public class EventHandler {
         Loader.instance().setActiveModContainer(null); //this is for vanilla minecraft ONLY
         e.getRegistry().registerAll(
             new FallingBlockSnow(),
-            new FallingBlockSnowBlock(),
-            new CustomCraftingTable()
+            new FallingBlockSnowBlock()/*,
+            new CustomCraftingTable()*/
         );
         Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Reference.MOD_ID));
     }
