@@ -7,6 +7,8 @@ item.multic.cooked_parrot_meat.name=Upieczone mięso papugi
 item.multic.bat_wing.name=Skrzydło nietoperza
 item.multic.ender_pearl_piece.name=Kawałek oka kresu
 item.multic.llama_fur.name=Futro lamy
+item.multic.wither_bone.name=Kość Withera
+item.multic.wither_bone_meal.name=Mączka kostna z kości withera
 
 # Armor
 item.multic.fur_costume_helmet.name=Futrzana czapka
@@ -16,3 +18,24 @@ item.multic.fur_costume.name=Futrzane buty
 
 # Weapons
 item.multic.hammer.name=Młot
+item.multic.iron_shield.name=Żelazna tarcza
+item.multic.golden_shield.name=Złota tarcza
+
+# Blocks
+tile.multic.colored_planks.white.name=Białe deski
+tile.multic.colored_planks.orange.name=Pomarańczowe
+tile.multic.colored_planks.magenta.name=Fioletowe deski
+tile.multic.colored_planks.light_blue.name=Jasno niebieskie deski
+tile.multic.colored_planks.yellow.name=Zółte deski
+tile.multic.colored_planks.lime.name=Limonkowe deski
+tile.multic.colored_planks.pink.name=Różowe deski
+tile.multic.colored_planks.gray.name=Szare deski
+tile.multic.colored_planks.light_gray.name=Jasno szare deski
+tile.multic.colored_planks.cyan.name=Cyjanowe deski
+tile.multic.colored_planks.purple.name=Purpurowe deski
+tile.multic.colored_planks.blue.name=Niebieskie deski
+tile.multic.colored_planks.brown.name=Brązowe deski
+tile.multic.colored_planks.green.name=Zielone deski
+tile.multic.colored_planks.red.name=Czerwone deski
+tile.multic.colored_planks.black.name=Czarne deski
+tile.multic.rock_path.name=Kamienna ścieżka

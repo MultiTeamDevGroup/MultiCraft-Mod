@@ -8,6 +8,8 @@ item.multic.ender_pearl_piece.name=Ender parel stuk
 item.multic.llama_fur.name=Lama vacht
 item.multic.chain.name=Ketting
 item.multic.polar_bear_leather.name=Ijsbeer vacht
+item.multic.wither_bone.name=
+item.multic.wither_bone_meal.name=
 
 # Armor
 item.multic.fur_costume_helmet.name=Vacht kostuum helm

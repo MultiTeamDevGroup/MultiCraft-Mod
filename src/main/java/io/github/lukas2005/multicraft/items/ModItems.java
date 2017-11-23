@@ -1,17 +1,25 @@
 package io.github.lukas2005.multicraft.items;
 
 import io.github.lukas2005.multicraft.Reference;
+import net.minecraft.block.BlockNetherWart;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemShield;
+import net.minecraft.item.ItemDye;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 import java.util.HashMap;
 
 public class ModItems {
 
-    public static HashMap<String, Item> ModItems = new HashMap<>();
+    public static final HashMap<String, Item> ModItems = new HashMap<>();
 
     public static void init() {
         // Food
@@ -24,6 +32,27 @@ public class ModItems {
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "ender_pearl_piece");
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "chain");
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "polar_bear_leather");
+        registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "wither_bone");
+
+        registerItem(new Item() {
+            @Override
+            public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+                IBlockState state = worldIn.getBlockState(pos);
+                if (state.getBlock() == Blocks.NETHER_WART) {
+                    int age = state.getValue(BlockNetherWart.AGE);
+
+                    if (age+1 <= 3) {
+                        IBlockState newState = Blocks.NETHER_WART.getDefaultState().withProperty(BlockNetherWart.AGE, age+1);
+                        worldIn.setBlockState(pos, newState);
+
+                        if (!worldIn.isRemote) ItemDye.spawnBonemealParticles(worldIn, pos, 10);
+
+                        return EnumActionResult.SUCCESS;
+                    }
+                }
+                return EnumActionResult.FAIL;
+            }
+        }.setCreativeTab(CreativeTabs.MATERIALS), "wither_bone_meal");
 
         // Armor
         registerItem(new FurCostumeArmor.FurCostumeHelmet(), "fur_costume_helmet");

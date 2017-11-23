@@ -8,6 +8,8 @@ item.multic.ender_pearl_piece.name=Ender peral piece
 item.multic.llama_fur.name=Llama fur
 item.multic.chain.name=Chain
 item.multic.polar_bear_leather.name=Polar bear leather
+item.multic.wither_bone.name=Wither Bone
+item.multic.wither_bone_meal.name=Wither Bone Meal
 
 # Armor
 item.multic.fur_costume_helmet.name=Fur costume helmet

@@ -8,6 +8,8 @@ item.multic.ender_pearl_piece.name=Véggyöngy darab
 item.multic.llama_fur.name=Láma bunda
 item.multic.chain.name=Lánc
 item.multic.polar_bear_leather.name=Jegesmedve bőr
+item.multic.wither_bone.name=
+item.multic.wither_bone_meal.name=
 
 # Armor
 item.multic.fur_costume_helmet.name=Bunda sapka

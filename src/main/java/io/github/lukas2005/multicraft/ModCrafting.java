@@ -1,16 +1,12 @@
 package io.github.lukas2005.multicraft;
 
-import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.items.ModItems;
-import jdk.nashorn.internal.ir.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -23,6 +19,9 @@ public class ModCrafting {
         // Crafting (Shapeless)
         // TODO: Fix this recipe
         addShapelessRecipe(new ItemStack(Items.POTIONITEM, 1, 8260), ModItems.getItem("bat_wing"), Items.POTIONITEM);
+
+        addShapelessRecipe(new ItemStack(ModItems.getItem("wither_bone_meal"), 3), ModItems.getItem("wither_bone"));
+
 
         NBTTagCompound nbt = new NBTTagCompound();
         NBTTagCompound displayNBT = new NBTTagCompound();
