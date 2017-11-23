@@ -33,6 +33,7 @@ public class ModItems {
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "chain");
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "polar_bear_leather");
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "wither_bone");
+        registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "silver_fish_scale");
 
         registerItem(new Item() {
             @Override

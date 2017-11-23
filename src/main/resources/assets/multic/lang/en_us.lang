@@ -4,12 +4,13 @@ item.multic.cooked_parrot_meat.name=Cooked parrot meat
 
 # Materials
 item.multic.bat_wing.name=Bat wing
-item.multic.ender_pearl_piece.name=Ender peral piece
+item.multic.ender_pearl_piece.name=Ender pearl piece
 item.multic.llama_fur.name=Llama fur
 item.multic.chain.name=Chain
 item.multic.polar_bear_leather.name=Polar bear leather
-item.multic.wither_bone.name=Wither Bone
-item.multic.wither_bone_meal.name=Wither Bone Meal
+item.multic.wither_bone.name=Wither bone
+item.multic.wither_bone_meal.name=Wither bone meal
+item.multic.silver_fish_scale.name=Silverfish scale
 
 # Armor
 item.multic.fur_costume_helmet.name=Fur costume helmet
