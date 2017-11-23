@@ -45,7 +45,7 @@ public class Hammer extends ItemSword {
             is.damageItem(1, player);
 
             return EnumActionResult.SUCCESS;
-        } else if (worldIn.getBlockState(pos).getBlock() == Blocks.SNOW) {
+        } else if (worldIn.getBlockState(pos).getBlock() == Blocks.ICE) {
 
             worldIn.setBlockState(pos, Blocks.PACKED_ICE.getDefaultState());
             is.damageItem(1, player);
