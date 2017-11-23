@@ -1,13 +1,17 @@
 package io.github.lukas2005.multicraft.items;
 
 import io.github.lukas2005.multicraft.Reference;
+import net.minecraft.block.BlockCrops;
 import net.minecraft.block.BlockNetherWart;
+import net.minecraft.block.BlockPotato;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemDye;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -39,6 +43,8 @@ public class ModItems {
             @Override
             public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
                 IBlockState state = worldIn.getBlockState(pos);
+                ItemStack is = player.getHeldItem(hand);
+
                 if (state.getBlock() == Blocks.NETHER_WART) {
                     int age = state.getValue(BlockNetherWart.AGE);
 
@@ -48,8 +54,12 @@ public class ModItems {
 
                         if (!worldIn.isRemote) ItemDye.spawnBonemealParticles(worldIn, pos, 10);
 
+                        is.setCount(is.getCount()-1);
                         return EnumActionResult.SUCCESS;
                     }
+                } else if (state.getBlock() == Blocks.POTATOES) {
+                    worldIn.setBlockToAir(pos);
+                    if (!worldIn.isRemote && state.getValue(BlockCrops.AGE)+1==8) player.dropItem(Items.POISONOUS_POTATO, 1);
                 }
                 return EnumActionResult.FAIL;
             }

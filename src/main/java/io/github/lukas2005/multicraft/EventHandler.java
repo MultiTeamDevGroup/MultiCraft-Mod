@@ -1,6 +1,10 @@
 package io.github.lukas2005.multicraft;
 
-import io.github.lukas2005.multicraft.blocks.*;
+import io.github.lukas2005.multicraft.blocks.ColoredPlanks;
+import io.github.lukas2005.multicraft.blocks.FallingBlockSnow;
+import io.github.lukas2005.multicraft.blocks.FallingBlockSnowBlock;
+import io.github.lukas2005.multicraft.blocks.ModBlocks;
+import io.github.lukas2005.multicraft.entity.ai.AIEatCropBlock;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
@@ -11,6 +15,7 @@ import net.minecraft.entity.monster.EntityShulker;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.entity.passive.EntityParrot;
+import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
@@ -19,14 +24,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.EntityEvent;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -36,8 +41,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
-import java.lang.reflect.Field;
-import java.math.BigInteger;
+import java.util.ArrayList;
 
 @Mod.EventBusSubscriber(modid = Reference.MOD_ID)
 public class EventHandler {
@@ -130,53 +134,14 @@ public class EventHandler {
             if (is.getItem() == Items.DYE) {
                 is.setCount(is.getCount() - 1);
 
-                changeShulkerColor(sh, EnumDyeColor.byDyeDamage(is.getItemDamage()));
+                Utils.changeShulkerColor(sh, EnumDyeColor.byDyeDamage(is.getItemDamage()));
             } else if (is.getItem() == Items.POTIONITEM) {
                 is.setCount(0);
                 e.getEntityPlayer().addItemStackToInventory(new ItemStack(Items.GLASS_BOTTLE));
 
-                changeShulkerColor(sh, EnumDyeColor.PURPLE);
+                Utils.changeShulkerColor(sh, EnumDyeColor.PURPLE);
 
             }
-        }
-    }
-
-    public static void changeShulkerColor(EntityShulker sh, EnumDyeColor color) {
-        try {
-            Class<? extends EntityShulker> shulkerClass = sh.getClass();
-
-            Field dataManagerField;
-            Field colorField;
-            try {
-                dataManagerField = Utils.getField(shulkerClass, "dataManager");
-            } catch (Exception ex) {
-                try {
-                    dataManagerField = Utils.getField(shulkerClass, "field_70180_af");
-                } catch (Exception ex1) {
-                    throw ex1;
-                }
-            }
-            try {
-                colorField = Utils.getField(shulkerClass, "COLOR");
-            } catch (Exception ex) {
-                try {
-                    colorField = Utils.getField(shulkerClass, "field_190770_bw");
-                } catch (Exception ex1) {
-                    throw ex1;
-                }
-            }
-            dataManagerField.setAccessible(true);
-            colorField.setAccessible(true);
-
-            EntityDataManager dataManager = (EntityDataManager) dataManagerField.get(sh);
-            DataParameter<Byte> COLOR = (DataParameter<Byte>) colorField.get(sh);
-
-            final BigInteger bi = BigInteger.valueOf(color.getMetadata());
-            final byte[] bytes = bi.toByteArray();
-
-            dataManager.set(COLOR, bytes[0]);
-        } catch (Exception ex) {
-            ex.printStackTrace();
         }
     }
 
@@ -200,4 +165,17 @@ public class EventHandler {
         }
     }
 
+    public static ArrayList<Block> crops = new ArrayList<Block>();
+    static {
+        crops.add(Blocks.CARROTS);
+    }
+
+    @SubscribeEvent
+    public static void onEntityJoinWorld(EntityJoinWorldEvent e) {
+        if (e.getEntity() instanceof EntityRabbit) {
+            EntityRabbit rabbit = (EntityRabbit) e.getEntity();
+
+            rabbit.tasks.addTask(5, new AIEatCropBlock(rabbit, crops));
+        }
+    }
 }
