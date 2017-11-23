@@ -13,6 +13,6 @@ public class CustomShield extends ItemShield {
 
     @Override
     public String getItemStackDisplayName(ItemStack stack) {
-        return I18n.translateToLocal(getUnlocalizedName());
+        return I18n.translateToLocal(getUnlocalizedName()+".name");
     }
 }
