@@ -2,7 +2,6 @@ package io.github.lukas2005.multicraft.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
-import net.minecraft.block.BlockSnow;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
@@ -192,8 +191,8 @@ public class FallingBlockSnow extends BlockFalling
         }
         else
         {
-            IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
-            return iblockstate.getBlock() == this && (iblockstate.getValue(LAYERS).intValue() >= blockState.getValue(LAYERS).intValue() ? false : super.shouldSideBeRendered(blockState, blockAccess, pos, side));
+            IBlockState iblocksState = blockAccess.getBlockState(pos.offset(side));
+            return iblockstate.getBlock() == this && iblockstate.getValue(LAYERS).intValue() >= blockState.getValue(LAYERS).intValue() ? false : super.shouldSideBeRendered(blockState, blockAccess, pos, side);
         }
     }
 
