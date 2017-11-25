@@ -49,45 +49,32 @@ public class ModCrafting {
 
         // Crafting (Shaped)
 
-        addShapedRecipe(new ItemStack(Items.ENDER_PEARL),
+        addShapedRecipe(new ItemStack(Items.ENDER_PEARL), //ender_pearl
                 "PPP",
                         "PPP",
                         "PPP", 'P', ModItems.getItem("ender_pearl_piece"));
 
 
 
-
-        addShapedRecipe(new ItemStack(Items.CHAINMAIL_HELMET),
-                "FFF",
-                        "F F",
-                        "   ", 'F', ModItems.getItem("chain"));
-        addShapedRecipe(new ItemStack(Items.CHAINMAIL_HELMET),
-                "   ",
-                        "FFF",
-                        "F F", 'F', ModItems.getItem("chain"));
+        
 
 
-        addShapedRecipe(new ItemStack(Items.CHAINMAIL_CHESTPLATE),
+        addShapedRecipe(new ItemStack(Items.CHAINMAIL_CHESTPLATE), //chainmail_chestplate
                 "F F",
                         "FFF",
                         "FFF", 'F', ModItems.getItem("chain"));
 
-        addShapedRecipe(new ItemStack(Items.CHAINMAIL_LEGGINGS),
+        addShapedRecipe(new ItemStack(Items.CHAINMAIL_LEGGINGS), //chainmail_leggings
                 "FFF",
                         "F F",
                         "F F", 'F', ModItems.getItem("chain"));
 
-        addShapedRecipe(new ItemStack(Items.CHAINMAIL_BOOTS),
-                "F F",
-                        "F F",
-                        "   ", 'F', ModItems.getItem("chain"));
-
-        addShapedRecipe(new ItemStack(Items.CHAINMAIL_BOOTS),
+        addShapedRecipe(new ItemStack(Items.CHAINMAIL_BOOTS), //chainmail_boots
                 "   ",
                         "F F",
                         "F F", 'F', ModItems.getItem("chain"));
 
-        addShapedRecipe(new ItemStack(ModItems.getItem("chain")),
+        addShapedRecipe(new ItemStack(ModItems.getItem("chain")), //chain
                 "I I",
                         " I ",
                         "I I", 'I', Items.IRON_NUGGET);
