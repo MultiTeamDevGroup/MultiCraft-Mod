@@ -10,8 +10,4 @@ public class TileEntityCraftingTable extends TileEntity {
         return compound;
     }
 
-    @Override
-    public void readFromNBT(NBTTagCompound compound) {
-        super.readFromNBT(compound);
-    }
 }
