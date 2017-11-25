@@ -41,5 +41,5 @@ tile.multic.colored_planks.green.name=Green planks
 tile.multic.colored_planks.red.name=Red planks
 tile.multic.colored_planks.black.name=Black planks
 tile.multic.rock_path.name=Andesite path
-tile.multic.ancient_stone=Ancient stone
-tile.multic.volcanic_stone=Volcanic stone
+tile.multic.ancient_stone.name=Ancient stone
+tile.multic.volcanic_stone.name=Volcanic stone

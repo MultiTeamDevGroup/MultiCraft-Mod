@@ -40,5 +40,5 @@ tile.multic.colored_planks.green.name=Zielone deski
 tile.multic.colored_planks.red.name=Czerwone deski
 tile.multic.colored_planks.black.name=Czarne deski
 tile.multic.rock_path.name=Kamienna ścieżka
-tile.multic.ancient_stone=Stary kamień
-tile.multic.volcanic_stone=Wulkaniczny kamień
+tile.multic.ancient_stone.name=Stary kamień
+tile.multic.volcanic_stone.name=Wulkaniczny kamień
