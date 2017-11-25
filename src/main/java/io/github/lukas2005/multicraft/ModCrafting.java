@@ -49,11 +49,6 @@ public class ModCrafting {
 
         // Crafting (Shaped)
 
-        addShapedRecipe(new ItemStack(ModItems.getItem("fur_costume_leggings")),
-                 "FFF",
-                         "F F",
-                         "F F", 'F', ModItems.getItem("llama_fur"));
-
         addShapedRecipe(new ItemStack(ModItems.getItem("fur_costume_boots")),
                  "F F",
                          "F F",

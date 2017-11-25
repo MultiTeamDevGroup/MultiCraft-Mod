@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "multic:llama_fur"
+    }
+  },
+  "result": {
+    "item": "multic:fur_costume_leggings"
+  }
+}
