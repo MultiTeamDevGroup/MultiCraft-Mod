@@ -48,12 +48,6 @@ public class ModCrafting {
         addShapelessRecipe(lingeringPotionItemStack, potionItemStack, new ItemStack(Items.DRAGON_BREATH));
 
         // Crafting (Shaped)
-
-        addShapedRecipe(new ItemStack(Items.ENDER_PEARL), //ender_pearl
-                "PPP",
-                        "PPP",
-                        "PPP", 'P', ModItems.getItem("ender_pearl_piece"));
-
         nbt = new NBTTagCompound();
         displayNBT = new NBTTagCompound();
         displayNBT.setString("LocName", "Tipped Arrow of Levitation");
