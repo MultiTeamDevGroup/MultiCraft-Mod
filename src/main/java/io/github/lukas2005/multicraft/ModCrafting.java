@@ -54,10 +54,6 @@ public class ModCrafting {
                         "PPP",
                         "PPP", 'P', ModItems.getItem("ender_pearl_piece"));
 
-        addShapedRecipe(new ItemStack(ModItems.getItem("hammer")),
-                " I ",
-                        " SI",
-                        "S  ", 'S', Items.STICK, 'I', Items.IRON_INGOT);
 
 
 
