@@ -2,14 +2,12 @@ package io.github.lukas2005.multicraft.blocks;
 
 import io.github.lukas2005.multicraft.EnumColor;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
@@ -18,11 +16,9 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import java.util.Random;
-
 public class ColoredPlanks extends Block {
 
-    public static final PropertyEnum<EnumColor> COLOR = PropertyEnum.create("color", EnumColor.class);
+    private static final PropertyEnum<EnumColor> COLOR = PropertyEnum.create("color", EnumColor.class);
 
     public ColoredPlanks() {
         super(Material.WOOD);

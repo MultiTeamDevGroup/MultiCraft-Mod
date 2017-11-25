@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class MyBlockSnowBlock extends BlockFalling
+class MyBlockSnowBlock extends BlockFalling
 {
     protected MyBlockSnowBlock()
     {

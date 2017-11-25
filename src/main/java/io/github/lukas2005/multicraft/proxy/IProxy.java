@@ -6,14 +6,16 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+@SuppressWarnings("EmptyMethod")
 public interface IProxy {
 
-    public void preInit(FMLPreInitializationEvent e);
+    void preInit(FMLPreInitializationEvent e);
 
-    public void init(FMLInitializationEvent e);
+    @SuppressWarnings("EmptyMethod")
+    void init(FMLInitializationEvent e);
 
-    public void postInit(FMLPostInitializationEvent e);
+    void postInit(FMLPostInitializationEvent e);
 
-    public void registerItemRender(Item item);
-    public void registerBlockRender(Block block);
+    void registerItemRender(Item item);
+    void registerBlockRender(Block block);
 }

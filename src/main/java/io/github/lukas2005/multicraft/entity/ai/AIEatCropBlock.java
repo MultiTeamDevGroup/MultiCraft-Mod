@@ -13,9 +13,9 @@ import java.util.Collection;
 
 public class AIEatCropBlock extends EntityAIBase {
 
-    EntityRabbit e;
-    ArrayList<Block> crops;
-    World world;
+    private final EntityRabbit e;
+    private final ArrayList<Block> crops;
+    private final World world;
 
     public AIEatCropBlock(EntityRabbit e, Collection<Block> crops) {
         this.e = e;

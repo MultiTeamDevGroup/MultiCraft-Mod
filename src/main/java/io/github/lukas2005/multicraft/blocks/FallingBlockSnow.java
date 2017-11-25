@@ -3,7 +3,6 @@ package io.github.lukas2005.multicraft.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
@@ -31,13 +30,13 @@ import java.util.Random;
 
 public class FallingBlockSnow extends BlockFalling
 {
-    public static final PropertyInteger LAYERS = PropertyInteger.create("layers", 1, 8);
-    protected static final AxisAlignedBB[] SNOW_AABB = new AxisAlignedBB[] {new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.0D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.375D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.625D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.75D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.875D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D)};
+    private static final PropertyInteger LAYERS = PropertyInteger.create("layers", 1, 8);
+    private static final AxisAlignedBB[] SNOW_AABB = new AxisAlignedBB[] {new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.0D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.375D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.625D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.75D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.875D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D)};
 
     public FallingBlockSnow()
     {
         super(Material.SNOW);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(LAYERS, Integer.valueOf(1)));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(LAYERS, 1));
         this.setTickRandomly(true);
         this.setCreativeTab(CreativeTabs.DECORATIONS);
 
@@ -47,7 +46,7 @@ public class FallingBlockSnow extends BlockFalling
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
-        return SNOW_AABB[((Integer)state.getValue(LAYERS)).intValue()];
+        return SNOW_AABB[state.getValue(LAYERS)];
     }
 
     /**
@@ -55,7 +54,7 @@ public class FallingBlockSnow extends BlockFalling
      */
     public boolean isPassable(IBlockAccess worldIn, BlockPos pos)
     {
-        return ((Integer)worldIn.getBlockState(pos).getValue(LAYERS)).intValue() < 5;
+        return worldIn.getBlockState(pos).getValue(LAYERS) < 5;
     }
 
     /**
@@ -63,7 +62,7 @@ public class FallingBlockSnow extends BlockFalling
      */
     public boolean isTopSolid(IBlockState state)
     {
-        return ((Integer)state.getValue(LAYERS)).intValue() == 8;
+        return state.getValue(LAYERS) == 8;
     }
 
     public BlockFaceShape getBlockFaceShape(IBlockAccess p_193383_1_, IBlockState p_193383_2_, BlockPos p_193383_3_, EnumFacing p_193383_4_)
@@ -74,7 +73,7 @@ public class FallingBlockSnow extends BlockFalling
     @Nullable
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
     {
-        int i = ((Integer)blockState.getValue(LAYERS)).intValue() - 1;
+        int i = blockState.getValue(LAYERS) - 1;
         float f = 0.125F;
         AxisAlignedBB axisalignedbb = blockState.getBoundingBox(worldIn, pos);
         return new AxisAlignedBB(axisalignedbb.minX, axisalignedbb.minY, axisalignedbb.minZ, axisalignedbb.maxX, (double)((float)i * 0.125F), axisalignedbb.maxZ);
@@ -101,7 +100,7 @@ public class FallingBlockSnow extends BlockFalling
         if (block != Blocks.ICE && block != Blocks.PACKED_ICE && block != Blocks.BARRIER)
         {
             BlockFaceShape blockfaceshape = iblockstate.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP);
-            return blockfaceshape == BlockFaceShape.SOLID || iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.down()) || block == this && ((Integer)iblockstate.getValue(LAYERS)).intValue() == 8;
+            return blockfaceshape == BlockFaceShape.SOLID || iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.down()) || block == this && iblockstate.getValue(LAYERS) == 8;
         }
         else
         {
@@ -174,7 +173,7 @@ public class FallingBlockSnow extends BlockFalling
 
             IBlockState newState = state.cycleProperty(LAYERS);
             System.out.println(state.getValue(LAYERS).intValue());
-            if (state.getValue(LAYERS).intValue() == 7) return worldIn.setBlockState(pos, Blocks.SNOW.getDefaultState());
+            if (state.getValue(LAYERS) == 7) return worldIn.setBlockState(pos, Blocks.SNOW.getDefaultState());
 
 
             return worldIn.setBlockState(pos, newState);
@@ -192,7 +191,7 @@ public class FallingBlockSnow extends BlockFalling
         else
         {
             IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
-            return iblockstate.getBlock() == this && iblockstate.getValue(LAYERS).intValue() >= blockState.getValue(LAYERS).intValue() ? false : super.shouldSideBeRendered(blockState, blockAccess, pos, side);
+            return (iblockstate.getBlock() != this || iblockstate.getValue(LAYERS) < blockState.getValue(LAYERS)) && super.shouldSideBeRendered(blockState, blockAccess, pos, side);
         }
     }
 
@@ -201,7 +200,7 @@ public class FallingBlockSnow extends BlockFalling
      */
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(LAYERS, Integer.valueOf((meta & 7) + 1));
+        return this.getDefaultState().withProperty(LAYERS, (meta & 7) + 1);
     }
 
     /**
@@ -209,7 +208,7 @@ public class FallingBlockSnow extends BlockFalling
      */
     public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos)
     {
-        return ((Integer)worldIn.getBlockState(pos).getValue(LAYERS)).intValue() == 1;
+        return worldIn.getBlockState(pos).getValue(LAYERS) == 1;
     }
 
     @Override
@@ -222,13 +221,13 @@ public class FallingBlockSnow extends BlockFalling
      */
     public int getMetaFromState(IBlockState state)
     {
-        return ((Integer)state.getValue(LAYERS)).intValue() - 1;
+        return state.getValue(LAYERS) - 1;
     }
 
-    @Override public int quantityDropped(IBlockState state, int fortune, Random random){ return ((Integer)state.getValue(LAYERS)) + 1; }
+    @Override public int quantityDropped(IBlockState state, int fortune, Random random){ return state.getValue(LAYERS) + 1; }
 
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, new IProperty[] {LAYERS});
+        return new BlockStateContainer(this, LAYERS);
     }
 }

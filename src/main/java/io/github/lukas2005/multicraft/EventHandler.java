@@ -176,7 +176,7 @@ public class EventHandler {
         }
     }
 
-    public static ArrayList<Block> crops = new ArrayList<Block>();
+    private static final ArrayList<Block> crops = new ArrayList<>();
     static {
         crops.add(Blocks.CARROTS);
     }

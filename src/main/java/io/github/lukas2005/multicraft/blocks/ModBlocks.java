@@ -5,14 +5,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.Loader;
 
 import java.util.HashMap;
 
 public class ModBlocks {
 
-    public static HashMap<String, Block> ModBlocks = new HashMap<>();
+    public static final HashMap<String, Block> ModBlocks = new HashMap<>();
 
     public static void init() {
         // Building Blocks

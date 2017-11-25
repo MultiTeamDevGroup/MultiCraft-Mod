@@ -10,7 +10,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ContainerWorkbench;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -23,7 +22,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class CustomCraftingTable extends Block
+class CustomCraftingTable extends Block
 {
     public CustomCraftingTable()
     {
@@ -57,12 +56,12 @@ public class CustomCraftingTable extends Block
         return true;
     }
 
-    public static class InterfaceCraftingTable implements IInteractionObject
+    static class InterfaceCraftingTable implements IInteractionObject
     {
         private final World world;
         private final BlockPos position;
 
-        public InterfaceCraftingTable(World worldIn, BlockPos pos)
+        InterfaceCraftingTable(World worldIn, BlockPos pos)
         {
             this.world = worldIn;
             this.position = pos;
@@ -89,7 +88,7 @@ public class CustomCraftingTable extends Block
          */
         public ITextComponent getDisplayName()
         {
-            return new TextComponentTranslation(Blocks.CRAFTING_TABLE.getUnlocalizedName() + ".name", new Object[0]);
+            return new TextComponentTranslation(Blocks.CRAFTING_TABLE.getUnlocalizedName() + ".name");
         }
 
         public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn)

@@ -8,7 +8,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class FurCostumeArmor {
 
-    public static final ItemArmor.ArmorMaterial furArmorMaterial = EnumHelper.addArmorMaterial(Reference.MOD_ID+":furArmorMaterial", Reference.MOD_ID+":fur", 6, new int[]{2, 4, 3, 2}, 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
+    private static final ItemArmor.ArmorMaterial furArmorMaterial = EnumHelper.addArmorMaterial(Reference.MOD_ID+":furArmorMaterial", Reference.MOD_ID+":fur", 6, new int[]{2, 4, 3, 2}, 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
 
     public static class FurCostumeHelmet extends ItemArmor {
 

@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 public class ColoredPlanksRecipe extends net.minecraftforge.registries.IForgeRegistryEntry.Impl<IRecipe> implements IRecipe {
     @Override
     public boolean matches(InventoryCrafting inv, World worldIn) {
-        if (inv.getStackInSlot(0).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
+        return inv.getStackInSlot(0).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
                 inv.getStackInSlot(1).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
                 inv.getStackInSlot(2).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
                 inv.getStackInSlot(3).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
@@ -20,10 +20,7 @@ public class ColoredPlanksRecipe extends net.minecraftforge.registries.IForgeReg
                 inv.getStackInSlot(5).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
                 inv.getStackInSlot(6).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
                 inv.getStackInSlot(7).getItem() == Item.getItemFromBlock(Blocks.PLANKS) &&
-                inv.getStackInSlot(8).getItem() == Item.getItemFromBlock(Blocks.PLANKS)) {
-            return true;
-        }
-        return false;
+                inv.getStackInSlot(8).getItem() == Item.getItemFromBlock(Blocks.PLANKS);
     }
 
     @Override
@@ -33,7 +30,7 @@ public class ColoredPlanksRecipe extends net.minecraftforge.registries.IForgeReg
 
     @Override
     public boolean canFit(int width, int height) {
-        return (width == 3 && height == 3) ? true : false;
+        return width == 3 && height == 3;
     }
 
     @Override

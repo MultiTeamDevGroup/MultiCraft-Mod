@@ -4,7 +4,7 @@ import net.minecraft.item.ItemShield;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.translation.I18n;
 
-public class CustomShield extends ItemShield {
+class CustomShield extends ItemShield {
 
     public CustomShield(int maxDamage) {
         super();

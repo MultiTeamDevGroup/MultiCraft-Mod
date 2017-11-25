@@ -1,6 +1,5 @@
 package io.github.lukas2005.multicraft;
 
-import com.google.common.collect.BiMap;
 import net.minecraft.block.Block;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.monster.EntityShulker;
@@ -11,18 +10,13 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.registries.ForgeRegistry;
-import net.minecraftforge.registries.IForgeRegistry;
 
 import java.lang.reflect.Field;
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Utils {
 
@@ -34,10 +28,11 @@ public class Utils {
         potionNbt.setInteger("Amplifier", amplifier);
         potionNbt.setInteger("Duration", duration); // 600 = (0:30) 1800 = (1:30)
         customEffectsList.appendTag(potionNbt);
+        assert nbt != null;
         nbt.setTag("CustomPotionEffects", customEffectsList);
     }
 
-    public static Field getField(Class clazz, String fieldName) throws NoSuchFieldException {
+    private static Field getField(Class clazz, String fieldName) throws NoSuchFieldException {
         try {
             return clazz.getDeclaredField(fieldName);
         } catch (NoSuchFieldException e) {
@@ -50,10 +45,9 @@ public class Utils {
         }
     }
 
-    public static boolean checkForBlocksInArea(BlockPos pos2, BlockPos pos1, ArrayList<Block> blocks, World world) {
-        Iterator<BlockPos> positions = BlockPos.getAllInBox(pos2, pos1).iterator();
-        while(positions.hasNext())
-            if(blocks.contains(world.getBlockState(positions.next()).getBlock()))
+    private static boolean checkForBlocksInArea(BlockPos pos2, BlockPos pos1, ArrayList<Block> blocks, World world) {
+        for (BlockPos blockPos : BlockPos.getAllInBox(pos2, pos1))
+            if (blocks.contains(world.getBlockState(blockPos).getBlock()))
                 return true;
         return false;
     }
@@ -63,10 +57,8 @@ public class Utils {
                 new BlockPos(from.getX()+radius, from.getY()+(goUpwards?radius:0), from.getZ()+radius), blocks, world);
     }
 
-    public static BlockPos getBlockPosInArea(BlockPos pos2, BlockPos pos1, Block block, World world) {
-        Iterator<BlockPos> positions = BlockPos.getAllInBox(pos2, pos1).iterator();
-        while(positions.hasNext()) {
-            BlockPos current = positions.next();
+    private static BlockPos getBlockPosInArea(BlockPos pos2, BlockPos pos1, Block block, World world) {
+        for (BlockPos current : BlockPos.getAllInBox(pos2, pos1)) {
             if (block.equals(world.getBlockState(current).getBlock())) {
                 return current;
             }
@@ -79,6 +71,7 @@ public class Utils {
                 new BlockPos(from.getX()+radius, from.getY()+(goUpwards?radius:0), from.getZ()+radius), block, world);
     }
 
+    @SuppressWarnings("unchecked")
     public static void changeShulkerColor(EntityShulker sh, EnumDyeColor color) {
         try {
             Class<? extends EntityShulker> shulkerClass = sh.getClass();
@@ -91,7 +84,7 @@ public class Utils {
                 try {
                     dataManagerField = Utils.getField(shulkerClass, "field_70180_af");
                 } catch (Exception ex1) {
-                    throw ex1;
+                    throw ex;
                 }
             }
             try {
@@ -100,7 +93,7 @@ public class Utils {
                 try {
                     colorField = Utils.getField(shulkerClass, "field_190770_bw");
                 } catch (Exception ex1) {
-                    throw ex1;
+                    throw ex;
                 }
             }
             dataManagerField.setAccessible(true);
@@ -118,7 +111,7 @@ public class Utils {
         }
     }
 
-    public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback) {
+    private static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback) {
         GameRules rules = sender.getEntityWorld().getGameRules();
         boolean sendCommandFeedbackOrig = rules.getBoolean("sendCommandFeedback");
 
