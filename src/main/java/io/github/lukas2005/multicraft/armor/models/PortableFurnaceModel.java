@@ -8,7 +8,7 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class PortableFurnanceModel extends ModelBiped {
+public class PortableFurnaceModel extends ModelBiped {
     //fields
     private ModelRenderer lead1;
     private ModelRenderer furnace;
@@ -20,10 +20,8 @@ public class PortableFurnanceModel extends ModelBiped {
     private ModelRenderer lead7;
     private ModelRenderer lead8;
 
-    public PortableFurnanceModel(float scale) {
-        super(scale, 0, 64, 54);
-        textureWidth = 128;
-        textureHeight = 128;
+    public PortableFurnaceModel(float scale) {
+        super(scale, 0, 128, 128);
 
         lead1 = new ModelRenderer(this, 0, 43);
         lead1.addBox(3F, -0.5F, 2F, 1, 1, 4);

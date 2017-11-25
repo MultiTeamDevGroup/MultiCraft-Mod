@@ -3,7 +3,7 @@ package io.github.lukas2005.multicraft.items;
 import io.github.lukas2005.multicraft.Reference;
 import io.github.lukas2005.multicraft.Utils;
 import io.github.lukas2005.multicraft.armor.FurCostumeArmor;
-import io.github.lukas2005.multicraft.armor.PortableFurnance;
+import io.github.lukas2005.multicraft.armor.PortableFurnace;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.BlockNetherWart;
 import net.minecraft.block.state.IBlockState;
@@ -73,7 +73,7 @@ public class ModItems {
 
         // Armor
         new FurCostumeArmor(); // It auto-registers itself now :P
-        new PortableFurnance();
+        new PortableFurnace();
 
         // Weapon
         registerItem(new Hammer(), "hammer");

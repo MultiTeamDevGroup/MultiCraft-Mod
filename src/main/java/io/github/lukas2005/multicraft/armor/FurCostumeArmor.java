@@ -16,7 +16,6 @@ public class FurCostumeArmor extends ArmorBase {
                 20,
                 0,
                 SoundEvents.ITEM_ARMOR_EQUIP_LEATHER,
-                false,
                 true, true, true, true);
     }
 }

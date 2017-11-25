@@ -1,7 +1,7 @@
 package io.github.lukas2005.multicraft.armor;
 
 import io.github.lukas2005.multicraft.Reference;
-import io.github.lukas2005.multicraft.armor.models.PortableFurnanceModel;
+import io.github.lukas2005.multicraft.armor.models.PortableFurnaceModel;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.SoundEvents;
@@ -11,28 +11,27 @@ import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
 
-public class PortableFurnance extends ArmorBase {
+public class PortableFurnace extends ArmorBase {
 
-    private static PortableFurnanceModel model = new PortableFurnanceModel(1.0f);
+    private static PortableFurnaceModel model = new PortableFurnaceModel(1.0f);
 
-    public PortableFurnance() {
-        super(new ResourceLocation(Reference.MOD_ID,"portable_furnance"),
+    public PortableFurnace() {
+        super(new ResourceLocation(Reference.MOD_ID,"portable_furnace"),
                 6, new int[]{0,1,0,0},
                 0,
                 0,
                 SoundEvents.ITEM_ARMOR_EQUIP_IRON,
-                true,
                 false, true);
 
-        replaceArmorPiece(EntityEquipmentSlot.CHEST, new PortableFurnancePiece());
+        replaceArmorPiece(EntityEquipmentSlot.CHEST, new PortableFurnacePiece());
     }
 
-    private class PortableFurnancePiece extends Chestplate {
+    private class PortableFurnacePiece extends Chestplate {
         @Override
         @Nullable
         public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped defaultModel) {
             if (itemStack != null) {
-                if (itemStack.getItem() instanceof PortableFurnancePiece) {
+                if (itemStack.getItem() instanceof PortableFurnacePiece) {
 
                     ModelBiped armorModel = model;
 
