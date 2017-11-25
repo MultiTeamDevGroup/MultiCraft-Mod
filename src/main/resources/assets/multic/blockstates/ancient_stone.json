@@ -1,13 +1,13 @@
 {
 	"forge_marker": 1,
 	"defaults": {
-		"model": "minecraft:cube_all"
+		"model": "minecraft:cube_all",
+		"textures": {
+			"all": "multic:blocks/ancient_stone"
+		}
 	},
 	"variants": {
-		"normal": {
-			"textures": {
-				"all": "multic:blocks/ancient_stone"
-			}
-		}
+		"normal": [{}],
+		"inventory": [{}]
 	}
 }
