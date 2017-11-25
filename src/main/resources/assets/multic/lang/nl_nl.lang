@@ -8,9 +8,9 @@ item.multic.ender_pearl_piece.name=Ender parel stuk
 item.multic.llama_fur.name=Lama vacht
 item.multic.chain.name=Ketting
 item.multic.polar_bear_leather.name=Ijsbeer vacht
-item.multic.wither_bone.name=
-item.multic.wither_bone_meal.name=
-item.multic.silver_fish_scale.name=
+item.multic.wither_bone.name=Wither been
+item.multic.wither_bone_meal.name=Been stof
+item.multic.silver_fish_scale.name=Zilvervis meter
 
 # Armor
 item.multic.fur_costume_helmet.name=Vacht kostuum helm
@@ -41,5 +41,5 @@ tile.multic.colored_planks.green.name=Groene planken
 tile.multic.colored_planks.red.name=Rode planked
 tile.multic.colored_planks.black.name=Zwarte planken
 tile.multic.rock_path.name=Andesite pad
-tile.multic.ancient_stone.name=
-tile.multic.volcanic_stone.name=
+tile.multic.ancient_stone.name=Klassiek steen
+tile.multic.volcanic_stone.name=Volcaanse steen
