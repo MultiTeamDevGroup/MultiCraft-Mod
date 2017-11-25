@@ -48,10 +48,6 @@ public class ModCrafting {
         addShapelessRecipe(lingeringPotionItemStack, potionItemStack, new ItemStack(Items.DRAGON_BREATH));
 
         // Crafting (Shaped)
-        addShapedRecipe(new ItemStack(ModItems.getItem("fur_costume_chestplate")),
-                "F F",
-                        "FFF",
-                        "FFF", 'F', ModItems.getItem("llama_fur"));
 
         addShapedRecipe(new ItemStack(ModItems.getItem("fur_costume_leggings")),
                  "FFF",
