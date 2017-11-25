@@ -12,6 +12,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.monster.EntityPolarBear;
 import net.minecraft.entity.monster.EntityShulker;
+import net.minecraft.entity.monster.EntityWitherSkeleton;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.entity.passive.EntityParrot;
@@ -173,6 +174,11 @@ public class EventHandler {
             float rand = Main.random.nextFloat();
             int amount = rand > 0.8F ? 4 : rand > 0.6F ? 3 : 2;
             e.getEntityLiving().dropItem(ModItems.getItem("llama_fur"), amount);
+        }  else if (e.getEntity() instanceof EntityWitherSkeleton) {
+            for (EntityItem eItem : e.getDrops()) {
+                if (eItem.getItem().getItem() == Items.BONE) eItem.setDead();
+            }
+            e.getEntityLiving().dropItem(ModItems.getItem("wither_bone"), 1);
         }
     }
 
