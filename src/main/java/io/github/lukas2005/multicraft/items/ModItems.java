@@ -1,6 +1,7 @@
 package io.github.lukas2005.multicraft.items;
 
 import io.github.lukas2005.multicraft.Reference;
+import io.github.lukas2005.multicraft.Utils;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.BlockNetherWart;
 import net.minecraft.block.BlockPotato;
@@ -12,11 +13,13 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
@@ -53,7 +56,10 @@ public class ModItems {
                         IBlockState newState = Blocks.NETHER_WART.getDefaultState().withProperty(BlockNetherWart.AGE, age+1);
                         worldIn.setBlockState(pos, newState);
 
-                        if (!worldIn.isRemote) FMLCommonHandler.instance().getMinecraftServerInstance().commandManager.executeCommand(FMLCommonHandler.instance().getMinecraftServerInstance(), "/particle fallingdust "+pos.getX()+" "+pos.getY()+" "+pos.getZ()+" 0.5 0.5 0.5 0.5 20 0.5 @a");
+                        if (!worldIn.isRemote){
+                            MinecraftServer server = FMLCommonHandler.instance().getMinecraftServerInstance();
+                            Utils.sendCommand(server, server, "/particle fallingdust ~ ~ ~ 0.5 0.5 0.5 0.5 20 0.5 @a", false, pos);
+                        }
 
                         is.setCount(is.getCount()-1);
                         return EnumActionResult.SUCCESS;

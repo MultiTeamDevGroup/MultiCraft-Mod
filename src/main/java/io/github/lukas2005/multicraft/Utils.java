@@ -2,6 +2,7 @@ package io.github.lukas2005.multicraft;
 
 import com.google.common.collect.BiMap;
 import net.minecraft.block.Block;
+import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.monster.EntityShulker;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
@@ -9,8 +10,10 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.ForgeRegistry;
@@ -113,6 +116,23 @@ public class Utils {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback) {
+        GameRules rules = sender.getEntityWorld().getGameRules();
+        boolean sendCommandFeedbackOrig = rules.getBoolean("sendCommandFeedback");
+
+        if (!sendCommandFeedback) rules.setOrCreateGameRule("sendCommandFeedback", "false");
+        server.commandManager.executeCommand(sender, cmd);
+        if (!sendCommandFeedback) rules.setOrCreateGameRule("sendCommandFeedback", String.valueOf(sendCommandFeedbackOrig));
+    }
+
+    public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd) {
+        sendCommand(server, sender, cmd, false);
+    }
+
+    public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback, BlockPos pos) {
+        sendCommand(server, sender, cmd.replace("~ ~ ~",pos.getX()+" "+pos.getY()+" "+pos.getZ()), sendCommandFeedback);
     }
 
 }
