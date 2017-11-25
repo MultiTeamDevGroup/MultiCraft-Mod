@@ -19,25 +19,65 @@ public class ArmorBase {
 
     public ArmorBase(ResourceLocation name, int durability, int[] reductionAmounts, int enchantability, float toughtness, SoundEvent equipSound, boolean...enabledArmorPieces) {
         this.name = name;
-        material = EnumHelper.addArmorMaterial(name.toString()+"Material", name.toString(), durability, reductionAmounts, enchantability, equipSound, toughtness);
+        material = EnumHelper.addArmorMaterial(name.toString()+"_material", name.toString(), durability, reductionAmounts, enchantability, equipSound, toughtness);
+
         for (int i = 0; i<enabledArmorPieces.length; i++) {
             if (enabledArmorPieces[i]) {
+                EntityEquipmentSlot slot = EntityEquipmentSlot.HEAD;
                 switch (i) {
                     case (0):
-                        armorPieces.put(EntityEquipmentSlot.HEAD, ModItems.registerItem(new Helmet(), name.getResourcePath()+"_helmet"));
+                        slot = EntityEquipmentSlot.HEAD;
                         break;
                     case (1):
-                        armorPieces.put(EntityEquipmentSlot.CHEST, ModItems.registerItem(new Chestplate(), name.getResourcePath()+"_chestplate"));
+                        slot = EntityEquipmentSlot.CHEST;
                         break;
                     case (2):
-                        armorPieces.put(EntityEquipmentSlot.LEGS, ModItems.registerItem(new Leggings(), name.getResourcePath()+"_leggings"));
+                        slot = EntityEquipmentSlot.LEGS;
                         break;
                     case (3):
-                        armorPieces.put(EntityEquipmentSlot.FEET, ModItems.registerItem(new Boots(), name.getResourcePath()+"_boots"));
+                        slot = EntityEquipmentSlot.FEET;
                         break;
                 }
+                armorPieces.put(slot, ModItems.registerItem(getItemArmorInstanceFromSlot(slot), name.getResourcePath()+"_"+getNameFromSlot(slot)));
             }
         }
+    }
+
+    public static String getNameFromSlot(EntityEquipmentSlot slot) {
+        switch (slot) {
+            case HEAD:
+                return "helmet";
+            case CHEST:
+                return "chestplate";
+            case LEGS:
+                return "leggings";
+            case FEET:
+                return "boots";
+        }
+        return null;
+    }
+
+    public ItemArmor getItemArmorInstanceFromSlot(EntityEquipmentSlot slot) {
+        switch (slot) {
+            case HEAD:
+                return new Helmet();
+            case CHEST:
+                return new Chestplate();
+            case LEGS:
+                return new Leggings();
+            case FEET:
+                return new Boots();
+        }
+        return null;
+    }
+
+    /**
+     * Use for custom fancy armor with custom fancy things
+     */
+    public void replaceArmorPiece(EntityEquipmentSlot slot, ItemArmor newPiece) {
+        ModItems.ModItems.remove(armorPieces.get(slot));
+        armorPieces.remove(slot);
+        armorPieces.put(slot, ModItems.registerItem(newPiece, name.getResourcePath()+"_"+getNameFromSlot(slot)));
     }
 
     public class Helmet extends ItemArmor {
@@ -45,13 +85,11 @@ public class ArmorBase {
             super(material, 0, EntityEquipmentSlot.HEAD);
         }
     }
-
     public class Chestplate extends ItemArmor {
         public Chestplate() {
             super(material, 0, EntityEquipmentSlot.CHEST);
         }
     }
-
     public class Leggings extends ItemArmor {
         public Leggings() {
             super(material, 1, EntityEquipmentSlot.LEGS);

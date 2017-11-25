@@ -10,7 +10,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class FurCostumeArmor extends ArmorBase {
     public FurCostumeArmor() {
-        super(new ResourceLocation(Reference.MOD_ID+":fur_costume"),
+        super(new ResourceLocation(Reference.MOD_ID, "fur_costume"),
                 6,
                 new int[]{2, 4, 3, 2},
                 20,
