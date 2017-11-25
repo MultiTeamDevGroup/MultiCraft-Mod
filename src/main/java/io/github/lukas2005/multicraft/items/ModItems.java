@@ -18,6 +18,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 import java.util.HashMap;
 
@@ -52,7 +53,7 @@ public class ModItems {
                         IBlockState newState = Blocks.NETHER_WART.getDefaultState().withProperty(BlockNetherWart.AGE, age+1);
                         worldIn.setBlockState(pos, newState);
 
-                        if (!worldIn.isRemote) ItemDye.spawnBonemealParticles(worldIn, pos, 10);
+                        if (!worldIn.isRemote) FMLCommonHandler.instance().getMinecraftServerInstance().commandManager.executeCommand(FMLCommonHandler.instance().getMinecraftServerInstance(), "/particle fallingdust "+pos.getX()+" "+pos.getY()+" "+pos.getZ()+" 0.5 0.5 0.5 0.5 20 0.5 @a");
 
                         is.setCount(is.getCount()-1);
                         return EnumActionResult.SUCCESS;
