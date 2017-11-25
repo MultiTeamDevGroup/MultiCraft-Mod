@@ -2,6 +2,7 @@ package io.github.lukas2005.multicraft.items;
 
 import io.github.lukas2005.multicraft.Reference;
 import io.github.lukas2005.multicraft.Utils;
+import io.github.lukas2005.multicraft.armor.FurCostumeArmor;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.BlockNetherWart;
 import net.minecraft.block.state.IBlockState;
@@ -70,10 +71,7 @@ public class ModItems {
         }.setCreativeTab(CreativeTabs.MATERIALS), "wither_bone_meal");
 
         // Armor
-        registerItem(new FurCostumeArmor.FurCostumeHelmet(), "fur_costume_helmet");
-        registerItem(new FurCostumeArmor.FurCostumeChestplate(), "fur_costume_chestplate");
-        registerItem(new FurCostumeArmor.FurCostumeLeggings(), "fur_costume_leggings");
-        registerItem(new FurCostumeArmor.FurCostumeBoots(), "fur_costume_boots");
+        new FurCostumeArmor(); // It auto-registers itself now :P
 
         // Weapon
         registerItem(new Hammer(), "hammer");
@@ -84,10 +82,11 @@ public class ModItems {
         registerItem(new CustomShield(700), "diamond_shield");
     }
 
-    private static void registerItem(Item item, String name) {
+    public static Item registerItem(Item item, String name) {
         item.setRegistryName(new ResourceLocation(Reference.MOD_ID, name));
         item.setUnlocalizedName(Reference.MOD_ID+"."+name);
         ModItems.put(item.getUnlocalizedName(), item);
+        return item;
     }
 
     public static Item getItem(String itemName) {
