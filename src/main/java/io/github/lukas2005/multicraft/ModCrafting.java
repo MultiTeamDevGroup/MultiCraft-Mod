@@ -58,6 +58,8 @@ public class ModCrafting {
 
         Utils.addPotionEffectToItem(tippedArrowItemStack, 25, 1 , 600);
 
+        //TODO: Convert these recipe's into JSON's
+
         addShapedRecipe(tippedArrowItemStack,
                 "AAA",
                         "APA",
