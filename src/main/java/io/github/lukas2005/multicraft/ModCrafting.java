@@ -53,12 +53,7 @@ public class ModCrafting {
                 "PPP",
                         "PPP",
                         "PPP", 'P', ModItems.getItem("ender_pearl_piece"));
-
-        addShapedRecipe(new ItemStack(Items.CHAINMAIL_BOOTS), //chainmail_boots
-                "   ",
-                        "F F",
-                        "F F", 'F', ModItems.getItem("chain"));
-
+        
         addShapedRecipe(new ItemStack(ModItems.getItem("chain")), //chain
                 "I I",
                         " I ",
