@@ -53,11 +53,6 @@ public class ModCrafting {
                 "PPP",
                         "PPP",
                         "PPP", 'P', ModItems.getItem("ender_pearl_piece"));
-        
-        addShapedRecipe(new ItemStack(ModItems.getItem("chain")), //chain
-                "I I",
-                        " I ",
-                        "I I", 'I', Items.IRON_NUGGET);
 
         nbt = new NBTTagCompound();
         displayNBT = new NBTTagCompound();
