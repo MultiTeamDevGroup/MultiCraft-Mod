@@ -21,7 +21,8 @@ public class PortableFurnance extends ArmorBase {
                 0,
                 0,
                 SoundEvents.ITEM_ARMOR_EQUIP_IRON,
-                true, false, true);
+                true,
+                false, true);
 
         replaceArmorPiece(EntityEquipmentSlot.CHEST, new PortableFurnancePiece());
     }
