@@ -18,6 +18,8 @@ public class ModBlocks {
         // Building Blocks
         registerBlock(new ColoredPlanks().setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "colored_planks");
         registerBlock(new BlockPath(Material.ROCK).setResistance(30).setHardness(3).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "rock_path");
+        registerBlock(new BlockAncientStone().setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "ancient_stone");
+        registerBlock(new BlockVolcanicStone().setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "volcanic_stone");
 
 
 
