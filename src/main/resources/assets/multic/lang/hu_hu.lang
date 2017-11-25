@@ -17,7 +17,7 @@ item.multic.fur_costume_helmet.name=Bunda sapka
 item.multic.fur_costume_chestplate.name=Bunda kabát
 item.multic.fur_costume_leggings.name=Bunda nadrág
 item.multic.fur_costume_boots.name=Bunda bakancs
-item.multic.portable_furnace_chestplate.name=
+item.multic.portable_furnace_chestplate.name=Hordozható kemence
 
 # Weapons
 item.multic.hammer.name=Kalapács
@@ -42,5 +42,5 @@ tile.multic.colored_planks.green.name=Zöld deszka
 tile.multic.colored_planks.red.name=Piros deszka
 tile.multic.colored_planks.black.name=Fekete deszka
 tile.multic.rock_path.name=Kő út
-tile.multic.ancient_stone.name=
-tile.multic.volcanic_stone.name=
+tile.multic.ancient_stone.name=Ősi kő
+tile.multic.volcanic_stone.name=Vulkanikus kő
