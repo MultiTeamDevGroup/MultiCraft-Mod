@@ -18,7 +18,7 @@ public class ArmorBase {
 
     protected HashMap<EntityEquipmentSlot, Item> armorPieces = new HashMap<>();
 
-    protected String emptyTextureName = Reference.MOD_ID+"empty";
+    protected String emptyTextureName = Reference.MOD_ID+":empty";
 
     public ArmorBase(ResourceLocation name, int durability, int[] reductionAmounts, int enchantability, float toughtness, SoundEvent equipSound, boolean noTexture, boolean...enabledArmorPieces) {
         this.name = name;
