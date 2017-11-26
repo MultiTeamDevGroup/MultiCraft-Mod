@@ -122,8 +122,8 @@ public class EventHandler {
                 }
             } else if (e.side == Side.CLIENT) {
                 // TODO: bind this with packets
-                if ((e.player.motionX > 0 || e.player.motionZ > 0 || e.player.motionY > 0) && e.player.isCollidedVertically) {
-                    e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
+                if (/*(e.player.motionX > 0 || e.player.motionZ > 0 || e.player.motionY > 0) && */e.player.isCollidedVertically) {
+                    Utils.sendCommand(FMLCommonHandler.instance().getMinecraftServerInstance(), FMLCommonHandler.instance().getMinecraftServerInstance(), "/particle footstep "+e.player.posX+" "+e.player.posY+" "+e.player.posZ+" 0 0.1 0 0.5 1 100", false);
                     //e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
                 }
             }

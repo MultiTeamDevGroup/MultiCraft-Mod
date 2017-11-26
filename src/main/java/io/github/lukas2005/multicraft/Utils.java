@@ -113,13 +113,19 @@ public class Utils {
         }
     }
 
-    private static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback) {
+    public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback) {
         GameRules rules = sender.getEntityWorld().getGameRules();
         boolean sendCommandFeedbackOrig = rules.getBoolean("sendCommandFeedback");
+        boolean logAdminCommandsOrig = rules.getBoolean("logAdminCommands");
 
-        if (!sendCommandFeedback) rules.setOrCreateGameRule("sendCommandFeedback", "false");
+        rules.setOrCreateGameRule("sendCommandFeedback", String.valueOf(sendCommandFeedback));
+        rules.setOrCreateGameRule("logAdminCommands", String.valueOf(sendCommandFeedback));
+
         server.commandManager.executeCommand(sender, cmd);
-        if (!sendCommandFeedback) rules.setOrCreateGameRule("sendCommandFeedback", String.valueOf(sendCommandFeedbackOrig));
+
+        rules.setOrCreateGameRule("sendCommandFeedback", String.valueOf(sendCommandFeedbackOrig));
+        rules.setOrCreateGameRule("logAdminCommands", String.valueOf(logAdminCommandsOrig));
+
     }
 
     public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd) {
@@ -128,6 +134,14 @@ public class Utils {
 
     public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback, BlockPos pos) {
         sendCommand(server, sender, cmd.replace("~ ~ ~",pos.getX()+" "+pos.getY()+" "+pos.getZ()), sendCommandFeedback);
+    }
+
+    public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback, boolean useSenderPosition) {
+        if (useSenderPosition) {
+            sendCommand(server, sender, cmd, sendCommandFeedback, sender.getPosition());
+        } else {
+            sendCommand(server, sender, cmd, sendCommandFeedback);
+        }
     }
 
     /**
