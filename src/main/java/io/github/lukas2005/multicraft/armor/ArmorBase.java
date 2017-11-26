@@ -1,6 +1,5 @@
 package io.github.lukas2005.multicraft.armor;
 
-import io.github.lukas2005.multicraft.Reference;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
@@ -19,12 +18,26 @@ public class ArmorBase {
     protected HashMap<EntityEquipmentSlot, Item> armorPieces = new HashMap<>();
 
     public ArmorBase(ResourceLocation name, int durability, int[] reductionAmounts, int enchantability, float toughtness, SoundEvent equipSound, boolean...enabledArmorPieces) {
+        this(name,
+                EnumHelper.addArmorMaterial(
+                        name.toString()+"_material",
+                        name.toString(),
+                        durability,
+                        reductionAmounts,
+                        enchantability,
+                        equipSound,
+                        toughtness),
+                enabledArmorPieces);
+    }
+
+    public ArmorBase(ResourceLocation name, ItemArmor.ArmorMaterial material, boolean...enabledArmorPieces) {
         this.name = name;
-        material = EnumHelper.addArmorMaterial(name.toString()+"_material", name.toString(), durability, reductionAmounts, enchantability, equipSound, toughtness);
+        this.material = material;
 
         for (int i = 0; i<enabledArmorPieces.length; i++) {
             if (enabledArmorPieces[i]) {
                 EntityEquipmentSlot slot = EntityEquipmentSlot.HEAD;
+
                 switch (i) {
                     case (0):
                         slot = EntityEquipmentSlot.HEAD;

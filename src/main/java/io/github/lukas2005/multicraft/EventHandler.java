@@ -1,12 +1,12 @@
 package io.github.lukas2005.multicraft;
 
+import io.github.lukas2005.multicraft.armor.PolarBearHood;
 import io.github.lukas2005.multicraft.blocks.ColoredPlanks;
 import io.github.lukas2005.multicraft.blocks.FallingBlockSnow;
 import io.github.lukas2005.multicraft.blocks.FallingBlockSnowBlock;
 import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.entity.ai.AIEatCropBlock;
 import io.github.lukas2005.multicraft.items.ModItems;
-import io.github.lukas2005.multicraft.packets.NetworkManager;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -18,9 +18,11 @@ import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.entity.passive.EntityParrot;
 import net.minecraft.entity.passive.EntityRabbit;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -28,15 +30,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -150,7 +151,6 @@ public class EventHandler {
                 e.getEntityPlayer().addItemStackToInventory(new ItemStack(Items.GLASS_BOTTLE));
 
                 Utils.changeShulkerColor(sh, EnumDyeColor.PURPLE);
-
             }
         }
     }
@@ -190,6 +190,15 @@ public class EventHandler {
         if (e.getEntity() instanceof EntityRabbit) {
             EntityRabbit rabbit = (EntityRabbit) e.getEntity();
             rabbit.tasks.addTask(5, new AIEatCropBlock(rabbit, crops));
+        }
+    }
+
+    @SubscribeEvent
+    public static void onLivingSetAttackTarget(LivingSetAttackTargetEvent e) {
+        if (e.getEntity() instanceof EntityPolarBear && e.getTarget() instanceof EntityPlayer) {
+            if (e.getTarget().getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ModItems.getItem("polar_bear_hood_helmet")) {
+                ((EntityPolarBear) e.getEntity()).setAttackTarget(null);
+            }
         }
     }
 
