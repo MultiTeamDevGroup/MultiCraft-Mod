@@ -19,6 +19,9 @@ public class Main {
 
     public static final Random random = new Random();
 
+    @Mod.Instance(Reference.MOD_ID)
+    public static Main INSTANCE;
+
     @EventHandler
     public static void preInit(FMLPreInitializationEvent e) {
         NetworkManager.init();

@@ -6,6 +6,7 @@ import io.github.lukas2005.multicraft.blocks.FallingBlockSnowBlock;
 import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.entity.ai.AIEatCropBlock;
 import io.github.lukas2005.multicraft.items.ModItems;
+import io.github.lukas2005.multicraft.packets.NetworkManager;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -35,6 +36,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -126,10 +128,6 @@ public class EventHandler {
                 }
             }
         }
-        if (e.player.isSneaking()) {
-            e.player.setEntityBoundingBox(playerSneakBox);
-            //e.player.setEntityBoundingBox(playerBox);
-        }
     }
 
     @SubscribeEvent
@@ -194,4 +192,5 @@ public class EventHandler {
             rabbit.tasks.addTask(5, new AIEatCropBlock(rabbit, crops));
         }
     }
+
 }

@@ -1,8 +1,10 @@
 package io.github.lukas2005.multicraft;
 
+import io.github.lukas2005.multicraft.gui.GuiHandler;
 import net.minecraft.block.Block;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.monster.EntityShulker;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -126,6 +128,28 @@ public class Utils {
 
     public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback, BlockPos pos) {
         sendCommand(server, sender, cmd.replace("~ ~ ~",pos.getX()+" "+pos.getY()+" "+pos.getZ()), sendCommandFeedback);
+    }
+
+    /**
+     * Open a GUI for a block
+     */
+    public static void openGui(EntityPlayer player, World world, BlockPos pos, GuiHandler.EnumGuis guiID) {
+        player.openGui(Main.INSTANCE, guiID.ordinal(), world, pos.getX(), pos.getY(), pos.getZ());
+    }
+
+    /**
+     * Open a GUI for an item (Uses the position of the player).
+     */
+    public static void openGui(EntityPlayer player, World world, GuiHandler.EnumGuis guiID) {
+        openGui(player, world, guiID.ordinal());
+    }
+
+    /**
+     * Open a GUI for an item (Uses the position of the player).
+     */
+    public static void openGui(EntityPlayer player, World world, int guiID) {
+        BlockPos pos = player.getPosition();
+        player.openGui(Main.INSTANCE, guiID, world, pos.getX(), pos.getY(), pos.getZ());
     }
 
 }
