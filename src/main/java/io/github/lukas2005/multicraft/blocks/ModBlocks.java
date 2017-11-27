@@ -19,10 +19,10 @@ public class ModBlocks {
 
         registerBlock(new ColoredPlanks().setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "colored_planks");
         registerBlock(new BlockPath(Material.ROCK).setResistance(30).setHardness(3).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "rock_path");
-        registerBlock(blockAncientStone, "ancient_stone");
+        registerBlock(blockAncientStone.setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "ancient_stone");
         registerBlock(new BlockVolcanicStone().setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "volcanic_stone");
 
-        registerBlock(new BlockAncientStoneStairs(blockAncientStone.getDefaultState()).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "ancient_stone_stairs");
+        registerBlock(new BlockAncientStoneStairs(blockAncientStone.getDefaultState()), "ancient_stone_stairs");
     }
 
     private static void registerBlock(Block block, String name) {

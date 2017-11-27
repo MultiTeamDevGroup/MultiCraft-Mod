@@ -30,6 +30,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -110,11 +111,6 @@ public class EventHandler {
 
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent e) {
-        AxisAlignedBB playerBox = e.player.getEntityBoundingBox();
-       // System.out.println(playerBox.maxY);
-        //System.out.println(playerBox.minY);
-        //System.out.println(playerBox.maxY-playerBox.minY);
-        AxisAlignedBB playerSneakBox = new AxisAlignedBB(playerBox.minX, playerBox.minY, playerBox.minZ, playerBox.maxX, (playerBox.minY+1.7999999523162842)-0.4, playerBox.maxZ);
         if (e.phase == TickEvent.Phase.END) {
             if (e.side == Side.SERVER) {
                 BlockPos playerPos = new BlockPos(e.player.posX, e.player.posY, e.player.posZ);
@@ -123,9 +119,8 @@ public class EventHandler {
                 }
             } else if (e.side == Side.CLIENT) {
                 // TODO: bind this with packets
-                if (/*(e.player.motionX > 0 || e.player.motionZ > 0 || e.player.motionY > 0) && */e.player.isCollidedVertically) {
-                    Utils.sendCommand(FMLCommonHandler.instance().getMinecraftServerInstance(), FMLCommonHandler.instance().getMinecraftServerInstance(), "/particle footstep "+e.player.posX+" "+e.player.posY+" "+e.player.posZ+" 0 0.1 0 0.5 1 100", false);
-                    //e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
+                if ((e.player.motionX > 0 || e.player.motionZ > 0) && e.player.isCollidedVertically) {
+                    e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
                 }
             }
         }
