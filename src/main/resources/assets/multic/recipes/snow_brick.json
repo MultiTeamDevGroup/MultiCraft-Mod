@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:shapeless",
+  "pattern": [
+    "   ",
+    " ##",
+    " ##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:snow"
+    }
+  },
+  "result": {
+    "item": "multic:snow_brick"
+  }
+}
