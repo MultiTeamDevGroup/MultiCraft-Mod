@@ -13,12 +13,12 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
 public class PortableFurnace extends ArmorBase {
-
-    private static PortableFurnaceModel model = new PortableFurnaceModel(1.0f);
 
     public PortableFurnace() {
         super(new ResourceLocation(Reference.MOD_ID,"portable_furnace"),
@@ -41,11 +41,12 @@ public class PortableFurnace extends ArmorBase {
 
         @Override
         @Nullable
+        @SideOnly(Side.CLIENT)
         public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped defaultModel) {
             if (itemStack != null) {
                 if (itemStack.getItem() instanceof PortableFurnacePiece) {
 
-                    ModelBiped armorModel = model;
+                    ModelBiped armorModel = ClientProxy.PORTABLE_FURNACE_MODEL;
 
                     armorModel.bipedBody.showModel = true;
 
