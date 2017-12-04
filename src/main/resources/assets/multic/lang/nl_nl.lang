@@ -19,6 +19,8 @@ item.multic.fur_costume_leggings.name=Vacht kostuum broek
 item.multic.fur_costume_boots.name=Vacht kostuum botten
 item.multic.portable_furnace_chestplate.name=Draagbare oven borststuk
 item.multic.polar_bear_hood_helmet.name=Ijsbeer Helm
+tile.multic.chiseled_snow_brick.name=
+tile.multic.snow_brick.name=
 
 # Weapon
 item.multic.hammer.name=Hamer

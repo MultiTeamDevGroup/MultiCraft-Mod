@@ -23,6 +23,9 @@ public class ModBlocks {
         registerBlock(new BlockVolcanicStone().setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "volcanic_stone");
 
         registerBlock(new BlockAncientStoneStairs(blockAncientStone.getDefaultState()), "ancient_stone_stairs");
+
+        registerBlock(new Block(Material.SNOW).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "snow_brick");
+        registerBlock(new Block(Material.SNOW).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "chiseled_snow_brick");
     }
 
     private static void registerBlock(Block block, String name) {
