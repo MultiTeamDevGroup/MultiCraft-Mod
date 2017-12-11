@@ -1,6 +1,7 @@
 # Food
 item.multic.raw_parrot_meat.name=Raw parrot meat
 item.multic.cooked_parrot_meat.name=Cooked parrot meat
+item.multic.cheese.name=Cheese
 
 # Materials
 item.multic.bat_wing.name=Bat wing

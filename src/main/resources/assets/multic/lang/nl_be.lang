@@ -1,6 +1,7 @@
 # Food
 item.multic.raw_parrot_meat.name=Rauw papegaai vlees
 item.multic.cooked_parrot_meat.name=Gekookt papegaai vlees
+item.multic.cheese.name=Kaas
 
 # Materials
 item.multic.bat_wing.name=Vleermuis vleugel

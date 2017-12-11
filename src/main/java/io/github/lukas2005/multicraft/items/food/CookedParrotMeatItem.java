@@ -1,4 +1,4 @@
-package io.github.lukas2005.multicraft.items;
+package io.github.lukas2005.multicraft.items.food;
 
 import net.minecraft.item.ItemFood;
 

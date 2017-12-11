@@ -1,32 +1,15 @@
 package io.github.lukas2005.multicraft.items;
 
 import io.github.lukas2005.multicraft.Reference;
-import io.github.lukas2005.multicraft.Utils;
 import io.github.lukas2005.multicraft.armor.FurCostumeArmor;
 import io.github.lukas2005.multicraft.armor.PolarBearHood;
 import io.github.lukas2005.multicraft.armor.PortableFurnace;
-import net.minecraft.block.BlockCrops;
-import net.minecraft.block.BlockNetherWart;
-import net.minecraft.block.state.IBlockState;
+import io.github.lukas2005.multicraft.items.food.CheeseItem;
+import io.github.lukas2005.multicraft.items.food.CookedParrotMeatItem;
+import io.github.lukas2005.multicraft.items.food.RawParrotMeatItem;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.EntityMinecart;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 
 import java.util.HashMap;
 
@@ -38,6 +21,7 @@ public class ModItems {
         // Food
         registerItem(new RawParrotMeatItem(), "raw_parrot_meat");
         registerItem(new CookedParrotMeatItem(), "cooked_parrot_meat");
+        registerItem(new CheeseItem().setCreativeTab(CreativeTabs.FOOD), "cheese");
 
         // Materials
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "llama_fur");
