@@ -1,6 +1,6 @@
 package io.github.lukas2005.multicraft.items;
 
-import io.github.lukas2005.multicraft.Utils;
+import io.github.lukas2005.multicraft.utils.Utils;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.BlockNetherWart;
 import net.minecraft.block.state.IBlockState;

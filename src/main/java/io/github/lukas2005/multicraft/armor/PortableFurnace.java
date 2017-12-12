@@ -1,8 +1,7 @@
 package io.github.lukas2005.multicraft.armor;
 
 import io.github.lukas2005.multicraft.Reference;
-import io.github.lukas2005.multicraft.Utils;
-import io.github.lukas2005.multicraft.armor.models.PortableFurnaceModel;
+import io.github.lukas2005.multicraft.utils.Utils;
 import io.github.lukas2005.multicraft.gui.GuiHandler;
 import io.github.lukas2005.multicraft.proxy.ClientProxy;
 import net.minecraft.client.model.ModelBiped;

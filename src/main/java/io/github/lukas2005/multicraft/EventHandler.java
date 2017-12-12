@@ -1,13 +1,17 @@
 package io.github.lukas2005.multicraft;
 
-import io.github.lukas2005.multicraft.armor.PolarBearHood;
 import io.github.lukas2005.multicraft.blocks.ColoredPlanks;
 import io.github.lukas2005.multicraft.blocks.FallingBlockSnow;
 import io.github.lukas2005.multicraft.blocks.FallingBlockSnowBlock;
 import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.entity.ai.AIEatCropBlock;
 import io.github.lukas2005.multicraft.items.ModItems;
+import io.github.lukas2005.multicraft.utils.NBTTagListIterator;
+import io.github.lukas2005.multicraft.utils.Utils;
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentFrostWalker;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityEndermite;
@@ -20,6 +24,7 @@ import net.minecraft.entity.passive.EntityParrot;
 import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -28,15 +33,17 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -121,6 +128,20 @@ public class EventHandler {
                 // TODO: bind this with packets
                 if ((e.player.motionX > 0 || e.player.motionZ > 0) && e.player.isCollidedVertically) {
                     e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onEntityTick(LivingEvent.LivingUpdateEvent e) {
+        EntityLivingBase en = e.getEntityLiving();
+        for (ItemStack stack : en.getArmorInventoryList()) {
+            for (Enchantment ench : EnchantmentHelper.getEnchantments(stack).keySet()) {
+                if (ench == Enchantments.FROST_WALKER) {
+                    if (en.world.getBlockState(en.getPosition()).getBlock() == Blocks.FIRE) {
+                        en.world.setBlockToAir(en.getPosition());
+                    }
                 }
             }
         }

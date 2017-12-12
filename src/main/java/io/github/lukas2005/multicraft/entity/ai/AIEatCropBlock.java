@@ -1,7 +1,7 @@
 package io.github.lukas2005.multicraft.entity.ai;
 
 import io.github.lukas2005.multicraft.Main;
-import io.github.lukas2005.multicraft.Utils;
+import io.github.lukas2005.multicraft.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.passive.EntityRabbit;

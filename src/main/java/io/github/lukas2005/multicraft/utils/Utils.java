@@ -1,5 +1,6 @@
-package io.github.lukas2005.multicraft;
+package io.github.lukas2005.multicraft.utils;
 
+import io.github.lukas2005.multicraft.Main;
 import io.github.lukas2005.multicraft.gui.GuiHandler;
 import net.minecraft.block.Block;
 import net.minecraft.command.ICommandSender;
