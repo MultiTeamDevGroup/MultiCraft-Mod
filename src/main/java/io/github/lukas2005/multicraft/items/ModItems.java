@@ -8,8 +8,12 @@ import io.github.lukas2005.multicraft.items.food.CheeseItem;
 import io.github.lukas2005.multicraft.items.food.CookedParrotMeatItem;
 import io.github.lukas2005.multicraft.items.food.RawParrotMeatItem;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
 import java.util.HashMap;
 
@@ -32,6 +36,13 @@ public class ModItems {
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "wither_bone");
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "silver_fish_scale");
         registerItem(new WitherBoneMeal().setCreativeTab(CreativeTabs.MATERIALS), "wither_bone_meal");
+        registerItem(new ItemFood(1, false) {
+            @Override
+            protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
+                super.onFoodEaten(stack, worldIn, player);
+                player.addExperienceLevel(8);
+            }
+        }, "emerald_apple");
 
         // Armor
         new FurCostumeArmor(); // It auto-registers itself now :P
