@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "multic:blocks/rusty_door_lower",
+        "top": "multic:blocks/rusty_door_upper"
+    }
+}

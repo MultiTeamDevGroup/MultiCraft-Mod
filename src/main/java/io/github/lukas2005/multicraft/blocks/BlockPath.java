@@ -17,12 +17,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
-class BlockPath extends Block {
+class BlockPath extends BlockBase {
 
     private static final AxisAlignedBB PATH_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.9375D, 1.0D);
 
     public BlockPath(Material material) {
-        super(material);
+        super(material, false);
     }
 
     @SideOnly(Side.CLIENT)

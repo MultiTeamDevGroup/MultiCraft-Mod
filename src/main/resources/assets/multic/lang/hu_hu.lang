@@ -23,6 +23,7 @@ item.multic.polar_bear_hood_helmet.name=Jegesmedve sapka
 tile.multic.chiseled_snow_brick.name=
 tile.multic.snow_brick.name=
 item.multic.emerald_apple.name=
+tile.multic.rust_dust.name=
 
 # Weapons
 item.multic.hammer.name=Kalapács

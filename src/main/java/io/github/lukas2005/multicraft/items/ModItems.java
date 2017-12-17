@@ -43,6 +43,7 @@ public class ModItems {
                 player.addExperienceLevel(8);
             }
         }, "emerald_apple");
+        registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "rust_dust");
 
         // Armor
         new FurCostumeArmor(); // It auto-registers itself now :P

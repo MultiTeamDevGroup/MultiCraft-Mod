@@ -16,12 +16,12 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class ColoredPlanks extends Block {
+public class ColoredPlanks extends BlockBase {
 
     private static final PropertyEnum<EnumColor> COLOR = PropertyEnum.create("color", EnumColor.class);
 
     public ColoredPlanks() {
-        super(Material.WOOD);
+        super(Material.WOOD, true);
         setHardness(2);
         setResistance(15);
     }
