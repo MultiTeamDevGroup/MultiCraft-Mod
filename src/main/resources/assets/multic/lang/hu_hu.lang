@@ -12,7 +12,7 @@ item.multic.polar_bear_leather.name=Jegesmedve bőr
 item.multic.wither_bone.name=Wither Csont
 item.multic.wither_bone_meal.name=Wither Csont por
 item.multic.silver_fish_scale.name=Ezüstmoly pikkely
-item.multic.adobe_brick.name=
+item.multic.adobe_brick.name=Sártégla
 
 # Armor
 item.multic.fur_costume_helmet.name=Bunda sapka
@@ -21,10 +21,10 @@ item.multic.fur_costume_leggings.name=Bunda nadrág
 item.multic.fur_costume_boots.name=Bunda bakancs
 item.multic.portable_furnace_chestplate.name=Hordozható kemence
 item.multic.polar_bear_hood_helmet.name=Jegesmedve sapka
-tile.multic.chiseled_snow_brick.name=
-tile.multic.snow_brick.name=
-item.multic.emerald_apple.name=
-tile.multic.rust_dust.name=
+tile.multic.chiseled_snow_brick.name=Csiszolt hótégla
+tile.multic.snow_brick.name=Hótégla
+item.multic.emerald_apple.name=Smaragd alma
+tile.multic.rust_dust.name=Rozsda
 
 # Weapons
 item.multic.hammer.name=Kalapács
@@ -51,4 +51,4 @@ tile.multic.colored_planks.black.name=Fekete deszka
 tile.multic.rock_path.name=Kő út
 tile.multic.ancient_stone.name=Ősi kő
 tile.multic.volcanic_stone.name=Vulkanikus kő
-tile.multic.ancient_stone_stairs.name=
+tile.multic.ancient_stone_stairs.name=Ősi kőlépcső
