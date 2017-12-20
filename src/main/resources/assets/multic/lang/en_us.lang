@@ -14,6 +14,7 @@ item.multic.wither_bone.name=Wither bone
 item.multic.wither_bone_meal.name=Wither bone meal
 item.multic.silver_fish_scale.name=Silverfish scale
 tile.multic.rust_dust.name=Rust dust
+item.multic.adobe_brick.name=Adobe Brick
 
 # Armor
 item.multic.fur_costume_helmet.name=Fur costume helmet

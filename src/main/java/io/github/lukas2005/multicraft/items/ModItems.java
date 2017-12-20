@@ -36,6 +36,7 @@ public class ModItems {
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "wither_bone");
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "silver_fish_scale");
         registerItem(new WitherBoneMeal().setCreativeTab(CreativeTabs.MATERIALS), "wither_bone_meal");
+        registerItem(new ItemAdobeBrick().setCreativeTab(CreativeTabs.MATERIALS), "adobe_brick");
         registerItem(new ItemFood(1, false) {
             @Override
             protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
