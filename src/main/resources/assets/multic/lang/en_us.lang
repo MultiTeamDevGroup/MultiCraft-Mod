@@ -52,7 +52,7 @@ tile.multic.volcanic_stone.name=Volcanic stone
 tile.multic.ancient_stone_stairs.name=Ancient stone stairs
 tile.multic.chiseled_snow_brick.name=Chiseled snow brick
 tile.multic.snow_brick.name=Snow brick
-tile.multic.block_adobe_brick.name=Adobe brick
+tile.multic.block_adobe_brick.name=Adobe bricks
 
 # Messages
 message.multic.chain.pair_failed=Pairing failed!
