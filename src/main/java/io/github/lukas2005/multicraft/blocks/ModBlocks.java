@@ -43,6 +43,7 @@ public class ModBlocks {
                 .addDrop(new ItemStack(ModItems.getItem("rust_dust"), 6))
                 .addDrop(new ItemStack(Items.IRON_NUGGET, 3))
                 .setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "rusty_iron_door");
+        registerBlock(new BlockAdobeBrick(), "block_adobe_brick");
     }
 
     private static void registerBlock(Block block, String name) {
