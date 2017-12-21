@@ -1,0 +1,59 @@
+# Food
+item.multic.raw_parrot_meat.name=Rått papegoj kött
+item.multic.cooked_parrot_meat.name=Tillagat papegoj kött
+item.multic.cheese.name=Ost
+item.multic.emerald_apple.name=Smaragd-äpple
+
+# Materials
+item.multic.bat_wing.name=Fladdermössvinge
+item.multic.ender_pearl_piece.name=Enderpärlbit
+item.multic.llama_fur.name=Llama päls
+item.multic.chain.name=Kedja
+item.multic.polar_bear_leather.name=Isbjörns läder
+item.multic.wither_bone.name=Wither ben
+item.multic.wither_bone_meal.name=Wither benmjöl
+item.multic.silver_fish_scale.name=Silverfisk fjäll
+tile.multic.rust_dust.name=Rostdamm
+item.multic.adobe_brick.name=Soltorkat tegel
+
+# Armor
+item.multic.fur_costume_helmet.name=Päls kostym hjälm
+item.multic.fur_costume_chestplate.name=Päls kostym bröstplatta
+item.multic.fur_costume_leggings.name=Päls kostym leggins
+item.multic.fur_costume_boots.name=Päls kostym kängor
+item.multic.portable_furnace_chestplate.name=Bärbar ugn
+item.multic.polar_bear_hood_helmet.name=Isbjörn luva
+
+# Weapon
+item.multic.hammer.name=Hammare
+item.multic.iron_shield.name=Järnsköld
+item.multic.golden_shield.name=Guldsköld
+
+# Blocks
+tile.multic.colored_planks.white.name=Vita plankor
+tile.multic.colored_planks.orange.name=Orangea plankor
+tile.multic.colored_planks.magenta.name=Magenta plankor
+tile.multic.colored_planks.light_blue.name=Ljusblå plankor
+tile.multic.colored_planks.yellow.name=Gula plankor
+tile.multic.colored_planks.lime.name=Lime plankor
+tile.multic.colored_planks.pink.name=Rosa plankor
+tile.multic.colored_planks.gray.name=Grå plankor
+tile.multic.colored_planks.light_gray.name=Ljusgrå plankor
+tile.multic.colored_planks.cyan.name=Turkosa plankor
+tile.multic.colored_planks.purple.name=Lila plankor
+tile.multic.colored_planks.blue.name=Blå plankor
+tile.multic.colored_planks.brown.name=Bruna plankor
+tile.multic.colored_planks.green.name=Gröna plankor
+tile.multic.colored_planks.red.name=Röda plankor
+tile.multic.colored_planks.black.name=Svarta plankor
+tile.multic.rock_path.name=Andesit gång
+tile.multic.ancient_stone.name=Forntida sten
+tile.multic.volcanic_stone.name=Vulkanisk sten
+tile.multic.ancient_stone_stairs.name=Forntida sten trappor
+tile.multic.chiseled_snow_brick.name=Huggen snöbyggkloss
+tile.multic.snow_brick.name=Snöbyggkloss
+tile.multic.block_adobe_brick.name=Soltorkat tegel
+
+# Messages
+message.multic.chain.pair_failed=Parning misslyckad!
+message.multic.chain.pair_success=Parning lyckad!
