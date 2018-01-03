@@ -29,6 +29,9 @@ item.multic.hammer.name=Hammare
 item.multic.iron_shield.name=Järnsköld
 item.multic.golden_shield.name=Guldsköld
 
+# Tool
+item.multic.chisel.name=
+
 # Blocks
 tile.multic.colored_planks.white.name=Vita plankor
 tile.multic.colored_planks.orange.name=Orangea plankor
@@ -53,6 +56,7 @@ tile.multic.ancient_stone_stairs.name=Forntida sten trappor
 tile.multic.chiseled_snow_brick.name=Huggen snöbyggkloss
 tile.multic.snow_brick.name=Snöbyggkloss
 tile.multic.block_adobe_brick.name=Soltorkat tegel
+tile.multic.engraved_ancient_stone.name=
 
 # Messages
 message.multic.chain.pair_failed=Parning misslyckad!

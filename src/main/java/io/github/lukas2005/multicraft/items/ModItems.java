@@ -46,6 +46,8 @@ public class ModItems {
         }, "emerald_apple");
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "rust_dust");
 
+        registerItem(new ItemChisel(), "chisel");
+
         // Armor
         new FurCostumeArmor(); // It auto-registers itself now :P
         new PortableFurnace();

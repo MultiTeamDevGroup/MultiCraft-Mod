@@ -29,6 +29,9 @@ item.multic.hammer.name=Hamer
 item.multic.iron_shield.name=Ijzer schild
 item.multic.golden_shield.name=Gouden schild
 
+# Tool
+item.multic.chisel.name=
+
 # Blocks
 tile.multic.colored_planks.white.name=Witte planken
 tile.multic.colored_planks.orange.name=Oranje planken
@@ -51,3 +54,4 @@ tile.multic.ancient_stone.name=Klassiek steen
 tile.multic.volcanic_stone.name=Volcaanse steen
 tile.multic.ancient_stone_stairs.name=Klassieke stenen trappen
 tile.multic.block_adobe_brick.name=Adobe baksteen
+tile.multic.engraved_ancient_stone.name=

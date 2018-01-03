@@ -28,6 +28,9 @@ item.multic.hammer.name=Młot
 item.multic.iron_shield.name=Żelazna tarcza
 item.multic.golden_shield.name=Złota tarcza
 
+# Tool
+item.multic.chisel.name=
+
 # Blocks
 tile.multic.colored_planks.white.name=Białe deski
 tile.multic.colored_planks.orange.name=Pomarańczowe
@@ -52,3 +55,4 @@ tile.multic.ancient_stone_stairs.name=Schod ze starego kamieńia
 tile.multic.chiseled_snow_brick.name=Rzeźbione śnieżne cegły
 tile.multic.snow_brick.name=Śnieżne cegły
 tile.multic.block_adobe_brick.name=
+tile.multic.engraved_ancient_stone.name=

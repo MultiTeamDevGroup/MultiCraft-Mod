@@ -29,6 +29,9 @@ item.multic.hammer.name=Hammer
 item.multic.iron_shield.name=Iron shield
 item.multic.golden_shield.name=Golden shield
 
+# Tool
+item.multic.chisel.name=Chisel
+
 # Blocks
 tile.multic.colored_planks.white.name=White planks
 tile.multic.colored_planks.orange.name=Orange planks
@@ -53,6 +56,7 @@ tile.multic.ancient_stone_stairs.name=Ancient stone stairs
 tile.multic.chiseled_snow_brick.name=Chiseled snow brick
 tile.multic.snow_brick.name=Snow brick
 tile.multic.block_adobe_brick.name=Adobe bricks
+tile.multic.engraved_ancient_stone.name=Engraved ancient stone
 
 # Messages
 message.multic.chain.pair_failed=Pairing failed!

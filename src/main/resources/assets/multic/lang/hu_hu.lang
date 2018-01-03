@@ -32,6 +32,9 @@ item.multic.hammer.name=Kalapács
 item.multic.iron_shield.name=Vas pajzs
 item.multic.golden_shield.name=Arany pajzs
 
+# Tool
+item.multic.chisel.name=
+
 # Block
 tile.multic.colored_planks.white.name=Fehér deszka
 tile.multic.colored_planks.orange.name=Narancssárga deszka
@@ -54,3 +57,4 @@ tile.multic.ancient_stone.name=Ősi kő
 tile.multic.volcanic_stone.name=Vulkanikus kő
 tile.multic.ancient_stone_stairs.name=Ősi kőlépcső
 tile.multic.block_adobe_brick.name=Sártégla blokk
+tile.multic.engraved_ancient_stone.name=
