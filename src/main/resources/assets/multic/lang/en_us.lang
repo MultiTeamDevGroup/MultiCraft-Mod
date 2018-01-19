@@ -2,7 +2,7 @@
 item.multic.raw_parrot_meat.name=Raw parrot meat
 item.multic.cooked_parrot_meat.name=Cooked parrot meat
 item.multic.cheese.name=Cheese
-item.multic.emerald_apple.name=Emerald apple
+item.multic.emerald_apple.name=§aEmerald apple
 
 # Materials
 item.multic.bat_wing.name=Bat wing
@@ -15,6 +15,7 @@ item.multic.wither_bone_meal.name=Wither bone meal
 item.multic.silver_fish_scale.name=Silverfish scale
 tile.multic.rust_dust.name=Rust dust
 item.multic.adobe_brick.name=Adobe Brick
+item.multic.rust_dust.name=Rust Dust
 
 # Armor
 item.multic.fur_costume_helmet.name=Fur costume helmet
@@ -57,6 +58,9 @@ tile.multic.chiseled_snow_brick.name=Chiseled snow brick
 tile.multic.snow_brick.name=Snow brick
 tile.multic.block_adobe_brick.name=Adobe bricks
 tile.multic.engraved_ancient_stone.name=Engraved ancient stone
+tile.multic.rusty_iron_block.name=Rusty iron block
+tile.multic.rusty_iron_door.name=Rusty iron door
+tile.multic.rusty_iron_bars.name=Rusty iron bars
 
 # Messages
 message.multic.chain.pair_failed=Pairing failed!
