@@ -1,4 +1,5 @@
-{   "parent": "block/block",
+{
+  "parent": "block/block",
   "textures": {
     "particle": "multic:blocks/andesite_path",
     "top": "multic:blocks/andesite_path",

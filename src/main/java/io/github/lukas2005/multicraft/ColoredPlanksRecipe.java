@@ -25,7 +25,7 @@ public class ColoredPlanksRecipe extends net.minecraftforge.registries.IForgeReg
 
     @Override
     public ItemStack getCraftingResult(InventoryCrafting inv) {
-        return new ItemStack(ModBlocks.getBlock("colored_planks"), 8, inv.getStackInSlot(4).getMetadata());
+        return new ItemStack(ModBlocks.COLORED_PLANKS, 8, inv.getStackInSlot(4).getMetadata());
     }
 
     @Override
@@ -35,7 +35,7 @@ public class ColoredPlanksRecipe extends net.minecraftforge.registries.IForgeReg
 
     @Override
     public ItemStack getRecipeOutput() {
-        return new ItemStack(ModBlocks.getBlock("colored_planks"), 8);
+        return new ItemStack(ModBlocks.COLORED_PLANKS, 8);
     }
 
 }

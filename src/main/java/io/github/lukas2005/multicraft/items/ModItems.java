@@ -1,37 +1,44 @@
 package io.github.lukas2005.multicraft.items;
 
-import io.github.lukas2005.multicraft.Main;
-import io.github.lukas2005.multicraft.armor.FurCostumeArmor;
-import io.github.lukas2005.multicraft.armor.PolarBearHood;
-import io.github.lukas2005.multicraft.armor.PortableFurnace;
-import io.github.lukas2005.multicraft.items.food.CheeseItem;
-import io.github.lukas2005.multicraft.items.food.CookedParrotMeatItem;
-import io.github.lukas2005.multicraft.items.food.RawParrotMeatItem;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
+import io.github.lukas2005.multicraft.items.itemclasses.ItemBatWing;
+import io.github.lukas2005.multicraft.items.itemclasses.ItemRawParrotMeat;
+import io.github.lukas2005.multicraft.items.itemclasses.ItemCookedParrotMeat;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-
-import java.util.HashMap;
+import net.minecraftforge.registries.IForgeRegistry;
 
 public class ModItems {
+    public static final ItemRawParrotMeat RAW_PARROT_MEAT = new ItemRawParrotMeat();
+    public static final ItemCookedParrotMeat COOKED_PARROT_MEAT = new ItemCookedParrotMeat();
+    public static final ItemBatWing BAT_WING = new ItemBatWing();
 
+    public static void register(IForgeRegistry<Item> registry) {
+        registry.registerAll(
+                RAW_PARROT_MEAT,
+                COOKED_PARROT_MEAT,
+                BAT_WING
+        );
+    }
+
+    public static void registerModels() {
+        RAW_PARROT_MEAT.registerItemModel();
+        COOKED_PARROT_MEAT.registerItemModel();
+        BAT_WING.registerItemModel();
+    }
+
+
+
+    /* old code
     public static final HashMap<String, Item> ModItems = new HashMap<>();
+
 
     public static void init() {
         // Food
-        registerItem(new RawParrotMeatItem(), "raw_parrot_meat");
+        registerItem(new ItemRawParrotMeat(), "raw_parrot_meat");
         registerItem(new CookedParrotMeatItem(), "cooked_parrot_meat");
-        registerItem(new CheeseItem().setCreativeTab(CreativeTabs.FOOD), "cheese");
+        registerItem(new ItemCheese().setCreativeTab(CreativeTabs.FOOD), "cheese");
 
         // Materials
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "llama_fur");
-        registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "bat_wing");
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "ender_pearl_piece");
         registerItem(new ChainItem().setCreativeTab(CreativeTabs.MATERIALS), "chain");
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "polar_bear_leather");
@@ -48,7 +55,7 @@ public class ModItems {
             }
         }.setPotionEffect(new PotionEffect(MobEffects.LUCK,)), "emerald_apple");
         * #BUGGED #NEEDSFIX
-        */
+        *//*
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "rust_dust");
 
         registerItem(new ItemChisel(), "chisel");
@@ -77,4 +84,5 @@ public class ModItems {
     public static Item getItem(String itemName) {
         return ModItems.get("item."+Main.MODID+"."+itemName);
     }
+    */
 }

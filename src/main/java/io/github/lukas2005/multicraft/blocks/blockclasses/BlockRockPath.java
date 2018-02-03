@@ -1,9 +1,11 @@
-package io.github.lukas2005.multicraft.blocks;
+package io.github.lukas2005.multicraft.blocks.blockclasses;
 
+import io.github.lukas2005.multicraft.blocks.BlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,12 +19,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
-class BlockPath extends BlockBase {
+public class BlockRockPath extends BlockBase {
 
     private static final AxisAlignedBB PATH_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.9375D, 1.0D);
 
-    public BlockPath(Material material) {
-        super(material, false);
+    public BlockRockPath() {
+        super(Material.ROCK, "rock_path", 1, 3f, CreativeTabs.BUILDING_BLOCKS);
+        setResistance(30);
     }
 
     @SideOnly(Side.CLIENT)
@@ -38,7 +41,7 @@ class BlockPath extends BlockBase {
             case EAST:
                 IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
                 Block block = iblockstate.getBlock();
-                return !iblockstate.isOpaqueCube() && block != Blocks.FARMLAND && !(block instanceof BlockPath) && block != Blocks.GRASS_PATH;
+                return !iblockstate.isOpaqueCube() && block != Blocks.FARMLAND && !(block instanceof BlockRockPath) && block != Blocks.GRASS_PATH;
             default:
                 return super.shouldSideBeRendered(blockState, blockAccess, pos, side);
         }

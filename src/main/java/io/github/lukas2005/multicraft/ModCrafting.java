@@ -15,11 +15,11 @@ public class ModCrafting {
 
     public static void init() {
         // Smelting
-        GameRegistry.addSmelting(ModItems.getItem("raw_parrot_meat"), new ItemStack(ModItems.getItem("cooked_parrot_meat")), 0.35f);
+        GameRegistry.addSmelting(ModItems.RAW_PARROT_MEAT, new ItemStack(ModItems.COOKED_PARROT_MEAT), 0.35f);
 
         // Crafting (Shapeless)
         // TODO: Fix this recipe
-        addShapelessRecipe(new ItemStack(Items.POTIONITEM, 1, 8260), ModItems.getItem("bat_wing"), Items.POTIONITEM);
+        addShapelessRecipe(new ItemStack(Items.POTIONITEM, 1, 8260), ModItems.BAT_WING, Items.POTIONITEM);
 
         NBTTagCompound nbt = new NBTTagCompound();
         NBTTagCompound displayNBT = new NBTTagCompound();
@@ -31,7 +31,7 @@ public class ModCrafting {
 
         Utils.addPotionEffectToItem(potionItemStack, 25, 1 , 600);
 
-        addShapelessRecipe(potionItemStack, ModItems.getItem("bat_wing"), Items.DRAGON_BREATH);
+        addShapelessRecipe(potionItemStack, ModItems.BAT_WING, Items.DRAGON_BREATH);
 
         nbt = new NBTTagCompound();
         displayNBT = new NBTTagCompound();
