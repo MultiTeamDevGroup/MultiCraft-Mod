@@ -6,11 +6,9 @@ import io.github.lukas2005.multicraft.blocks.FallingBlockSnowBlock;
 import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.entity.ai.AIEatCropBlock;
 import io.github.lukas2005.multicraft.items.ModItems;
-import io.github.lukas2005.multicraft.utils.NBTTagListIterator;
 import io.github.lukas2005.multicraft.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentFrostWalker;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -33,8 +31,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.nbt.NBTBase;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
@@ -55,7 +51,7 @@ import net.minecraftforge.fml.relauncher.Side;
 
 import java.util.ArrayList;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
+@Mod.EventBusSubscriber(modid = Main.MODID)
 public class EventHandler {
 
     @SubscribeEvent
@@ -71,7 +67,7 @@ public class EventHandler {
             new FallingBlockSnowBlock()/*,
             new CustomCraftingTable()*/
         );
-        Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Reference.MOD_ID));
+        Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Main.MODID));
     }
 
     @SubscribeEvent
@@ -113,7 +109,7 @@ public class EventHandler {
 
     @SubscribeEvent
     public static void registerIRecipes(RegistryEvent.Register<IRecipe> e) {
-        e.getRegistry().register(new ColoredPlanksRecipe().setRegistryName(Reference.MOD_ID, "planks_recipe"));
+        e.getRegistry().register(new ColoredPlanksRecipe().setRegistryName(Main.MODID, "planks_recipe"));
     }
 
     @SubscribeEvent

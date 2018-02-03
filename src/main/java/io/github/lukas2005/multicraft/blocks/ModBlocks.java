@@ -1,10 +1,8 @@
 package io.github.lukas2005.multicraft.blocks;
 
-import io.github.lukas2005.multicraft.Reference;
+import io.github.lukas2005.multicraft.Main;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockDoor;
-import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialLogic;
@@ -13,7 +11,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.HashMap;
 
@@ -54,12 +51,12 @@ public class ModBlocks {
     }
 
     private static void registerBlock(Block block, String name) {
-        block.setRegistryName(new ResourceLocation(Reference.MOD_ID, name));
-        block.setUnlocalizedName(Reference.MOD_ID+"."+name);
+        block.setRegistryName(new ResourceLocation(Main.MODID, name));
+        block.setUnlocalizedName(Main.MODID + "." + name);
         ModBlocks.put(block.getUnlocalizedName(), block);
     }
 
     public static Block getBlock(String itemName) {
-        return ModBlocks.get("tile."+Reference.MOD_ID+"."+itemName);
+        return ModBlocks.get("tile." + Main.MODID + "." + itemName);
     }
 }

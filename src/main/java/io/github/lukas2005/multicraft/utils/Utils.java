@@ -149,7 +149,7 @@ public class Utils {
      * Open a GUI for a block
      */
     public static void openGui(EntityPlayer player, World world, BlockPos pos, GuiHandler.EnumGuis guiID) {
-        player.openGui(Main.INSTANCE, guiID.ordinal(), world, pos.getX(), pos.getY(), pos.getZ());
+        player.openGui(Main.instance, guiID.ordinal(), world, pos.getX(), pos.getY(), pos.getZ());
     }
 
     /**
@@ -164,7 +164,7 @@ public class Utils {
      */
     public static void openGui(EntityPlayer player, World world, int guiID) {
         BlockPos pos = player.getPosition();
-        player.openGui(Main.INSTANCE, guiID, world, pos.getX(), pos.getY(), pos.getZ());
+        player.openGui(Main.instance, guiID, world, pos.getX(), pos.getY(), pos.getZ());
     }
 
 }

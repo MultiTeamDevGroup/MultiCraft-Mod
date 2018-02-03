@@ -1,6 +1,6 @@
 package io.github.lukas2005.multicraft.items;
 
-import io.github.lukas2005.multicraft.Reference;
+import io.github.lukas2005.multicraft.Main;
 import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,7 +16,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class Hammer extends ItemSword {
 
-    private static final ToolMaterial mat = EnumHelper.addToolMaterial(Reference.MOD_ID+":hammer", 1, 270,1,9,10);
+    private static final ToolMaterial mat = EnumHelper.addToolMaterial(Main.MODID+":hammer", 1, 270,1,9,10);
 
     public Hammer() {
         super(mat);
