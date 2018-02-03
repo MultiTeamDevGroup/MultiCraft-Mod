@@ -21,9 +21,6 @@ public class ModCrafting {
         // TODO: Fix this recipe
         addShapelessRecipe(new ItemStack(Items.POTIONITEM, 1, 8260), ModItems.getItem("bat_wing"), Items.POTIONITEM);
 
-        addShapelessRecipe(new ItemStack(ModItems.getItem("wither_bone_meal"), 3), ModItems.getItem("wither_bone"));
-
-
         NBTTagCompound nbt = new NBTTagCompound();
         NBTTagCompound displayNBT = new NBTTagCompound();
         displayNBT.setString("LocName", "Splash Potion of Levitation");
