@@ -1,3 +1,4 @@
 # MultiCraft-Mod
-Code by lukas2005
-Ideas/Design/Textures/Models/Other by King of Creepers
+Code by `SkyHawkB`, `lukas2005`, and `Monstahhh`
+
+Ideas, Design, Textures, Models, and other things by `King of Creepers`
