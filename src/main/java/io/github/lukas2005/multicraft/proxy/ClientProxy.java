@@ -1,7 +1,7 @@
 package io.github.lukas2005.multicraft.proxy;
 
 import io.github.lukas2005.multicraft.EnumColor;
-import io.github.lukas2005.multicraft.Reference;
+import io.github.lukas2005.multicraft.Main;
 import io.github.lukas2005.multicraft.armor.models.PortableFurnaceModel;
 import io.github.lukas2005.multicraft.blocks.ColoredPlanks;
 import io.github.lukas2005.multicraft.entity.render.CustomRenderSheep;
@@ -23,7 +23,7 @@ import org.lwjgl.input.Keyboard;
 public class ClientProxy implements IProxy {
 
     // Key bindings
-    public static final KeyBinding KEY_PORTABLE_FURNANCE = new KeyBinding("keybind."+Reference.MOD_ID+".portable_furnance_key", Keyboard.KEY_C, "key.categories.inventory");
+    public static final KeyBinding KEY_PORTABLE_FURNANCE = new KeyBinding("keybind."+ Main.MODID+".portable_furnance_key", Keyboard.KEY_C, "key.categories.inventory");
 
     // Model Instances
     public static final PortableFurnaceModel PORTABLE_FURNACE_MODEL = new PortableFurnaceModel(1.0f);

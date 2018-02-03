@@ -1,6 +1,6 @@
 package io.github.lukas2005.multicraft.items;
 
-import io.github.lukas2005.multicraft.Reference;
+import io.github.lukas2005.multicraft.Main;
 import io.github.lukas2005.multicraft.armor.FurCostumeArmor;
 import io.github.lukas2005.multicraft.armor.PolarBearHood;
 import io.github.lukas2005.multicraft.armor.PortableFurnace;
@@ -39,14 +39,16 @@ public class ModItems {
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "silver_fish_scale");
         registerItem(new WitherBoneMeal().setCreativeTab(CreativeTabs.MATERIALS), "wither_bone_meal");
         registerItem(new ItemAdobeBrick().setCreativeTab(CreativeTabs.MATERIALS), "adobe_brick");
-        registerItem(new ItemFood(1, false) {
+        /*registerItem(new ItemFood(1, false) {
             @Override
             protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
                 super.onFoodEaten(stack, worldIn, player);
                 player.addExperienceLevel(8);
 
             }
-        }.setPotionEffect(new PotionEffect(MobEffects.LUCK, )), "emerald_apple");
+        }.setPotionEffect(new PotionEffect(MobEffects.LUCK,)), "emerald_apple");
+        * #BUGGED #NEEDSFIX
+        */
         registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "rust_dust");
 
         registerItem(new ItemChisel(), "chisel");
@@ -66,13 +68,13 @@ public class ModItems {
     }
 
     public static Item registerItem(Item item, String name) {
-        item.setRegistryName(new ResourceLocation(Reference.MOD_ID, name));
-        item.setUnlocalizedName(Reference.MOD_ID+"."+name);
+        item.setRegistryName(new ResourceLocation(Main.MODID, name));
+        item.setUnlocalizedName(Main.MODID+"."+name);
         ModItems.put(item.getUnlocalizedName(), item);
         return item;
     }
 
     public static Item getItem(String itemName) {
-        return ModItems.get("item."+Reference.MOD_ID+"."+itemName);
+        return ModItems.get("item."+Main.MODID+"."+itemName);
     }
 }

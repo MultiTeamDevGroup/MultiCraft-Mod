@@ -1,12 +1,12 @@
 package io.github.lukas2005.multicraft.armor;
 
-import io.github.lukas2005.multicraft.Reference;
+import io.github.lukas2005.multicraft.Main;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.ResourceLocation;
 
 public class PolarBearHood extends ArmorBase {
     public PolarBearHood() {
-        super(new ResourceLocation(Reference.MOD_ID,
+        super(new ResourceLocation(Main.MODID,
                 "polar_bear_hood"),
                 5,
                 new int[]{1, 2, 3, 1},

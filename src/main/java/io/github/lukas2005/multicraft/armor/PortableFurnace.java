@@ -1,6 +1,6 @@
 package io.github.lukas2005.multicraft.armor;
 
-import io.github.lukas2005.multicraft.Reference;
+import io.github.lukas2005.multicraft.Main;
 import io.github.lukas2005.multicraft.utils.Utils;
 import io.github.lukas2005.multicraft.gui.GuiHandler;
 import io.github.lukas2005.multicraft.proxy.ClientProxy;
@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 public class PortableFurnace extends ArmorBase {
 
     public PortableFurnace() {
-        super(new ResourceLocation(Reference.MOD_ID,"portable_furnace"),
+        super(new ResourceLocation(Main.MODID,"portable_furnace"),
                 6, new int[]{0,1,0,0},
                 0,
                 0,

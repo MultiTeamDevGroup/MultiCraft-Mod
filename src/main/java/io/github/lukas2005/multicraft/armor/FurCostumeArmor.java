@@ -1,16 +1,12 @@
 package io.github.lukas2005.multicraft.armor;
 
-import io.github.lukas2005.multicraft.Reference;
+import io.github.lukas2005.multicraft.Main;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
-import net.minecraftforge.common.util.EnumHelper;
 
 public class FurCostumeArmor extends ArmorBase {
     public FurCostumeArmor() {
-        super(new ResourceLocation(Reference.MOD_ID, "fur_costume"),
+        super(new ResourceLocation(Main.MODID, "fur_costume"),
                 6,
                 new int[]{2, 4, 3, 2},
                 20,
