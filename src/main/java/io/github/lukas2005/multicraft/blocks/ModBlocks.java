@@ -10,13 +10,13 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 public class ModBlocks {
     public static final BlockAdobeBrick ADOBE_BRICK = new BlockAdobeBrick();
-    public static final BlockColoredPlanks COLORED_PLANKS = new BlockColoredPlanks();
+    //public static final BlockColoredPlanks COLORED_PLANKS = new BlockColoredPlanks(); #BUGGED TODO: fix Colored Planks
     public static final BlockRockPath ROCK_PATH = new BlockRockPath();
 
     public static void register(IForgeRegistry<Block> registry) {
         registry.registerAll(
                 ADOBE_BRICK,
-                COLORED_PLANKS,
+                //COLORED_PLANKS,
                 ROCK_PATH
         );
     }
@@ -24,21 +24,18 @@ public class ModBlocks {
     public static void registerItems(IForgeRegistry<Item> registry) {
         registry.registerAll(
                 ADOBE_BRICK.createItemBlock(),
-                COLORED_PLANKS.createItemBlock(),
+                //COLORED_PLANKS.createItemBlock(),
                 ROCK_PATH.createItemBlock()
         );
     }
 
     public static void registerModels() {
         ADOBE_BRICK.registerItemModel(Item.getItemFromBlock(ADOBE_BRICK));
-        COLORED_PLANKS.registerItemModel(Item.getItemFromBlock(COLORED_PLANKS));
+        //COLORED_PLANKS.registerItemModel(Item.getItemFromBlock(COLORED_PLANKS));
         ROCK_PATH.registerItemModel(Item.getItemFromBlock(ROCK_PATH));
     }
 
     /* old code
-    public static final HashMap<String, Block> ModBlocks = new HashMap<>();
-
-    public static final HashMap<IBlockState, IBlockState> chiselMapping = new HashMap<>();
 
     public static BlockBase blockAncientStone = new BlockBase(Material.ROCK, true);
 

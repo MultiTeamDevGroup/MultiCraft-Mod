@@ -13,7 +13,7 @@ item.multic.polar_bear_leather.name=Polar Bear Leather
 item.multic.wither_bone.name=Wither Bone
 item.multic.wither_bone_meal.name=Wither Bone Meal
 item.multic.silver_fish_scale.name=Silverfish Scale
-tile.multic.rust_dust.name=Rust Dust
+item.multic.rust_dust.name=Rust Dust
 item.multic.adobe_brick.name=Adobe Brick
 
 # Armor
