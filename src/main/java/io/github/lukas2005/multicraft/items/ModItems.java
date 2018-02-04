@@ -1,13 +1,14 @@
 package io.github.lukas2005.multicraft.items;
 
 import io.github.lukas2005.multicraft.items.itemclasses.*;
-import io.github.lukas2005.multicraft.items.itemclasses.basematerials.*;
+import io.github.lukas2005.multicraft.items.itemclasses.simple.*;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class ModItems {
     // FOODS
     public static final ItemCheese CHEESE = new ItemCheese();
+    public static final ItemEmeraldApple EMERALD_APPLE = new ItemEmeraldApple();
     public static final ItemRawParrotMeat RAW_PARROT_MEAT = new ItemRawParrotMeat();
     public static final ItemCookedParrotMeat COOKED_PARROT_MEAT = new ItemCookedParrotMeat();
 
@@ -32,6 +33,7 @@ public class ModItems {
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
                 CHEESE,
+                EMERALD_APPLE,
                 RAW_PARROT_MEAT,
                 COOKED_PARROT_MEAT,
                 ADOBE_BRICK,
@@ -42,12 +44,16 @@ public class ModItems {
                 SILVERFISH_SCALE,
                 WITHER_BONE,
                 CHAIN,
-                WITHER_BONE_MEAL
+                WITHER_BONE_MEAL,
+                IRON_SHIELD,
+                GOLDEN_SHIELD,
+                DIAMOND_SHIELD
         );
     }
 
     public static void registerModels() {
         CHEESE.registerItemModel();
+        EMERALD_APPLE.registerItemModel();
         RAW_PARROT_MEAT.registerItemModel();
         COOKED_PARROT_MEAT.registerItemModel();
 
@@ -61,6 +67,10 @@ public class ModItems {
 
         CHAIN.registerItemModel();
         WITHER_BONE_MEAL.registerItemModel();
+
+        IRON_SHIELD.registerItemModel();
+        GOLDEN_SHIELD.registerItemModel();
+        DIAMOND_SHIELD.registerItemModel();
     }
 
 
