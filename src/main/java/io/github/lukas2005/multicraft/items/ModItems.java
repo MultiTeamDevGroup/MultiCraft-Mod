@@ -37,6 +37,7 @@ public class ModItems {
     public static final FurCostumeChestplate FUR_COSTUME_CHESTPLATE = new FurCostumeChestplate();
     public static final FurCostumeLeggings FUR_COSTUME_LEGGINGS = new FurCostumeLeggings();
     public static final FurCostumeBoots FUR_COSTUME_BOOTS = new FurCostumeBoots();
+    public static final PolarBearHood POLAR_BEAR_HOOD = new PolarBearHood();
 
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
@@ -60,7 +61,8 @@ public class ModItems {
                 FUR_COSTUME_HELMET,
                 FUR_COSTUME_CHESTPLATE,
                 FUR_COSTUME_LEGGINGS,
-                FUR_COSTUME_BOOTS
+                FUR_COSTUME_BOOTS,
+                POLAR_BEAR_HOOD
         );
     }
 
@@ -90,6 +92,7 @@ public class ModItems {
         FUR_COSTUME_CHESTPLATE.registerItemModel();
         FUR_COSTUME_LEGGINGS.registerItemModel();
         FUR_COSTUME_BOOTS.registerItemModel();
+        POLAR_BEAR_HOOD.registerItemModel();
     }
 
 
@@ -98,7 +101,6 @@ public class ModItems {
     public static void init() {
         registerItem(new ItemChisel(), "chisel");
         new PortableFurnace();
-        new PolarBearHood();
         registerItem(new Hammer(), "hammer");
     }
     */

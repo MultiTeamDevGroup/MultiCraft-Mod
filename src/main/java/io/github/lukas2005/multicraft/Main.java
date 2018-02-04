@@ -9,7 +9,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
-import net.minecraft.util.SoundEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
@@ -73,4 +72,5 @@ public class Main {
     }
 
     public static final ItemArmor.ArmorMaterial furCostume = EnumHelper.addArmorMaterial("FUR_COSTUME", MODID + ":fur_costume", 6, new int[]{2, 4, 3, 2}, 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0f);
+    public static final ItemArmor.ArmorMaterial polarHood = EnumHelper.addArmorMaterial("POLAR_HOOD", MODID + ":polar_bear_hood", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0f);
 }
