@@ -6,8 +6,12 @@ import io.github.lukas2005.multicraft.proxy.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -40,17 +44,12 @@ public class Main {
 
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent e) {
-        //NetworkManager.init();
-        //proxy.preInit(e);
     }
     @Mod.EventHandler
     public static void init(FMLInitializationEvent e) {
-
-        //proxy.init(e);
     }
     @Mod.EventHandler
     public static void postInit(FMLPostInitializationEvent e) {
-        //proxy.postInit(e);
     }
 
     @Mod.EventBusSubscriber
@@ -72,4 +71,6 @@ public class Main {
             ModBlocks.registerModels();
         }
     }
+
+    public static final ItemArmor.ArmorMaterial furCostume = EnumHelper.addArmorMaterial("FUR_COSTUME", MODID + ":fur_costume", 6, new int[]{2, 4, 3, 2}, 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0f);
 }

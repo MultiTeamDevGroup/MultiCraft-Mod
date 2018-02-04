@@ -2,6 +2,7 @@ package io.github.lukas2005.multicraft.items;
 
 import io.github.lukas2005.multicraft.items.itemclasses.*;
 import io.github.lukas2005.multicraft.items.itemclasses.simple.*;
+import io.github.lukas2005.multicraft.items.armor.*;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -31,6 +32,12 @@ public class ModItems {
     public static final ItemGoldenShield GOLDEN_SHIELD = new ItemGoldenShield();
     public static final ItemDiamondShield DIAMOND_SHIELD = new ItemDiamondShield();
 
+    // ARMOR
+    public static final FurCostumeHelmet FUR_COSTUME_HELMET = new FurCostumeHelmet();
+    public static final FurCostumeChestplate FUR_COSTUME_CHESTPLATE = new FurCostumeChestplate();
+    public static final FurCostumeLeggings FUR_COSTUME_LEGGINGS = new FurCostumeLeggings();
+    public static final FurCostumeBoots FUR_COSTUME_BOOTS = new FurCostumeBoots();
+
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
                 CHEESE,
@@ -49,7 +56,11 @@ public class ModItems {
                 WITHER_BONE_MEAL,
                 IRON_SHIELD,
                 GOLDEN_SHIELD,
-                DIAMOND_SHIELD
+                DIAMOND_SHIELD,
+                FUR_COSTUME_HELMET,
+                FUR_COSTUME_CHESTPLATE,
+                FUR_COSTUME_LEGGINGS,
+                FUR_COSTUME_BOOTS
         );
     }
 
@@ -74,32 +85,20 @@ public class ModItems {
         IRON_SHIELD.registerItemModel();
         GOLDEN_SHIELD.registerItemModel();
         DIAMOND_SHIELD.registerItemModel();
+
+        FUR_COSTUME_HELMET.registerItemModel();
+        FUR_COSTUME_CHESTPLATE.registerItemModel();
+        FUR_COSTUME_LEGGINGS.registerItemModel();
+        FUR_COSTUME_BOOTS.registerItemModel();
     }
 
 
 
     /* old code
     public static void init() {
-        /*registerItem(new ItemFood(1, false) {
-            @Override
-            protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
-                super.onFoodEaten(stack, worldIn, player);
-                player.addExperienceLevel(8);
-
-            }
-        }.setPotionEffect(new PotionEffect(MobEffects.LUCK,)), "emerald_apple");
-        * #BUGGED #NEEDSFIX
-        *//*
-        registerItem(new Item().setCreativeTab(CreativeTabs.MATERIALS), "rust_dust");
-
         registerItem(new ItemChisel(), "chisel");
-
-        // Armor
-        new FurCostumeArmor();
         new PortableFurnace();
         new PolarBearHood();
-
-        // Weapon
         registerItem(new Hammer(), "hammer");
     }
     */
