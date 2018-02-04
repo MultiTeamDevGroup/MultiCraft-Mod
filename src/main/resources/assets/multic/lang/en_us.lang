@@ -1,67 +1,67 @@
 # Food
-item.multic.raw_parrot_meat.name=Raw parrot meat
-item.multic.cooked_parrot_meat.name=Cooked parrot meat
+item.multic.raw_parrot_meat.name=Raw Parrot Meat
+item.multic.cooked_parrot_meat.name=Cooked Parrot Meat
 item.multic.cheese.name=Cheese
-item.multic.emerald_apple.name=§aEmerald apple
+item.multic.emerald_apple.name=§aEmerald Apple
 
 # Materials
-item.multic.bat_wing.name=Bat wing
-item.multic.ender_pearl_piece.name=Ender pearl piece
-item.multic.llama_fur.name=Llama fur
+item.multic.bat_wing.name=Bat Wing
+item.multic.ender_pearl_piece.name=Ender Pearl Piece
+item.multic.llama_fur.name=Llama Fur
 item.multic.chain.name=Chain
-item.multic.polar_bear_leather.name=Polar bear leather
-item.multic.wither_bone.name=Wither bone
-item.multic.wither_bone_meal.name=Wither bone meal
-item.multic.silver_fish_scale.name=Silverfish scale
-tile.multic.rust_dust.name=Rust dust
+item.multic.polar_bear_leather.name=Polar Bear Leather
+item.multic.wither_bone.name=Wither Bone
+item.multic.wither_bone_meal.name=Wither Bone Meal
+item.multic.silver_fish_scale.name=Silverfish Scale
+tile.multic.rust_dust.name=Rust Dust
 item.multic.adobe_brick.name=Adobe Brick
-item.multic.rust_dust.name=Rust Dust
 
 # Armor
-item.multic.fur_costume_helmet.name=Fur costume helmet
-item.multic.fur_costume_chestplate.name=Fur costume chestplate
-item.multic.fur_costume_leggings.name=Fur costume leggings
-item.multic.fur_costume_boots.name=Fur costume boots
-item.multic.portable_furnace_chestplate.name=Portable furnace
-item.multic.polar_bear_hood_helmet.name=Polar bear hood
+item.multic.fur_costume_helmet.name=Fur Costume Helmet
+item.multic.fur_costume_chestplate.name=Fur Costume Chestplate
+item.multic.fur_costume_leggings.name=Fur Costume Leggings
+item.multic.fur_costume_boots.name=Fur Costume Boots
+item.multic.portable_furnace_chestplate.name=Portable Furnace
+item.multic.polar_bear_hood.name=Polar Bear Hood
 
 # Weapon
 item.multic.hammer.name=Hammer
-item.multic.iron_shield.name=Iron shield
-item.multic.golden_shield.name=Golden shield
+item.multic.iron_shield.name=Iron Shield
+item.multic.golden_shield.name=Golden Shield
+item.multic.diamond_shield.name=Diamond Shield
 
 # Tool
 item.multic.chisel.name=Chisel
 
 # Blocks
-tile.multic.colored_planks.white.name=White planks
-tile.multic.colored_planks.orange.name=Orange planks
-tile.multic.colored_planks.magenta.name=Magenta planks
-tile.multic.colored_planks.light_blue.name=Light blue planks
-tile.multic.colored_planks.yellow.name=Yellow planks
-tile.multic.colored_planks.lime.name=Lime planks
-tile.multic.colored_planks.pink.name=Pink planks
-tile.multic.colored_planks.gray.name=Gray planks
-tile.multic.colored_planks.light_gray.name=Light gray planks
-tile.multic.colored_planks.cyan.name=Cyan planks
-tile.multic.colored_planks.purple.name=Purple planks
-tile.multic.colored_planks.blue.name=Blue planks
-tile.multic.colored_planks.brown.name=Brown planks
-tile.multic.colored_planks.green.name=Green planks
-tile.multic.colored_planks.red.name=Red planks
-tile.multic.colored_planks.black.name=Black planks
-tile.multic.rock_path.name=Andesite path
-tile.multic.ancient_stone.name=Ancient stone
-tile.multic.volcanic_stone.name=Volcanic stone
-tile.multic.ancient_stone_stairs.name=Ancient stone stairs
-tile.multic.chiseled_snow_brick.name=Chiseled snow brick
-tile.multic.snow_brick.name=Snow brick
-tile.multic.block_adobe_brick.name=Adobe bricks
-tile.multic.engraved_ancient_stone.name=Engraved ancient stone
-tile.multic.rusty_iron_block.name=Rusty iron block
-tile.multic.rusty_iron_door.name=Rusty iron door
-tile.multic.rusty_iron_bars.name=Rusty iron bars
+tile.multic.colored_planks.white.name=White Planks
+tile.multic.colored_planks.orange.name=Orange Planks
+tile.multic.colored_planks.magenta.name=Magenta Planks
+tile.multic.colored_planks.light_blue.name=Light Blue Planks
+tile.multic.colored_planks.yellow.name=Yellow Planks
+tile.multic.colored_planks.lime.name=Lime Planks
+tile.multic.colored_planks.pink.name=Pink Planks
+tile.multic.colored_planks.gray.name=Gray Planks
+tile.multic.colored_planks.light_gray.name=Light Gray Planks
+tile.multic.colored_planks.cyan.name=Cyan Planks
+tile.multic.colored_planks.purple.name=Purple Planks
+tile.multic.colored_planks.blue.name=Blue Planks
+tile.multic.colored_planks.brown.name=Brown Planks
+tile.multic.colored_planks.green.name=Green Planks
+tile.multic.colored_planks.red.name=Red Planks
+tile.multic.colored_planks.black.name=Black Planks
+tile.multic.rock_path.name=Andesite Path
+tile.multic.ancient_stone.name=Ancient Stone
+tile.multic.volcanic_stone.name=Volcanic Stone
+tile.multic.ancient_stone_stairs.name=Ancient Stone Stairs
+tile.multic.chiseled_snow_brick.name=Chiseled Snow Brick
+tile.multic.snow_brick.name=Snow Brick
+tile.multic.block_adobe_brick.name=Adobe Bricks
+tile.multic.engraved_ancient_stone.name=Engraved Ancient Stone
+tile.multic.rusty_iron_block.name=Rusty Iron Block
+tile.multic.rusty_iron_door.name=Rusty Iron Door
+tile.multic.rusty_iron_bars.name=Rusty Iron Bars
 
 # Messages
 message.multic.chain.pair_failed=Pairing failed!
-message.multic.chain.pair_success=Pairing success!
+message.multic.chain.pair_success=Pairing succeeded!

@@ -16,7 +16,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 public class Hammer extends ItemSword {
 
-    private static final ToolMaterial mat = EnumHelper.addToolMaterial(Main.MODID+":hammer", 1, 270,1,9,10);
+    private static final ToolMaterial mat = EnumHelper.addToolMaterial(Main.MODID + ":hammer", 1, 270,1,9,10);
 
     public Hammer() {
         super(mat);
@@ -35,7 +35,7 @@ public class Hammer extends ItemSword {
             return EnumActionResult.SUCCESS;
         } else if (worldIn.getBlockState(pos).getBlock() == Blocks.STONE) {
 
-            worldIn.setBlockState(pos, ModBlocks.getBlock("rock_path").getDefaultState());
+            worldIn.setBlockState(pos, ModBlocks.ROCK_PATH.getDefaultState());
             is.damageItem(1, player);
 
             return EnumActionResult.SUCCESS;

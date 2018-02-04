@@ -11,10 +11,9 @@ import net.minecraftforge.common.util.EnumHelper;
 import java.util.HashMap;
 
 public class ArmorBase {
-
+    /* #NEEDSFIX #FIXLATER
     protected ResourceLocation name;
     protected ItemArmor.ArmorMaterial material;
-
     protected HashMap<EntityEquipmentSlot, Item> armorPieces = new HashMap<>();
 
     public ArmorBase(ResourceLocation name, int durability, int[] reductionAmounts, int enchantability, float toughtness, SoundEvent equipSound, boolean...enabledArmorPieces) {
@@ -87,7 +86,7 @@ public class ArmorBase {
 
     /**
      * Use for custom fancy armor with custom fancy things
-     */
+     * /
     public void replaceArmorPiece(EntityEquipmentSlot slot, ItemArmor newPiece) {
         ModItems.ModItems.remove(armorPieces.get(slot));
         armorPieces.remove(slot);
@@ -114,5 +113,5 @@ public class ArmorBase {
             super(material, 0, EntityEquipmentSlot.FEET);
         }
     }
-
+    */
 }

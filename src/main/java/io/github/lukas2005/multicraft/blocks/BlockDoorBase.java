@@ -1,33 +1,30 @@
 package io.github.lukas2005.multicraft.blocks;
 
+import io.github.lukas2005.multicraft.Main;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
-
-import java.util.ArrayList;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 
 public class BlockDoorBase extends BlockDoor {
+    protected String name;
 
-    ArrayList<ItemStack> drops = new ArrayList<>();
+    public BlockDoorBase(Material material, String name, CreativeTabs tab) {
+        super(material);
 
-    public BlockDoorBase(Material materialIn, boolean dropsItself) {
-        super(materialIn);
-        if (dropsItself) drops.add(new ItemStack(this));
+        this.name = name;
+        super.setCreativeTab(tab);
+
+        setUnlocalizedName(Main.MODID + "." + name);
+        setRegistryName(name);
     }
 
-    @Override
-    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-        super.getDrops(drops, world, pos, state, fortune);
-        drops.addAll(this.drops);
+    public void registerItemModel(Item itemBlock) {
+        Main.proxy.registerItemRenderer(itemBlock, 0, name);
     }
 
-    public BlockDoorBase addDrop(ItemStack stack) {
-        drops.add(stack);
-        return this;
+    public Item createItemBlock() {
+        return new ItemBlock(this).setRegistryName(getRegistryName());
     }
-
 }

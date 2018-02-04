@@ -1,39 +1,24 @@
 package io.github.lukas2005.multicraft.proxy;
 
-import io.github.lukas2005.multicraft.EnumColor;
 import io.github.lukas2005.multicraft.Main;
-import io.github.lukas2005.multicraft.armor.models.PortableFurnaceModel;
-import io.github.lukas2005.multicraft.blocks.ColoredPlanks;
-import io.github.lukas2005.multicraft.entity.render.CustomRenderSheep;
-import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.lwjgl.input.Keyboard;
 
 @SideOnly(Side.CLIENT)
-public class ClientProxy implements IProxy {
+public class ClientProxy extends CommonProxy {
+    @Override
+    public void registerItemRenderer(Item item, int meta, String id) {
+        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(Main.MODID + ":" + id, "inventory"));
+    }
 
-    // Key bindings
-    public static final KeyBinding KEY_PORTABLE_FURNANCE = new KeyBinding("keybind."+ Main.MODID+".portable_furnance_key", Keyboard.KEY_C, "key.categories.inventory");
-
-    // Model Instances
-    public static final PortableFurnaceModel PORTABLE_FURNACE_MODEL = new PortableFurnaceModel(1.0f);
-
-
+    /* old code #NOKEEP #NEEDSMOVE
     @Override
     public void preInit(FMLPreInitializationEvent e) {
         RenderingRegistry.registerEntityRenderingHandler(EntitySheep.class, new CustomRenderSheep.Factory());
     }
-
     @Override
     public void init(FMLInitializationEvent e) {
 
@@ -51,7 +36,7 @@ public class ClientProxy implements IProxy {
 
     @Override
     public void registerBlockRender(Block block) {
-        if (block instanceof ColoredPlanks) {
+        if (block instanceof BlockColoredPlanks) {
             for (EnumColor color : EnumColor.values()) {
                 ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), color.getMetadata(), new ModelResourceLocation(block.getRegistryName(), "color="+color.getName()));
             }
@@ -59,4 +44,5 @@ public class ClientProxy implements IProxy {
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
         }
     }
+    */
 }
