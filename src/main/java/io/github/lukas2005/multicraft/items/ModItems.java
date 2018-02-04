@@ -18,6 +18,7 @@ public class ModItems {
     public static final ItemEnderPearlPiece ENDER_PEARL_PIECE = new ItemEnderPearlPiece();
     public static final ItemLlamaFur LLAMA_FUR = new ItemLlamaFur();
     public static final ItemPolarBearLeather POLAR_BEAR_LEATHER = new ItemPolarBearLeather();
+    public static final ItemRustDust RUST_DUST = new ItemRustDust();
     public static final ItemSilverfishScale SILVERFISH_SCALE = new ItemSilverfishScale();
     public static final ItemWitherBone WITHER_BONE = new ItemWitherBone();
 
@@ -41,6 +42,7 @@ public class ModItems {
                 ENDER_PEARL_PIECE,
                 LLAMA_FUR,
                 POLAR_BEAR_LEATHER,
+                RUST_DUST,
                 SILVERFISH_SCALE,
                 WITHER_BONE,
                 CHAIN,
@@ -62,6 +64,7 @@ public class ModItems {
         ENDER_PEARL_PIECE.registerItemModel();
         LLAMA_FUR.registerItemModel();
         POLAR_BEAR_LEATHER.registerItemModel();
+        RUST_DUST.registerItemModel();
         SILVERFISH_SCALE.registerItemModel();
         WITHER_BONE.registerItemModel();
 
