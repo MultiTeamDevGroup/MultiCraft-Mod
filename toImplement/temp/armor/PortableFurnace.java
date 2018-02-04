@@ -1,24 +1,6 @@
 package io.github.lukas2005.multicraft.armor;
 
-import io.github.lukas2005.multicraft.Main;
-import io.github.lukas2005.multicraft.armor.models.PortableFurnaceModel;
 import io.github.lukas2005.multicraft.utils.Utils;
-import io.github.lukas2005.multicraft.gui.GuiHandler;
-import io.github.lukas2005.multicraft.proxy.ClientProxy;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import org.lwjgl.input.Keyboard;
-
-import javax.annotation.Nullable;
 
 public class PortableFurnace/* extends ArmorBase */{
     /* #NEEDSFIX #FIXLATER

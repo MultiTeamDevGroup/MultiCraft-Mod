@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
-	"textures": {"0": "items/golden_shield"},
+	"textures": {"0": "multic:items/golden_shield"},
 	"elements": [
 		{
 			"name": "main",

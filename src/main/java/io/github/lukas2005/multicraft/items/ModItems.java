@@ -31,6 +31,7 @@ public class ModItems {
     public static final ItemIronShield IRON_SHIELD = new ItemIronShield();
     public static final ItemGoldenShield GOLDEN_SHIELD = new ItemGoldenShield();
     public static final ItemDiamondShield DIAMOND_SHIELD = new ItemDiamondShield();
+    // ^ #NEEDSTEXTURE TODO: make a diamond shield texture
 
     // ARMOR
     public static final FurCostumeHelmet FUR_COSTUME_HELMET = new FurCostumeHelmet();
@@ -57,7 +58,7 @@ public class ModItems {
                 WITHER_BONE_MEAL,
                 IRON_SHIELD,
                 GOLDEN_SHIELD,
-                DIAMOND_SHIELD,
+                //DIAMOND_SHIELD,
                 FUR_COSTUME_HELMET,
                 FUR_COSTUME_CHESTPLATE,
                 FUR_COSTUME_LEGGINGS,
@@ -86,7 +87,7 @@ public class ModItems {
 
         IRON_SHIELD.registerItemModel();
         GOLDEN_SHIELD.registerItemModel();
-        DIAMOND_SHIELD.registerItemModel();
+        //DIAMOND_SHIELD.registerItemModel();
 
         FUR_COSTUME_HELMET.registerItemModel();
         FUR_COSTUME_CHESTPLATE.registerItemModel();

@@ -2,7 +2,6 @@ package io.github.lukas2005.multicraft;
 
 import io.github.lukas2005.multicraft.items.ModItems;
 import io.github.lukas2005.multicraft.utils.Utils;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

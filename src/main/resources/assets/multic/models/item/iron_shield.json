@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
-	"textures": {"0": "items/iron_shield"},
+	"textures": {"0": "multic:items/iron_shield"},
 	"elements": [
 		{
 			"name": "base1",
