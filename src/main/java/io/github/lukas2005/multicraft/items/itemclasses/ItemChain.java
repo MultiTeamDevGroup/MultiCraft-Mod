@@ -1,6 +1,8 @@
-package io.github.lukas2005.multicraft.items;
+package io.github.lukas2005.multicraft.items.itemclasses;
 
 import io.github.lukas2005.multicraft.Main;
+import io.github.lukas2005.multicraft.items.ItemBase;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,7 +12,11 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
-public class ChainItem extends Item {
+public class ItemChain extends ItemBase {
+    public ItemChain() {
+        super("chain", CreativeTabs.MATERIALS);
+    }
+
     @Override
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
         if (entity instanceof EntityMinecart) {

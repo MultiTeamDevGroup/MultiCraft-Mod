@@ -1,9 +1,9 @@
 package io.github.lukas2005.multicraft.items.itemclasses;
 
-import net.minecraft.item.ItemFood;
+import io.github.lukas2005.multicraft.items.ItemFoodBase;
 
-public class ItemCheese extends ItemFood {
+public class ItemCheese extends ItemFoodBase {
     public ItemCheese() {
-        super(4, true);
+        super(4, 2.3f, true, "cheese");
     }
 }
