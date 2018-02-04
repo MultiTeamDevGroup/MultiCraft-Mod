@@ -27,7 +27,7 @@ import java.util.Random;
 public class Main {
     public static final String MODID = "multic";
     public static final String NAME = "MultiCraft";
-    public static final String VERSION = "0.1.2";
+    public static final String VERSION = "0.1.3";
     public static final String SERVER_PROXY = "io.github.lukas2005.multicraft.proxy.CommonProxy";
     public static final String CLIENT_PROXY = "io.github.lukas2005.multicraft.proxy.ClientProxy";
 
