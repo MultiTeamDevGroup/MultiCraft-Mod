@@ -1,13 +1,14 @@
-package io.github.lukas2005.multicraft.items;
+package io.github.lukas2005.multicraft.items.itemclasses;
 
+import io.github.lukas2005.multicraft.items.ItemBase;
 import io.github.lukas2005.multicraft.utils.Utils;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.BlockNetherWart;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.EnumActionResult;
@@ -17,7 +18,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
-public class WitherBoneMeal extends Item {
+public class ItemWitherBoneMeal extends ItemBase {
+    public ItemWitherBoneMeal() {
+        super("wither_bone_meal", CreativeTabs.MATERIALS);
+    }
+
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         IBlockState state = worldIn.getBlockState(pos);

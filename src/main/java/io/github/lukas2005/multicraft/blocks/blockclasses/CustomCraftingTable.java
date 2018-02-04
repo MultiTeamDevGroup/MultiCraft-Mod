@@ -1,4 +1,4 @@
-package io.github.lukas2005.multicraft.blocks;
+package io.github.lukas2005.multicraft.blocks.blockclasses;
 
 import io.github.lukas2005.multicraft.entity.tileentity.TileEntityCraftingTable;
 import io.github.lukas2005.multicraft.inventory.CustomContainerWorkbench;
@@ -22,8 +22,8 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-class CustomCraftingTable extends Block
-{
+// #UNUSED
+public class CustomCraftingTable extends Block {
     public CustomCraftingTable()
     {
         super(Material.WOOD);

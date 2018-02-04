@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "multic:wither_bone"
+    }
+  ],
+  "result": {
+    "item": "multic:wither_bone_meal",
+    "count": 3
+  }
+}

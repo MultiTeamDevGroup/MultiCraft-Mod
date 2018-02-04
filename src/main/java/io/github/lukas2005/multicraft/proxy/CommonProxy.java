@@ -6,16 +6,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@SuppressWarnings("EmptyMethod")
-public interface IProxy {
-
-    void preInit(FMLPreInitializationEvent e);
-
-    @SuppressWarnings("EmptyMethod")
-    void init(FMLInitializationEvent e);
-
-    void postInit(FMLPostInitializationEvent e);
-
-    void registerItemRender(Item item);
-    void registerBlockRender(Block block);
+public class CommonProxy {
+    public void registerItemRenderer(Item item, int meta, String id) {
+    }
 }

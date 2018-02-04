@@ -15,14 +15,11 @@ public class ModCrafting {
 
     public static void init() {
         // Smelting
-        GameRegistry.addSmelting(ModItems.getItem("raw_parrot_meat"), new ItemStack(ModItems.getItem("cooked_parrot_meat")), 0.35f);
+        GameRegistry.addSmelting(ModItems.RAW_PARROT_MEAT, new ItemStack(ModItems.COOKED_PARROT_MEAT), 0.35f);
 
         // Crafting (Shapeless)
         // TODO: Fix this recipe
-        addShapelessRecipe(new ItemStack(Items.POTIONITEM, 1, 8260), ModItems.getItem("bat_wing"), Items.POTIONITEM);
-
-        addShapelessRecipe(new ItemStack(ModItems.getItem("wither_bone_meal"), 3), ModItems.getItem("wither_bone"));
-
+        addShapelessRecipe(new ItemStack(Items.POTIONITEM, 1, 8260), ModItems.BAT_WING, Items.POTIONITEM);
 
         NBTTagCompound nbt = new NBTTagCompound();
         NBTTagCompound displayNBT = new NBTTagCompound();
@@ -34,7 +31,7 @@ public class ModCrafting {
 
         Utils.addPotionEffectToItem(potionItemStack, 25, 1 , 600);
 
-        addShapelessRecipe(potionItemStack, ModItems.getItem("bat_wing"), Items.DRAGON_BREATH);
+        addShapelessRecipe(potionItemStack, ModItems.BAT_WING, Items.DRAGON_BREATH);
 
         nbt = new NBTTagCompound();
         displayNBT = new NBTTagCompound();
@@ -66,34 +63,25 @@ public class ModCrafting {
                         "APA",
                         "AAA", 'A', Items.ARROW, 'P', lingeringPotionItemStack);
 
-        addShapedRecipe(new ItemStack(ModItems.getItem("iron_shield")),
-                "WIW",
-                        "IGI",
-                        "WIW", 'W', Blocks.PLANKS, 'I', Items.IRON_INGOT, 'G', Items.GOLD_INGOT);
-
-        addShapedRecipe(new ItemStack(ModItems.getItem("golden_shield")),
-                "GDG",
-                        "GIG",
-                        "IGI", 'D', Items.DIAMOND, 'I', Items.IRON_INGOT, 'G', Items.GOLD_INGOT);
 
         // Brewing
 
     }
 
     private static void addShapedRecipe(ItemStack output, Object... shape) {
-        GameRegistry.addShapedRecipe(new ResourceLocation(Reference.MOD_ID, output.getItem().getRegistryName().getResourcePath()+"_recipe"), null, output, shape);
+        GameRegistry.addShapedRecipe(new ResourceLocation(Main.MODID, output.getItem().getRegistryName().getResourcePath()+"_recipe"), null, output, shape);
     }
 
     private static void addShapelessRecipe(ItemStack output, Item... items) {
         Ingredient[] ingredients = new Ingredient[items.length];
         for (int i = 0; i < ingredients.length; i++) ingredients[i] = Ingredient.fromItem(items[i]);
-        GameRegistry.addShapelessRecipe(new ResourceLocation(Reference.MOD_ID, output.getItem().getRegistryName().getResourcePath()+"_recipe"), null, output, ingredients);
+        GameRegistry.addShapelessRecipe(new ResourceLocation(Main.MODID, output.getItem().getRegistryName().getResourcePath()+"_recipe"), null, output, ingredients);
     }
 
     private static void addShapelessRecipe(ItemStack output, ItemStack... items) {
         Ingredient[] ingredients = new Ingredient[items.length];
         for (int i = 0; i < ingredients.length; i++) ingredients[i] = Ingredient.fromStacks(items[i]);
-        GameRegistry.addShapelessRecipe(new ResourceLocation(Reference.MOD_ID, output.getItem().getRegistryName().getResourcePath()+"_recipe"), null, output, ingredients);
+        GameRegistry.addShapelessRecipe(new ResourceLocation(Main.MODID, output.getItem().getRegistryName().getResourcePath()+"_recipe"), null, output, ingredients);
     }
 
 //    /**

@@ -10,6 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ItemChisel extends Item {
+    /* #FIXLATER
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if (ModBlocks.chiselMapping.containsKey(worldIn.getBlockState(pos))) {
@@ -18,5 +19,5 @@ public class ItemChisel extends Item {
             }
         }
         return EnumActionResult.FAIL;
-    }
+    } */
 }

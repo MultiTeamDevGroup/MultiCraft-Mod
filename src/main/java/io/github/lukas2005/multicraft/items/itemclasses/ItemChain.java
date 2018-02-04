@@ -1,6 +1,8 @@
-package io.github.lukas2005.multicraft.items;
+package io.github.lukas2005.multicraft.items.itemclasses;
 
-import io.github.lukas2005.multicraft.Reference;
+import io.github.lukas2005.multicraft.Main;
+import io.github.lukas2005.multicraft.items.ItemBase;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,7 +12,11 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
-public class ChainItem extends Item {
+public class ItemChain extends ItemBase {
+    public ItemChain() {
+        super("chain", CreativeTabs.MATERIALS);
+    }
+
     @Override
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
         if (entity instanceof EntityMinecart) {
@@ -39,12 +45,12 @@ public class ChainItem extends Item {
                 tag.setUniqueId("SecondMinecart", null);
                 if (entityIn instanceof EntityPlayer) {
                     EntityPlayer p = (EntityPlayer) entityIn;
-                    p.sendMessage(new TextComponentTranslation("message."+ Reference.MOD_ID+".chain.pair_failed"));
+                    p.sendMessage(new TextComponentTranslation("message."+ Main.MODID+".chain.pair_failed"));
                 }
             } else if (tag.getUniqueId("FirstMinecart")!=null && tag.getUniqueId("SecondMinecart")!=null) {
                 if (entityIn instanceof EntityPlayer) {
                     EntityPlayer p = (EntityPlayer) entityIn;
-                    p.sendMessage(new TextComponentTranslation("message." + Reference.MOD_ID + ".chain.pair_success"));
+                    p.sendMessage(new TextComponentTranslation("message." + Main.MODID + ".chain.pair_success"));
                 }
             }
         }

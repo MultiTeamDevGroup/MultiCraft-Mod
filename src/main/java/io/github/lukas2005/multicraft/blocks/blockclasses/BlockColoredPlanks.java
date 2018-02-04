@@ -1,7 +1,7 @@
-package io.github.lukas2005.multicraft.blocks;
+package io.github.lukas2005.multicraft.blocks.blockclasses;
 
 import io.github.lukas2005.multicraft.EnumColor;
-import net.minecraft.block.Block;
+import io.github.lukas2005.multicraft.blocks.BlockBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
@@ -16,13 +16,12 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class ColoredPlanks extends BlockBase {
+public class BlockColoredPlanks extends BlockBase {
 
     private static final PropertyEnum<EnumColor> COLOR = PropertyEnum.create("color", EnumColor.class);
 
-    public ColoredPlanks() {
-        super(Material.WOOD, true);
-        setHardness(2);
+    public BlockColoredPlanks() {
+        super(Material.WOOD, "colored_planks", 1, 2f, CreativeTabs.BUILDING_BLOCKS);
         setResistance(15);
     }
 
