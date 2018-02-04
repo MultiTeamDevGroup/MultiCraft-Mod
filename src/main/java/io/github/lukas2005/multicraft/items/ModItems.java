@@ -1,6 +1,7 @@
 package io.github.lukas2005.multicraft.items;
 
 import io.github.lukas2005.multicraft.items.itemclasses.*;
+import io.github.lukas2005.multicraft.items.itemclasses.basematerials.*;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -19,9 +20,14 @@ public class ModItems {
     public static final ItemSilverfishScale SILVERFISH_SCALE = new ItemSilverfishScale();
     public static final ItemWitherBone WITHER_BONE = new ItemWitherBone();
 
-    // VARIOUS THINGS - #RENAMETHIS
+    // VARIOUS THINGS
     public static final ItemChain CHAIN = new ItemChain();
     public static final ItemWitherBoneMeal WITHER_BONE_MEAL = new ItemWitherBoneMeal();
+
+    // SHIELDS
+    public static final ItemIronShield IRON_SHIELD = new ItemIronShield();
+    public static final ItemGoldenShield GOLDEN_SHIELD = new ItemGoldenShield();
+    public static final ItemDiamondShield DIAMOND_SHIELD = new ItemDiamondShield();
 
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
@@ -82,11 +88,6 @@ public class ModItems {
 
         // Weapon
         registerItem(new Hammer(), "hammer");
-
-        // Shield
-        registerItem(new CustomShield(400), "iron_shield");
-        registerItem(new CustomShield(500), "golden_shield");
-        registerItem(new CustomShield(700), "diamond_shield");
     }
     */
 }

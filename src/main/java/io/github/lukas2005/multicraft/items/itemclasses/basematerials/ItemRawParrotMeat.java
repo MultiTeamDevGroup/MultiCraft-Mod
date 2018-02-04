@@ -1,7 +1,6 @@
-package io.github.lukas2005.multicraft.items.itemclasses;
+package io.github.lukas2005.multicraft.items.itemclasses.basematerials;
 
 import io.github.lukas2005.multicraft.items.ItemFoodBase;
-import net.minecraft.item.ItemFood;
 
 public class ItemRawParrotMeat extends ItemFoodBase {
     public ItemRawParrotMeat() {
