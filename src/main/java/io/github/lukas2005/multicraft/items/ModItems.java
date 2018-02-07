@@ -13,7 +13,8 @@ public class ModItems {
     public static final ItemRawParrotMeat RAW_PARROT_MEAT = new ItemRawParrotMeat();
     public static final ItemCookedParrotMeat COOKED_PARROT_MEAT = new ItemCookedParrotMeat();
 
-    // BASIC MATERIALS
+    // BASIC ITEMS
+    public static final ItemAcorn ACORN = new ItemAcorn();
     public static final ItemAdobeBrick ADOBE_BRICK = new ItemAdobeBrick();
     public static final ItemBatWing BAT_WING = new ItemBatWing();
     public static final ItemEnderPearlPiece ENDER_PEARL_PIECE = new ItemEnderPearlPiece();
@@ -46,6 +47,7 @@ public class ModItems {
                 EMERALD_APPLE,
                 RAW_PARROT_MEAT,
                 COOKED_PARROT_MEAT,
+                ACORN,
                 ADOBE_BRICK,
                 BAT_WING,
                 ENDER_PEARL_PIECE,
@@ -73,6 +75,7 @@ public class ModItems {
         RAW_PARROT_MEAT.registerItemModel();
         COOKED_PARROT_MEAT.registerItemModel();
 
+        ACORN.registerItemModel();
         ADOBE_BRICK.registerItemModel();
         BAT_WING.registerItemModel();
         ENDER_PEARL_PIECE.registerItemModel();
