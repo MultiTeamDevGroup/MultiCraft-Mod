@@ -1,10 +1,26 @@
 package io.github.lukas2005.multicraft;
 
+import io.github.lukas2005.multicraft.items.ModItems;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = Main.MODID)
 public class EventHandler {
-    /* old code #NOKEEP #NOKEEP-FILE #NEEDSMOVE
+    private static Random random = new Random();
+
+    @SubscribeEvent
+    public static void onHarvestDrops(BlockEvent.HarvestDropsEvent e) {
+        if((e.getState().getBlock() == Blocks.LEAVES || e.getState().getBlock() == Blocks.LEAVES2) && random.nextInt(40) == 1) {
+            e.getDrops().add(new ItemStack(ModItems.ACORN, 1));
+        }
+    }
+
+    /* old code
 
     @SubscribeEvent
     public static void registerIRecipes(RegistryEvent.Register<IRecipe> e) {
