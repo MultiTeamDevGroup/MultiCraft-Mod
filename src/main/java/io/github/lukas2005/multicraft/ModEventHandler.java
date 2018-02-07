@@ -1,41 +1,26 @@
 package io.github.lukas2005.multicraft;
 
 import io.github.lukas2005.multicraft.items.ModItems;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.monster.EntityEndermite;
-import net.minecraft.entity.monster.EntityPolarBear;
-import net.minecraft.entity.monster.EntityWitherSkeleton;
-import net.minecraft.entity.passive.EntityBat;
-import net.minecraft.entity.passive.EntityLlama;
-import net.minecraft.entity.passive.EntityParrot;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Enchantments;
-import net.minecraft.init.Items;
-import net.minecraft.init.MobEffects;
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.minecraftforge.fml.relauncher.Side;
 
 import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = Main.MODID)
 public class ModEventHandler {
     private static Random random = new Random();
+
+    @SubscribeEvent
+    public static void onHarvestDrops(BlockEvent.HarvestDropsEvent e) {
+        if((e.getState().getBlock() == Blocks.LEAVES || e.getState().getBlock() == Blocks.LEAVES2) && random.nextInt(40) == 1) {
+            e.getDrops().add(new ItemStack(ModItems.ACORN, 1));
+        }
+    }
+
+    /* old code
 
     @SubscribeEvent
     public static void onHarvestDrops(BlockEvent.HarvestDropsEvent e) {
