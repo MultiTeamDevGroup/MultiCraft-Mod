@@ -82,6 +82,7 @@ public class ModEventHandler {
             e.getEntityLiving().dropItem(ModItems.WITHER_BONE, 1);
         }
     }
+    /* old code #NOKEEP #NOKEEP-FILE #NEEDSMOVE
 
     @SubscribeEvent
     public static void onLivingSetAttackTarget(LivingSetAttackTargetEvent e) {
