@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " ##",
+    " ##"
+  ],
+  "key": {
+    "#": {
+      "item": "multic:adobe_brick"
+    }
+  },
+  "result": {
+    "item": "multic:block_adobe_brick"
+  }
+}
