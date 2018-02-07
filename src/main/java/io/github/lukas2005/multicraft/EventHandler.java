@@ -5,58 +5,6 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Main.MODID)
 public class EventHandler {
     /* old code #NOKEEP #NOKEEP-FILE #NEEDSMOVE
-    @SubscribeEvent
-    public static void registerBlock(RegistryEvent.Register<Block> e) {
-        ModBlocks.init();
-        for (Block block : ModBlocks.ModBlocks.values()) {
-            e.getRegistry().register(block);
-        }
-
-        Loader.instance().setActiveModContainer(null); //this is for vanilla minecraft ONLY
-        e.getRegistry().registerAll(
-            new FallingBlockSnow(),
-            new FallingBlockSnowBlock()/*,
-            new CustomCraftingTable()* /
-        );
-        Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Main.MODID));
-    }
-
-    @SubscribeEvent
-    public static void registerItem(RegistryEvent.Register<Item> e) {
-        ModItems.init();
-        for (Item item : ModItems.ModItems.values()) {
-            e.getRegistry().register(item);
-        }
-
-        for (Block block : ModBlocks.ModBlocks.values()) {
-            if (block instanceof BlockColoredPlanks) {
-                e.getRegistry().register(new ItemBlock(block){
-                    @Override
-                    public int getMetadata(int damage) {
-                        return damage;
-                    }
-
-                    @Override
-                    public String getUnlocalizedName(ItemStack stack) { return getUnlocalizedName()+"."+EnumColor.byMetadata(stack.getMetadata()).getName(); }
-                }.setHasSubtypes(true).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
-            } else {
-                e.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
-            }
-        }
-
-        ModCrafting.init();
-    }
-
-    @SubscribeEvent
-    public static void registerModels(ModelRegistryEvent e) {
-        for (Item item : ModItems.ModItems.values()) {
-            Main.proxy.registerItemRender(item);
-        }
-
-        for (Block block : ModBlocks.ModBlocks.values()) {
-            Main.proxy.registerBlockRender(block);
-        }
-    }
 
     @SubscribeEvent
     public static void registerIRecipes(RegistryEvent.Register<IRecipe> e) {
