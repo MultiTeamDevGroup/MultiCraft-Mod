@@ -1,45 +1,46 @@
 package io.github.lukas2005.multicraft.items;
 
+import io.github.lukas2005.multicraft.Main;
 import io.github.lukas2005.multicraft.items.itemclasses.*;
-import io.github.lukas2005.multicraft.items.itemclasses.simple.*;
-import io.github.lukas2005.multicraft.items.armor.*;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class ModItems {
     // FOODS
-    public static final ItemCheese CHEESE = new ItemCheese();
+    public static final ItemFoodBase CHEESE = new ItemFoodBase(4, 2.3f, true, "cheese");
     public static final ItemEmeraldApple EMERALD_APPLE = new ItemEmeraldApple();
-    public static final ItemRawParrotMeat RAW_PARROT_MEAT = new ItemRawParrotMeat();
-    public static final ItemCookedParrotMeat COOKED_PARROT_MEAT = new ItemCookedParrotMeat();
+    public static final ItemFoodBase RAW_PARROT_MEAT = new ItemFoodBase(1, 2.1f, true, "raw_parrot_meat");
+    public static final ItemFoodBase COOKED_PARROT_MEAT = new ItemFoodBase(4, 4.2f, true, "cooked_parrot_meat");
 
     // BASIC ITEMS
     public static final ItemAcorn ACORN = new ItemAcorn();
-    public static final ItemAdobeBrick ADOBE_BRICK = new ItemAdobeBrick();
-    public static final ItemBatWing BAT_WING = new ItemBatWing();
-    public static final ItemEnderPearlPiece ENDER_PEARL_PIECE = new ItemEnderPearlPiece();
-    public static final ItemLlamaFur LLAMA_FUR = new ItemLlamaFur();
-    public static final ItemPolarBearLeather POLAR_BEAR_LEATHER = new ItemPolarBearLeather();
-    public static final ItemRustDust RUST_DUST = new ItemRustDust();
-    public static final ItemSilverfishScale SILVERFISH_SCALE = new ItemSilverfishScale();
-    public static final ItemWitherBone WITHER_BONE = new ItemWitherBone();
+    public static final ItemBase ADOBE_BRICK = new ItemBase("adobe_brick", CreativeTabs.MATERIALS);
+    public static final ItemBase BAT_WING = new ItemBase("bat_wing", CreativeTabs.MATERIALS);
+    public static final ItemBase ENDER_PEARL_PIECE = new ItemBase("ender_pearl_piece", CreativeTabs.MATERIALS);
+    public static final ItemBase LLAMA_FUR = new ItemBase("llama_fur", CreativeTabs.MATERIALS);
+    public static final ItemBase POLAR_BEAR_LEATHER = new ItemBase("polar_bear_leather", CreativeTabs.MATERIALS);
+    public static final ItemBase RUST_DUST = new ItemBase("rust_dust", CreativeTabs.MATERIALS);
+    public static final ItemBase SILVERFISH_SCALE = new ItemBase("silver_fish_scale", CreativeTabs.MATERIALS);
+    public static final ItemBase WITHER_BONE = new ItemBase("wither_bone", CreativeTabs.MATERIALS);
 
     // VARIOUS THINGS
     public static final ItemChain CHAIN = new ItemChain();
     public static final ItemWitherBoneMeal WITHER_BONE_MEAL = new ItemWitherBoneMeal();
 
     // SHIELDS
-    public static final ItemIronShield IRON_SHIELD = new ItemIronShield();
-    public static final ItemGoldenShield GOLDEN_SHIELD = new ItemGoldenShield();
-    public static final ItemDiamondShield DIAMOND_SHIELD = new ItemDiamondShield();
+    public static final ItemShieldBase IRON_SHIELD = new ItemShieldBase(400, "iron_shield");
+    public static final ItemShieldBase GOLDEN_SHIELD = new ItemShieldBase(500, "golden_shield");
+    public static final ItemShieldBase DIAMOND_SHIELD = new ItemShieldBase(700, "diamond_shield");
     // ^ #NEEDSTEXTURE TODO: make a diamond shield texture
 
     // ARMOR
-    public static final FurCostumeHelmet FUR_COSTUME_HELMET = new FurCostumeHelmet();
-    public static final FurCostumeChestplate FUR_COSTUME_CHESTPLATE = new FurCostumeChestplate();
-    public static final FurCostumeLeggings FUR_COSTUME_LEGGINGS = new FurCostumeLeggings();
-    public static final FurCostumeBoots FUR_COSTUME_BOOTS = new FurCostumeBoots();
-    public static final PolarBearHood POLAR_BEAR_HOOD = new PolarBearHood();
+    public static final ItemArmorBase FUR_COSTUME_HELMET = new ItemArmorBase(Main.furCostume, EntityEquipmentSlot.HEAD, "fur_costume_helmet", 1);
+    public static final ItemArmorBase FUR_COSTUME_CHESTPLATE = new ItemArmorBase(Main.furCostume, EntityEquipmentSlot.CHEST, "fur_costume_chestplate", 1);
+    public static final ItemArmorBase FUR_COSTUME_LEGGINGS = new ItemArmorBase(Main.furCostume, EntityEquipmentSlot.LEGS, "fur_costume_leggings", 2);
+    public static final ItemArmorBase FUR_COSTUME_BOOTS = new ItemArmorBase(Main.furCostume, EntityEquipmentSlot.FEET, "fur_costume_boots", 1);
+    public static final ItemArmorBase POLAR_BEAR_HOOD = new ItemArmorBase(Main.polarHood, EntityEquipmentSlot.HEAD, "polar_bear_hood", 1);
 
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(

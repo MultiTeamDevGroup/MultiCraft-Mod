@@ -1,4 +1,4 @@
-package io.github.lukas2005.multicraft.items.itemclasses.simple;
+package io.github.lukas2005.multicraft.items.itemclasses;
 
 import io.github.lukas2005.multicraft.items.ItemFoodBase;
 import net.minecraft.entity.player.EntityPlayer;
