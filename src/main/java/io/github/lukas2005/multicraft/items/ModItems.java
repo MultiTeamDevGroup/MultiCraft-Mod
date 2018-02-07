@@ -11,6 +11,7 @@ public class ModItems {
     // FOODS
     public static final ItemFoodBase CHEESE = new ItemFoodBase(4, 2.3f, true, "cheese");
     public static final ItemEmeraldApple EMERALD_APPLE = new ItemEmeraldApple();
+    public static final ItemFoodBase SPLIT_ACORN = new ItemFoodBase(1, 0.4f, false, "split_acorn");
     public static final ItemFoodBase RAW_PARROT_MEAT = new ItemFoodBase(1, 2.1f, true, "raw_parrot_meat");
     public static final ItemFoodBase COOKED_PARROT_MEAT = new ItemFoodBase(4, 4.2f, true, "cooked_parrot_meat");
 
@@ -46,6 +47,7 @@ public class ModItems {
         registry.registerAll(
                 CHEESE,
                 EMERALD_APPLE,
+                SPLIT_ACORN,
                 RAW_PARROT_MEAT,
                 COOKED_PARROT_MEAT,
                 ACORN,
@@ -73,6 +75,7 @@ public class ModItems {
     public static void registerModels() {
         CHEESE.registerItemModel();
         EMERALD_APPLE.registerItemModel();
+        SPLIT_ACORN.registerItemModel();
         RAW_PARROT_MEAT.registerItemModel();
         COOKED_PARROT_MEAT.registerItemModel();
 
