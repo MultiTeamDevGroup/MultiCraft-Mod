@@ -3,9 +3,13 @@ package io.github.lukas2005.multicraft;
 import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.Side;
 
 import java.util.Random;
 
@@ -20,6 +24,18 @@ public class EventHandler {
         }
     }
 
+    @SubscribeEvent
+    public static void onPlayerTick(TickEvent.PlayerTickEvent e) {
+        if (e.phase == TickEvent.Phase.END) {
+            if (e.side == Side.SERVER) {
+                BlockPos playerPos = new BlockPos(e.player.posX, e.player.posY, e.player.posZ);
+                if (e.player.world.getBlockState(playerPos).getBlock() == Blocks.DEADBUSH && random.nextInt(40) == 1 && !e.player.isSneaking()) {
+                    e.player.attackEntityFrom(DamageSource.CACTUS, 1f);
+                }
+            }
+        }
+    }
+
     /* old code
 
     @SubscribeEvent
@@ -30,12 +46,7 @@ public class EventHandler {
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent e) {
         if (e.phase == TickEvent.Phase.END) {
-            if (e.side == Side.SERVER) {
-                BlockPos playerPos = new BlockPos(e.player.posX, e.player.posY, e.player.posZ);
-                if (e.player.world.getBlockState(playerPos).getBlock() == Blocks.DEADBUSH) {
-                    e.player.attackEntityFrom(DamageSource.CACTUS, 0.5f);
-                }
-            } else if (e.side == Side.CLIENT) {
+            if (e.side == Side.CLIENT) {
                 // TODO: bind this with packets
                 if ((e.player.motionX > 0 || e.player.motionZ > 0) && e.player.isCollidedVertically) {
                     e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
