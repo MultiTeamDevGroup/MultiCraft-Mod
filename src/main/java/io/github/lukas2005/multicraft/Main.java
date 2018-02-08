@@ -35,7 +35,6 @@ public class Main {
     @SidedProxy(serverSide = SERVER_PROXY, clientSide = CLIENT_PROXY)
     public static CommonProxy proxy;
 
-    public static final Random random = new Random(); // "random" > final, lol
     public static ArrayList<Entity[]> attachedMinecarts = new ArrayList<>();
 
     @Mod.Instance(MODID)
