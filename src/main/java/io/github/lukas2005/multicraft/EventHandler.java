@@ -1,6 +1,9 @@
 package io.github.lukas2005.multicraft;
 
 import io.github.lukas2005.multicraft.items.ModItems;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.monster.EntityPolarBear;
@@ -10,12 +13,14 @@ import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.entity.passive.EntityParrot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -31,7 +36,7 @@ public class EventHandler {
 
     @SubscribeEvent
     public static void onHarvestDrops(BlockEvent.HarvestDropsEvent e) {
-        if((e.getState().getBlock() == Blocks.LEAVES || e.getState().getBlock() == Blocks.LEAVES2) && random.nextInt(40) == 1) {
+        if ((e.getState().getBlock() == Blocks.LEAVES || e.getState().getBlock() == Blocks.LEAVES2) && random.nextInt(40) == 1) {
             e.getDrops().add(new ItemStack(ModItems.ACORN, 1));
         }
     }
@@ -83,6 +88,20 @@ public class EventHandler {
             }
         }
     }
+
+    @SubscribeEvent
+    public static void onEntityTick(LivingEvent.LivingUpdateEvent e) {
+        EntityLivingBase entity = e.getEntityLiving();
+        for (ItemStack stack : entity.getArmorInventoryList()) {
+            for (Enchantment enchant : EnchantmentHelper.getEnchantments(stack).keySet()) {
+                if (enchant == Enchantments.FROST_WALKER) {
+                    if (entity.world.getBlockState(entity.getPosition()).getBlock() == Blocks.FIRE) {
+                        entity.world.setBlockToAir(entity.getPosition());
+                    }
+                }
+            }
+        }
+    }
     /* old code
 
     @SubscribeEvent
@@ -97,20 +116,6 @@ public class EventHandler {
                 // TODO: bind this with packets
                 if ((e.player.motionX > 0 || e.player.motionZ > 0) && e.player.isCollidedVertically) {
                     e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
-                }
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public static void onEntityTick(LivingEvent.LivingUpdateEvent e) {
-        EntityLivingBase en = e.getEntityLiving();
-        for (ItemStack stack : en.getArmorInventoryList()) {
-            for (Enchantment ench : EnchantmentHelper.getEnchantments(stack).keySet()) {
-                if (ench == Enchantments.FROST_WALKER) {
-                    if (en.world.getBlockState(en.getPosition()).getBlock() == Blocks.FIRE) {
-                        en.world.setBlockToAir(en.getPosition());
-                    }
                 }
             }
         }
