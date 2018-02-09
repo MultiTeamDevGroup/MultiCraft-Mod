@@ -8,12 +8,15 @@ import net.minecraft.entity.monster.EntityWitherSkeleton;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.entity.passive.EntityParrot;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -72,6 +75,14 @@ public class EventHandler {
         }
     }
 
+    @SubscribeEvent
+    public static void onLivingSetAttackTarget(LivingSetAttackTargetEvent e) {
+        if (e.getEntity() instanceof EntityPolarBear && e.getTarget() instanceof EntityPlayer) {
+            if (e.getTarget().getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ModItems.POLAR_BEAR_HOOD) {
+                ((EntityPolarBear) e.getEntity()).setAttackTarget(null);
+            }
+        }
+    }
     /* old code
 
     @SubscribeEvent
@@ -129,31 +140,6 @@ public class EventHandler {
         }
     }
 
-    @SubscribeEvent
-    public static void onDrop(LivingDropsEvent e) {
-        if (e.getEntity() instanceof EntityParrot) {
-            e.getEntityLiving().dropItem(ModItems.getItem("raw_parrot_meat"), 1);
-        } else if (e.getEntity() instanceof EntityBat) {
-            e.getEntityLiving().dropItem(ModItems.getItem("bat_wing"), 1);
-        }  else if (e.getEntity() instanceof EntityEndermite) {
-            e.getEntityLiving().dropItem(ModItems.getItem("ender_pearl_piece"), 1);
-        }  else if (e.getEntity() instanceof EntityPolarBear) {
-            e.getEntityLiving().dropItem(ModItems.getItem("polar_bear_leather"), 1);
-        }  else if (e.getEntity() instanceof EntityLlama) {
-            for (EntityItem eItem : e.getDrops()) {
-                if (eItem.getItem().getItem() == Items.LEATHER) eItem.setDead();
-            }
-            float rand = Main.random.nextFloat();
-            int amount = rand > 0.8F ? 4 : rand > 0.6F ? 3 : 2;
-            e.getEntityLiving().dropItem(ModItems.getItem("llama_fur"), amount);
-        }  else if (e.getEntity() instanceof EntityWitherSkeleton) {
-            for (EntityItem eItem : e.getDrops()) {
-                if (eItem.getItem().getItem() == Items.BONE) eItem.setDead();
-            }
-            e.getEntityLiving().dropItem(ModItems.getItem("wither_bone"), 1);
-        }
-    }
-
     private static final ArrayList<Block> crops = new ArrayList<>();
     static {
         crops.add(Blocks.CARROTS);
@@ -164,15 +150,6 @@ public class EventHandler {
         if (e.getEntity() instanceof EntityRabbit) {
             EntityRabbit rabbit = (EntityRabbit) e.getEntity();
             rabbit.tasks.addTask(5, new AIEatCropBlock(rabbit, crops));
-        }
-    }
-
-    @SubscribeEvent
-    public static void onLivingSetAttackTarget(LivingSetAttackTargetEvent e) {
-        if (e.getEntity() instanceof EntityPolarBear && e.getTarget() instanceof EntityPlayer) {
-            if (e.getTarget().getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ModItems.getItem("polar_bear_hood_helmet")) {
-                ((EntityPolarBear) e.getEntity()).setAttackTarget(null);
-            }
         }
     }
     */
