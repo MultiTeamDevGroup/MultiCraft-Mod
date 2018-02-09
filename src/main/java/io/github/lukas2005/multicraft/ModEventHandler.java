@@ -1,6 +1,9 @@
 package io.github.lukas2005.multicraft;
 
 import io.github.lukas2005.multicraft.items.ModItems;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.monster.EntityPolarBear;
@@ -10,12 +13,14 @@ import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.entity.passive.EntityParrot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -31,7 +36,7 @@ public class ModEventHandler {
 
     @SubscribeEvent
     public static void onHarvestDrops(BlockEvent.HarvestDropsEvent e) {
-        if((e.getState().getBlock() == Blocks.LEAVES || e.getState().getBlock() == Blocks.LEAVES2) && random.nextInt(40) == 1) {
+        if ((e.getState().getBlock() == Blocks.LEAVES || e.getState().getBlock() == Blocks.LEAVES2) && random.nextInt(40) == 1) {
             e.getDrops().add(new ItemStack(ModItems.ACORN, 1));
         }
     }
@@ -83,6 +88,20 @@ public class ModEventHandler {
             }
         }
     }
+
+    @SubscribeEvent
+    public static void onEntityTick(LivingEvent.LivingUpdateEvent e) {
+        EntityLivingBase entity = e.getEntityLiving();
+        for (ItemStack stack : entity.getArmorInventoryList()) {
+            for (Enchantment enchant : EnchantmentHelper.getEnchantments(stack).keySet()) {
+                if (enchant == Enchantments.FROST_WALKER) {
+                    if (entity.world.getBlockState(entity.getPosition()).getBlock() == Blocks.FIRE) {
+                        entity.world.setBlockToAir(entity.getPosition());
+                    }
+                }
+            }
+        }
+    }
     /* old code
 
     @SubscribeEvent
@@ -109,6 +128,7 @@ public class ModEventHandler {
     }
 
     @SubscribeEvent
+<<<<<<< HEAD:src/main/java/io/github/lukas2005/multicraft/ModEventHandler.java
     public static void onDrop(LivingDropsEvent e) {
         if (e.getEntity() instanceof EntityParrot) {
             e.getEntityLiving().dropItem(ModItems.RAW_PARROT_MEAT, 1);
@@ -160,6 +180,8 @@ public class ModEventHandler {
     }
 
     @SubscribeEvent
+=======
+>>>>>>> frost walker puts out fires:src/main/java/io/github/lukas2005/multicraft/EventHandler.java
     public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract e) {
         ItemStack is = e.getItemStack();
 
