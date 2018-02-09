@@ -8,12 +8,15 @@ import net.minecraft.entity.monster.EntityWitherSkeleton;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.entity.passive.EntityParrot;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -72,6 +75,14 @@ public class ModEventHandler {
         }
     }
 
+    @SubscribeEvent
+    public static void onLivingSetAttackTarget(LivingSetAttackTargetEvent e) {
+        if (e.getEntity() instanceof EntityPolarBear && e.getTarget() instanceof EntityPlayer) {
+            if (e.getTarget().getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ModItems.POLAR_BEAR_HOOD) {
+                ((EntityPolarBear) e.getEntity()).setAttackTarget(null);
+            }
+        }
+    }
     /* old code
 
     @SubscribeEvent

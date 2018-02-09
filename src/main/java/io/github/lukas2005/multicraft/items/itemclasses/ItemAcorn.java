@@ -38,18 +38,6 @@ public class ItemAcorn extends ItemBase {
                 ItemStack held = player.getItemStackFromSlot(EntityEquipmentSlot.OFFHAND);
                 held.shrink(1);
                 ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(ModItems.SPLIT_ACORN, 1));
-
-                int amount = player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getCount();
-                ItemStack newStack = new ItemStack(ModItems.ACORN, amount - 1);
-                player.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, newStack);
-                ItemStack splitAcornStack = new ItemStack(ModItems.SPLIT_ACORN, 1);
-                ItemHandlerHelper.giveItemToPlayer(player, splitAcornStack);
-            } else {
-                int amount = player.getItemStackFromSlot(EntityEquipmentSlot.OFFHAND).getCount();
-                ItemStack newStack = new ItemStack(ModItems.ACORN, amount - 1);
-                player.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, newStack);
-                ItemStack splitAcornStack = new ItemStack(ModItems.SPLIT_ACORN, 1);
-                ItemHandlerHelper.giveItemToPlayer(player, splitAcornStack);
             }
             return EnumActionResult.SUCCESS;
         } else {
@@ -64,6 +52,5 @@ public class ItemAcorn extends ItemBase {
         hardBlocks.add(Blocks.BEDROCK);
         hardBlocks.add(Blocks.OBSIDIAN);
         hardBlocks.add(Blocks.STONE);
-        return EnumActionResult.FAIL;
     }
 }
