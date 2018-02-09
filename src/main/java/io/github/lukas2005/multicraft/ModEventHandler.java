@@ -15,13 +15,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -102,16 +105,33 @@ public class ModEventHandler {
             }
         }
     }
+
+    public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract e) {
+        ItemStack is = e.getItemStack();
+
+        if (is.getItem() == Items.GLOWSTONE_DUST && e.getTarget() instanceof EntityLivingBase) {
+            is.setCount(is.getCount() - 1);
+            ((EntityLivingBase) e.getTarget()).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 6000, 1));
+        }
+
+        /*if (e.getTarget() instanceof EntityShulker) {
+            EntityShulker sh = (EntityShulker) e.getTarget();
+            if (is.getItem() == Items.DYE) {
+                is.setCount(is.getCount() - 1);
+
+                Utils.changeShulkerColor(sh, EnumDyeColor.byDyeDamage(is.getItemDamage()));
+            } else if (is.getItem() == Items.POTIONITEM) {
+                is.setCount(0);
+                e.getEntityPlayer().addItemStackToInventory(new ItemStack(Items.GLASS_BOTTLE));
+
+                Utils.changeShulkerColor(sh, EnumDyeColor.PURPLE);
+            }
+        }*/
+    }
     /* old code
 
     @SubscribeEvent
-    public static void onHarvestDrops(BlockEvent.HarvestDropsEvent e) {
-        if ((e.getState().getBlock() == Blocks.LEAVES || e.getState().getBlock() == Blocks.LEAVES2) && random.nextInt(40) == 1) {
-            e.getDrops().add(new ItemStack(ModItems.ACORN, 1));
-        }
-    }
-
-    @SubscribeEvent
+<<<<<<< HEAD:src/main/java/io/github/lukas2005/multicraft/ModEventHandler.java
     public static void onPlayerTick(TickEvent.PlayerTickEvent e) {
         if (e.phase == TickEvent.Phase.END)
             if (e.side == Side.SERVER) {
@@ -125,6 +145,10 @@ public class ModEventHandler {
                 }
             }
         }
+=======
+    public static void registerIRecipes(RegistryEvent.Register<IRecipe> e) {
+        e.getRegistry().register(new ColoredPlanksRecipe().setRegistryName(Main.MODID, "planks_recipe"));
+>>>>>>> ?:src/main/java/io/github/lukas2005/multicraft/EventHandler.java
     }
 
     @SubscribeEvent
@@ -185,6 +209,7 @@ public class ModEventHandler {
     public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract e) {
         ItemStack is = e.getItemStack();
 
+<<<<<<< HEAD:src/main/java/io/github/lukas2005/multicraft/ModEventHandler.java
         if (is.getItem() == Items.GLOWSTONE_DUST && e.getTarget() instanceof EntityLivingBase) {
             is.setCount(is.getCount() - 1);
             ((EntityLivingBase) e.getTarget()).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 6000, 1));
@@ -201,6 +226,8 @@ public class ModEventHandler {
     public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract e) {
         ItemStack is = e.getItemStack();
 
+=======
+>>>>>>> ?:src/main/java/io/github/lukas2005/multicraft/EventHandler.java
         if (e.getTarget() instanceof EntityShulker) {
             EntityShulker sh = (EntityShulker) e.getTarget();
             if (is.getItem() == Items.DYE) {
