@@ -113,20 +113,6 @@ public class ModEventHandler {
             is.setCount(is.getCount() - 1);
             ((EntityLivingBase) e.getTarget()).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 6000, 1));
         }
-
-        /*if (e.getTarget() instanceof EntityShulker) {
-            EntityShulker sh = (EntityShulker) e.getTarget();
-            if (is.getItem() == Items.DYE) {
-                is.setCount(is.getCount() - 1);
-
-                Utils.changeShulkerColor(sh, EnumDyeColor.byDyeDamage(is.getItemDamage()));
-            } else if (is.getItem() == Items.POTIONITEM) {
-                is.setCount(0);
-                e.getEntityPlayer().addItemStackToInventory(new ItemStack(Items.GLASS_BOTTLE));
-
-                Utils.changeShulkerColor(sh, EnumDyeColor.PURPLE);
-            }
-        }*/
     }
     /* old code
 
