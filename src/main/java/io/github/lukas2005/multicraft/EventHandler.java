@@ -15,13 +15,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -102,6 +105,30 @@ public class EventHandler {
             }
         }
     }
+
+    @SubscribeEvent
+    public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract e) {
+        ItemStack is = e.getItemStack();
+
+        if (is.getItem() == Items.GLOWSTONE_DUST && e.getTarget() instanceof EntityLivingBase) {
+            is.setCount(is.getCount() - 1);
+            ((EntityLivingBase) e.getTarget()).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 6000, 1));
+        }
+
+        /*if (e.getTarget() instanceof EntityShulker) {
+            EntityShulker sh = (EntityShulker) e.getTarget();
+            if (is.getItem() == Items.DYE) {
+                is.setCount(is.getCount() - 1);
+
+                Utils.changeShulkerColor(sh, EnumDyeColor.byDyeDamage(is.getItemDamage()));
+            } else if (is.getItem() == Items.POTIONITEM) {
+                is.setCount(0);
+                e.getEntityPlayer().addItemStackToInventory(new ItemStack(Items.GLASS_BOTTLE));
+
+                Utils.changeShulkerColor(sh, EnumDyeColor.PURPLE);
+            }
+        }*/
+    }
     /* old code
 
     @SubscribeEvent
@@ -110,25 +137,8 @@ public class EventHandler {
     }
 
     @SubscribeEvent
-    public static void onPlayerTick(TickEvent.PlayerTickEvent e) {
-        if (e.phase == TickEvent.Phase.END) {
-            if (e.side == Side.CLIENT) {
-                // TODO: bind this with packets
-                if ((e.player.motionX > 0 || e.player.motionZ > 0) && e.player.isCollidedVertically) {
-                    e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
-                }
-            }
-        }
-    }
-
-    @SubscribeEvent
     public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract e) {
         ItemStack is = e.getItemStack();
-
-        if (is.getItem() == Items.GLOWSTONE_DUST && e.getTarget() instanceof EntityLivingBase) {
-            is.setCount(is.getCount() - 1);
-            ((EntityLivingBase) e.getTarget()).addPotionEffect(new PotionEffect(MobEffects.GLOWING,5 * 60 * 20,1));
-        }
 
         if (e.getTarget() instanceof EntityShulker) {
             EntityShulker sh = (EntityShulker) e.getTarget();
@@ -143,7 +153,21 @@ public class EventHandler {
                 Utils.changeShulkerColor(sh, EnumDyeColor.PURPLE);
             }
         }
+}
+
+    @SubscribeEvent
+    public static void onPlayerTick(TickEvent.PlayerTickEvent e) {
+        if (e.phase == TickEvent.Phase.END) {
+            if (e.side == Side.CLIENT) {
+                // TODO: bind this with packets
+                if ((e.player.motionX > 0 || e.player.motionZ > 0) && e.player.isCollidedVertically) {
+                    e.player.world.spawnParticle(EnumParticleTypes.FOOTSTEP, e.player.posX, e.player.posY+0.1, e.player.posZ, 0, 0, 0);
+                }
+            }
+        }
     }
+
+
 
     private static final ArrayList<Block> crops = new ArrayList<>();
     static {
