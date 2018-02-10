@@ -4,12 +4,15 @@ import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.items.ModItems;
 import io.github.lukas2005.multicraft.proxy.CommonProxy;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDoor;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.entity.Entity;
 
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -67,6 +70,7 @@ public class Main {
         public static void registerModels(ModelRegistryEvent event) {
             ModItems.registerModels();
             ModBlocks.registerModels();
+            ModelLoader.setCustomStateMapper(ModBlocks.RUSTY_IRON_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
         }
     }
 

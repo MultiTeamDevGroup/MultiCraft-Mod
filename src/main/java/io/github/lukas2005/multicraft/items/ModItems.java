@@ -29,6 +29,7 @@ public class ModItems {
     // VARIOUS THINGS
     public static final ItemChain CHAIN = new ItemChain();
     public static final ItemWitherBoneMeal WITHER_BONE_MEAL = new ItemWitherBoneMeal();
+    public static final ItemRustyIronDoor RUSTY_IRON_DOOR = new ItemRustyIronDoor();
 
     // SHIELDS
     public static final ItemShieldBase IRON_SHIELD = new ItemShieldBase(400, "iron_shield");
@@ -61,6 +62,7 @@ public class ModItems {
                 WITHER_BONE,
                 CHAIN,
                 WITHER_BONE_MEAL,
+                RUSTY_IRON_DOOR,
                 IRON_SHIELD,
                 GOLDEN_SHIELD,
                 //DIAMOND_SHIELD,
@@ -91,6 +93,7 @@ public class ModItems {
 
         CHAIN.registerItemModel();
         WITHER_BONE_MEAL.registerItemModel();
+        RUSTY_IRON_DOOR.registerItemModel();
 
         IRON_SHIELD.registerItemModel();
         GOLDEN_SHIELD.registerItemModel();
