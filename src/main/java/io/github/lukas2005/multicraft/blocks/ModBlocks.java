@@ -3,7 +3,10 @@ package io.github.lukas2005.multicraft.blocks;
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRockPath;
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRustyIronBars;
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRustyIronBlock;
+<<<<<<< HEAD
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRustyIronDoor;
+=======
+>>>>>>> blocks, volume 2
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -75,6 +78,18 @@ public class ModBlocks {
 
     /* old code
     public static void init() {
+<<<<<<< HEAD
+=======
+        registerBlock(new BlockBase(Material.ROCK, true).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "volcanic_stone");
+
+        registerBlock(new BlockBase((new MaterialLogic(MapColor.SNOW)), true).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "snow_brick");
+        registerBlock(new BlockBase(Material.SNOW, true).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "chiseled_snow_brick");
+        registerBlock(new BlockDoorBase(Material.IRON, false)
+                .addDrop(new ItemStack(ModItems.getItem("rust_dust"), 6))
+                .addDrop(new ItemStack(Items.IRON_NUGGET, 3))
+                .setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "rusty_iron_door");
+
+>>>>>>> blocks, volume 2
         chiselMapping.put(getBlock("ancient_stone").getDefaultState(), getBlock("engraved_ancient_stone").getDefaultState());
     }
     */
