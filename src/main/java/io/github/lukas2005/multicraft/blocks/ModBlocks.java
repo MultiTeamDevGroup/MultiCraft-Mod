@@ -4,9 +4,13 @@ import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRockPath;
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRustyIronBars;
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRustyIronBlock;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRustyIronDoor;
 =======
 >>>>>>> blocks, volume 2
+=======
+import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRustyIronDoor;
+>>>>>>> add some blocks and bugs
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -23,7 +27,11 @@ public class ModBlocks {
     public static final BlockRockPath ROCK_PATH = new BlockRockPath();
     public static final BlockRustyIronBars RUSTY_IRON_BARS = new BlockRustyIronBars();
     public static final BlockRustyIronBlock RUSTY_IRON_BLOCK = new BlockRustyIronBlock();
+<<<<<<< HEAD
     //public static final BlockRustyIronDoor RUSTY_IRON_DOOR = new BlockRustyIronDoor();
+=======
+    public static final BlockRustyIronDoor RUSTY_IRON_DOOR = new BlockRustyIronDoor();
+>>>>>>> add some blocks and bugs
     public static final BlockBase SNOW_BRICKS = new BlockBase(Material.CRAFTED_SNOW, "snow_brick", 1, 0.2f, CreativeTabs.BUILDING_BLOCKS);
     public static final BlockBase VOLCANIC_STONE = new BlockBase(Material.ROCK, "volcanic_stone", 1, 2f, CreativeTabs.BUILDING_BLOCKS);
 
@@ -78,8 +86,6 @@ public class ModBlocks {
 
     /* old code
     public static void init() {
-<<<<<<< HEAD
-=======
         registerBlock(new BlockBase(Material.ROCK, true).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "volcanic_stone");
 
         registerBlock(new BlockBase((new MaterialLogic(MapColor.SNOW)), true).setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "snow_brick");
@@ -89,7 +95,6 @@ public class ModBlocks {
                 .addDrop(new ItemStack(Items.IRON_NUGGET, 3))
                 .setCreativeTab(CreativeTabs.BUILDING_BLOCKS), "rusty_iron_door");
 
->>>>>>> blocks, volume 2
         chiselMapping.put(getBlock("ancient_stone").getDefaultState(), getBlock("engraved_ancient_stone").getDefaultState());
     }
     */
