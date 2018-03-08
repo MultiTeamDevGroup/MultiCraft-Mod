@@ -35,6 +35,24 @@ item.multic.color_tag.red.name=Red Color Tag
 item.multic.color_tag.white.name=White Color Tag
 item.multic.color_tag.yellow.name=Yellow Color Tag
 
+# Colored Books
+item.multic.book_colored.black.name=Black Book
+item.multic.book_colored.blue.name=Blue Book
+item.multic.book_colored.brown.name=Brown Book
+item.multic.book_colored.cyan.name=Cyan Book
+item.multic.book_colored.gray.name=Gray Book
+item.multic.book_colored.green.name=Green Book
+item.multic.book_colored.light_blue.name=Light Blue Book
+item.multic.book_colored.light_gray.name=Light Gray Book
+item.multic.book_colored.lime.name=Lime Book
+item.multic.book_colored.magenta.name=Magenta Book
+item.multic.book_colored.orange.name=Orange Book
+item.multic.book_colored.pink.name=Pink Book
+item.multic.book_colored.purple.name=Purple Book
+item.multic.book_colored.red.name=Red Book
+item.multic.book_colored.white.name=White Book
+item.multic.book_colored.yellow.name=Yellow Book
+
 # Armor
 item.multic.fur_costume_helmet.name=Fur Costume Helmet
 item.multic.fur_costume_chestplate.name=Fur Costume Chestplate

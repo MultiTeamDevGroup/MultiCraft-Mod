@@ -30,6 +30,7 @@ public class ModItems {
     public static final ItemChain CHAIN = new ItemChain();
     public static final ItemWitherBoneMeal WITHER_BONE_MEAL = new ItemWitherBoneMeal();
     public static final ItemColorTag COLOR_TAG = new ItemColorTag();
+    public static final ItemColoredBook COLORED_BOOK = new ItemColoredBook();
     //public static final ItemRustyIronDoor RUSTY_IRON_DOOR = new ItemRustyIronDoor();
 
     // SHIELDS
@@ -63,8 +64,9 @@ public class ModItems {
                 WITHER_BONE,
                 CHAIN,
                 WITHER_BONE_MEAL,
-                //RUSTY_IRON_DOOR,
                 COLOR_TAG,
+                COLORED_BOOK,
+                //RUSTY_IRON_DOOR,
                 IRON_SHIELD,
                 GOLDEN_SHIELD,
                 //DIAMOND_SHIELD,
@@ -96,6 +98,7 @@ public class ModItems {
         CHAIN.registerItemModel();
         WITHER_BONE_MEAL.registerItemModel();
         COLOR_TAG.registerItemModel();
+        COLORED_BOOK.registerItemModel();
         //RUSTY_IRON_DOOR.registerItemModel();
 
         IRON_SHIELD.registerItemModel();

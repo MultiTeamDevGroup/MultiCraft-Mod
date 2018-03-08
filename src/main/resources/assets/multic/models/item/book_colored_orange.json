@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "multic:items/color_tag_light_gray"
+    "layer0": "multic:items/book_colored_orange"
   }
 }
