@@ -17,6 +17,24 @@ item.multic.silver_fish_scale.name=Silverfish Scale
 item.multic.rust_dust.name=Rust Dust
 item.multic.adobe_brick.name=Adobe Brick
 
+# Color Tags
+item.multic.color_tag.black.name=Black Color Tag
+item.multic.color_tag.blue.name=Blue Color Tag
+item.multic.color_tag.brown.name=Brown Color Tag
+item.multic.color_tag.cyan.name=Cyan Color Tag
+item.multic.color_tag.gray.name=Gray Color Tag
+item.multic.color_tag.green.name=Green Color Tag
+item.multic.color_tag.light_blue.name=Light Blue Color Tag
+item.multic.color_tag.light_gray.name=Light Gray Color Tag
+item.multic.color_tag.lime.name=Lime Color Tag
+item.multic.color_tag.magenta.name=Magenta Color Tag
+item.multic.color_tag.orange.name=Orange Color Tag
+item.multic.color_tag.pink.name=Pink Color Tag
+item.multic.color_tag.purple.name=Purple Color Tag
+item.multic.color_tag.red.name=Red Color Tag
+item.multic.color_tag.white.name=White Color Tag
+item.multic.color_tag.yellow.name=Yellow Color Tag
+
 # Armor
 item.multic.fur_costume_helmet.name=Fur Costume Helmet
 item.multic.fur_costume_chestplate.name=Fur Costume Chestplate
@@ -34,7 +52,7 @@ item.multic.diamond_shield.name=Diamond Shield
 # Tool
 item.multic.chisel.name=Chisel
 
-# Blocks
+# Colored Planks
 tile.multic.colored_planks.white.name=White Planks
 tile.multic.colored_planks.orange.name=Orange Planks
 tile.multic.colored_planks.magenta.name=Magenta Planks
@@ -51,6 +69,8 @@ tile.multic.colored_planks.brown.name=Brown Planks
 tile.multic.colored_planks.green.name=Green Planks
 tile.multic.colored_planks.red.name=Red Planks
 tile.multic.colored_planks.black.name=Black Planks
+
+# Other Blocks
 tile.multic.rock_path.name=Andesite Path
 tile.multic.ancient_stone.name=Ancient Stone
 tile.multic.volcanic_stone.name=Volcanic Stone
