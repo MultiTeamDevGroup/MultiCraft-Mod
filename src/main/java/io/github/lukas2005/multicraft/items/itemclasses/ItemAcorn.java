@@ -30,7 +30,6 @@ public class ItemAcorn extends ItemBase {
 
         if(hardBlocks.contains(worldIn.getBlockState(pos).getBlock()) && facing == EnumFacing.UP) {
             if(hand == EnumHand.MAIN_HAND) {
-
                 ItemStack held = player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND);
                 held.shrink(1);
                 ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(ModItems.SPLIT_ACORN, 1));

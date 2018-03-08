@@ -27,11 +27,7 @@ public class ModBlocks {
     public static final BlockRockPath ROCK_PATH = new BlockRockPath();
     public static final BlockRustyIronBars RUSTY_IRON_BARS = new BlockRustyIronBars();
     public static final BlockRustyIronBlock RUSTY_IRON_BLOCK = new BlockRustyIronBlock();
-<<<<<<< HEAD
     //public static final BlockRustyIronDoor RUSTY_IRON_DOOR = new BlockRustyIronDoor();
-=======
-    public static final BlockRustyIronDoor RUSTY_IRON_DOOR = new BlockRustyIronDoor();
->>>>>>> add some blocks and bugs
     public static final BlockBase SNOW_BRICKS = new BlockBase(Material.CRAFTED_SNOW, "snow_brick", 1, 0.2f, CreativeTabs.BUILDING_BLOCKS);
     public static final BlockBase VOLCANIC_STONE = new BlockBase(Material.ROCK, "volcanic_stone", 1, 2f, CreativeTabs.BUILDING_BLOCKS);
 

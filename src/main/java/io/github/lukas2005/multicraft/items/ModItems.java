@@ -29,12 +29,9 @@ public class ModItems {
     // VARIOUS THINGS
     public static final ItemChain CHAIN = new ItemChain();
     public static final ItemWitherBoneMeal WITHER_BONE_MEAL = new ItemWitherBoneMeal();
-<<<<<<< HEAD
     public static final ItemColorTag COLOR_TAG = new ItemColorTag();
-    //public static final ItemRustyIronDoor RUSTY_IRON_DOOR = new ItemRustyIronDoor();
-=======
     public static final ItemRustyIronDoor RUSTY_IRON_DOOR = new ItemRustyIronDoor();
->>>>>>> add some blocks and bugs
+    //public static final ItemRustyIronDoor RUSTY_IRON_DOOR = new ItemRustyIronDoor();
 
     // SHIELDS
     public static final ItemShieldBase IRON_SHIELD = new ItemShieldBase(400, "iron_shield");
