@@ -70,7 +70,7 @@ public class Main {
         public static void registerModels(ModelRegistryEvent event) {
             ModItems.registerModels();
             ModBlocks.registerModels();
-            ModelLoader.setCustomStateMapper(ModBlocks.RUSTY_IRON_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
+            //ModelLoader.setCustomStateMapper(ModBlocks.RUSTY_IRON_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
         }
     }
 

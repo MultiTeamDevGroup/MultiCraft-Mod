@@ -30,17 +30,13 @@ public class ItemAcorn extends ItemBase {
 
         if(hardBlocks.contains(worldIn.getBlockState(pos).getBlock()) && facing == EnumFacing.UP) {
             if(hand == EnumHand.MAIN_HAND) {
-                int amount = player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND).getCount();
-                ItemStack newStack = new ItemStack(ModItems.ACORN, amount - 1);
-                player.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, newStack);
-                ItemStack splitAcornStack = new ItemStack(ModItems.SPLIT_ACORN, 1);
-                ItemHandlerHelper.giveItemToPlayer(player, splitAcornStack);
+                ItemStack held = player.getItemStackFromSlot(EntityEquipmentSlot.MAINHAND);
+                held.shrink(1);
+                ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(ModItems.SPLIT_ACORN, 1));
             } else {
-                int amount = player.getItemStackFromSlot(EntityEquipmentSlot.OFFHAND).getCount();
-                ItemStack newStack = new ItemStack(ModItems.ACORN, amount - 1);
-                player.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, newStack);
-                ItemStack splitAcornStack = new ItemStack(ModItems.SPLIT_ACORN, 1);
-                ItemHandlerHelper.giveItemToPlayer(player, splitAcornStack);
+                ItemStack held = player.getItemStackFromSlot(EntityEquipmentSlot.OFFHAND);
+                held.shrink(1);
+                ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(ModItems.SPLIT_ACORN, 1));
             }
             return EnumActionResult.SUCCESS;
         } else {

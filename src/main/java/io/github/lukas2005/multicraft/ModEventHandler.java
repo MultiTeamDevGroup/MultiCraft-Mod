@@ -34,7 +34,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = Main.MODID)
-public class EventHandler {
+public class ModEventHandler {
     private static Random random = new Random();
 
     @SubscribeEvent
