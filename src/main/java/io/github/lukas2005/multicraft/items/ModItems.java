@@ -30,7 +30,6 @@ public class ModItems {
     public static final ItemChain CHAIN = new ItemChain();
     public static final ItemWitherBoneMeal WITHER_BONE_MEAL = new ItemWitherBoneMeal();
     public static final ItemColorTag COLOR_TAG = new ItemColorTag();
-    public static final ItemRustyIronDoor RUSTY_IRON_DOOR = new ItemRustyIronDoor();
     //public static final ItemRustyIronDoor RUSTY_IRON_DOOR = new ItemRustyIronDoor();
 
     // SHIELDS
