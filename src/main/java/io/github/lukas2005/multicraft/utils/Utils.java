@@ -29,11 +29,14 @@ public class Utils {
 
     public static void addPotionEffectToItem(ItemStack item, int id, int amplifier, int duration) {
         NBTTagCompound nbt = item.hasTagCompound() ? item.getTagCompound() : new NBTTagCompound();
+
         NBTTagList customEffectsList = new NBTTagList();
         NBTTagCompound potionNbt = new NBTTagCompound();
+
         potionNbt.setInteger("Id", id);
         potionNbt.setInteger("Amplifier", amplifier);
         potionNbt.setInteger("Duration", duration); // 600 = (0:30) 1800 = (1:30)
+
         customEffectsList.appendTag(potionNbt);
         assert nbt != null;
         nbt.setTag("CustomPotionEffects", customEffectsList);
