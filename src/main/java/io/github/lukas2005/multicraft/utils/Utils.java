@@ -27,7 +27,6 @@ public class Utils {
         return formattingCodes[meta];
     }
 
-    // TODO: fix these up
     public static void addPotionEffectToItem(ItemStack item, int id, int amplifier, int duration) {
         NBTTagCompound nbt = item.hasTagCompound() ? item.getTagCompound() : new NBTTagCompound();
         NBTTagList customEffectsList = new NBTTagList();
@@ -39,7 +38,8 @@ public class Utils {
         assert nbt != null;
         nbt.setTag("CustomPotionEffects", customEffectsList);
     }
-
+    
+    /* TODO: fix these up
     private static Field getField(Class clazz, String fieldName) throws NoSuchFieldException {
         try {
             return clazz.getDeclaredField(fieldName);
@@ -152,24 +152,24 @@ public class Utils {
 
     /**
      * Open a GUI for a block
-     */
+     *
     public static void openGui(EntityPlayer player, World world, BlockPos pos, GuiHandler.EnumGuis guiID) {
         player.openGui(Main.instance, guiID.ordinal(), world, pos.getX(), pos.getY(), pos.getZ());
     }
 
     /**
      * Open a GUI for an item (Uses the position of the player).
-     */
+     *
     public static void openGui(EntityPlayer player, World world, GuiHandler.EnumGuis guiID) {
         openGui(player, world, guiID.ordinal());
     }
 
     /**
      * Open a GUI for an item (Uses the position of the player).
-     */
+     *
     public static void openGui(EntityPlayer player, World world, int guiID) {
         BlockPos pos = player.getPosition();
         player.openGui(Main.instance, guiID, world, pos.getX(), pos.getY(), pos.getZ());
     }
-
+    */
 }
