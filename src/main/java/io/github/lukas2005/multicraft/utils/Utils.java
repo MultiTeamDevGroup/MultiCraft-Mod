@@ -121,7 +121,7 @@ public class Utils {
             ex.printStackTrace();
         }
     }
-
+    */
     public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback) {
         GameRules rules = sender.getEntityWorld().getGameRules();
         boolean sendCommandFeedbackOrig = rules.getBoolean("sendCommandFeedback");
@@ -144,7 +144,7 @@ public class Utils {
     public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback, BlockPos pos) {
         sendCommand(server, sender, cmd.replace("~ ~ ~",pos.getX()+" "+pos.getY()+" "+pos.getZ()), sendCommandFeedback);
     }
-
+    /*
     public static void sendCommand(MinecraftServer server, ICommandSender sender, String cmd, boolean sendCommandFeedback, boolean useSenderPosition) {
         if (useSenderPosition) {
             sendCommand(server, sender, cmd, sendCommandFeedback, sender.getPosition());
