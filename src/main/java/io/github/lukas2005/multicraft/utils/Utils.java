@@ -22,7 +22,12 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class Utils {
+    public static String getFormattingCodeFromMeta(int meta) throws ArrayIndexOutOfBoundsException {
+        String[] formattingCodes = new String[]{"§f", "§6", "§d", "§b", "§e", "§a", "§d", "§8", "§7", "§3", "§5", "§1", "§4", "§2", "§c", "§0"};
+        return formattingCodes[meta];
+    }
 
+    // TODO: fix these up
     public static void addPotionEffectToItem(ItemStack item, int id, int amplifier, int duration) {
         NBTTagCompound nbt = item.hasTagCompound() ? item.getTagCompound() : new NBTTagCompound();
         NBTTagList customEffectsList = new NBTTagList();

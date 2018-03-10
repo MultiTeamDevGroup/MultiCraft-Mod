@@ -1,6 +1,7 @@
 package io.github.lukas2005.multicraft;
 
 import io.github.lukas2005.multicraft.items.ModItems;
+import io.github.lukas2005.multicraft.utils.Utils;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -193,12 +194,26 @@ public class ModEventHandler {
 =======
 >>>>>>> frost walker puts out fires:src/main/java/io/github/lukas2005/multicraft/EventHandler.java
     public static void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract e) {
-        ItemStack is = e.getItemStack();
+        ItemStack held = e.getItemStack();
 
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/java/io/github/lukas2005/multicraft/ModEventHandler.java
         if (is.getItem() == Items.GLOWSTONE_DUST && e.getTarget() instanceof EntityLivingBase) {
             is.setCount(is.getCount() - 1);
+=======
+        if(held.getItem() == Items.GLOWSTONE_DUST && e.getTarget() instanceof EntityLivingBase) {
+            held.shrink(1);
+>>>>>>> make color tags work
             ((EntityLivingBase) e.getTarget()).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 6000, 1));
+        } else if(held.getItem() == ModItems.COLOR_TAG && e.getTarget() instanceof EntityLivingBase) {
+            held.shrink(1);
+            if(!e.getTarget().hasCustomName()) {
+                if(held.hasDisplayName()) {
+                    e.getTarget().setCustomNameTag(Utils.getFormattingCodeFromMeta(held.getMetadata()) + held.getDisplayName());
+                }
+            } else {
+                e.getTarget().setCustomNameTag(Utils.getFormattingCodeFromMeta(held.getMetadata()) + e.getTarget().hasCustomName());
+            }
         }
     }
     /* old code

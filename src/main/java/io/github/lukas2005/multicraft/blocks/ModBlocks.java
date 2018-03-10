@@ -3,14 +3,6 @@ package io.github.lukas2005.multicraft.blocks;
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRockPath;
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRustyIronBars;
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRustyIronBlock;
-<<<<<<< HEAD
-<<<<<<< HEAD
-import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRustyIronDoor;
-=======
->>>>>>> blocks, volume 2
-=======
-import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRustyIronDoor;
->>>>>>> add some blocks and bugs
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
