@@ -24,6 +24,7 @@ public class ModItems {
     public static final ItemBase POLAR_BEAR_LEATHER = new ItemBase("polar_bear_leather", CreativeTabs.MATERIALS);
     public static final ItemBase RUST_DUST = new ItemBase("rust_dust", CreativeTabs.MATERIALS);
     public static final ItemBase SILVERFISH_SCALE = new ItemBase("silver_fish_scale", CreativeTabs.MATERIALS);
+    public static final ItemStick STICK = new ItemStick();
     public static final ItemBase WITHER_BONE = new ItemBase("wither_bone", CreativeTabs.MATERIALS);
 
     // VARIOUS THINGS
@@ -61,6 +62,7 @@ public class ModItems {
                 POLAR_BEAR_LEATHER,
                 RUST_DUST,
                 SILVERFISH_SCALE,
+                STICK,
                 WITHER_BONE,
                 CHAIN,
                 WITHER_BONE_MEAL,
@@ -93,6 +95,7 @@ public class ModItems {
         POLAR_BEAR_LEATHER.registerItemModel();
         RUST_DUST.registerItemModel();
         SILVERFISH_SCALE.registerItemModel();
+        STICK.registerItemModel();
         WITHER_BONE.registerItemModel();
 
         CHAIN.registerItemModel();
