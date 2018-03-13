@@ -212,7 +212,8 @@ public class ModEventHandler {
                     e.getTarget().setCustomNameTag(Utils.getFormattingCodeFromMeta(held.getMetadata()) + held.getDisplayName());
                 }
             } else {
-                e.getTarget().setCustomNameTag(Utils.getFormattingCodeFromMeta(held.getMetadata()) + e.getTarget().hasCustomName());
+                String oldName = e.getTarget().getCustomNameTag().substring(2);
+                e.getTarget().setCustomNameTag(Utils.getFormattingCodeFromMeta(held.getMetadata()) + oldName);
             }
         }
     }
