@@ -16,6 +16,7 @@ public class ItemShieldBase extends ItemShield {
         this.name = name;
         setUnlocalizedName(Main.MODID + "." + name);
         setRegistryName(name);
+        setCreativeTab(Main.tab_tools);
     }
 
     @Override

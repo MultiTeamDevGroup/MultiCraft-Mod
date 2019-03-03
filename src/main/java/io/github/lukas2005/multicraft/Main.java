@@ -4,11 +4,13 @@ import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.items.ModItems;
 import io.github.lukas2005.multicraft.proxy.CommonProxy;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
@@ -31,6 +33,32 @@ public class Main {
     public static final String SERVER_PROXY = "io.github.lukas2005.multicraft.proxy.CommonProxy";
     public static final String CLIENT_PROXY = "io.github.lukas2005.multicraft.proxy.ClientProxy";
 
+    public static CreativeTabs tab_food = new CreativeTabs("mod_food")
+    {
+        @Override
+        public ItemStack getTabIconItem()
+        {
+            return new ItemStack(ModItems.EMERALD_APPLE);
+        }
+    };
+
+    public static CreativeTabs tab_tools = new CreativeTabs("mod_tools")
+    {
+        @Override
+        public ItemStack getTabIconItem()
+        {
+            return new ItemStack(ModItems.IRON_SHIELD);
+        }
+    };
+
+    public static CreativeTabs tab = new CreativeTabs("mod_misc")
+    {
+        @Override
+        public ItemStack getTabIconItem()
+        {
+            return new ItemStack(ModItems.WITHER_BONE_MEAL);
+        }
+    };
 
     @SidedProxy(serverSide = SERVER_PROXY, clientSide = CLIENT_PROXY)
     public static CommonProxy proxy;

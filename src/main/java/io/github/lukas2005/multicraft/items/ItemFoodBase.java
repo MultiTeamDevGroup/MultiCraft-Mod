@@ -6,12 +6,13 @@ import net.minecraft.item.ItemFood;
 
 public class ItemFoodBase extends ItemFood {
     protected String name;
-    public ItemFoodBase(int hungerBars, float saturation, boolean isWolfFood, String name) {
+    public ItemFoodBase(int hungerBars, float saturation, boolean isWolfFood, String name)
+    {
         super(hungerBars, saturation, isWolfFood);
         this.name = name;
         setRegistryName(name);
         setUnlocalizedName(Main.MODID + "." + name);
-        setCreativeTab(CreativeTabs.FOOD);
+        setCreativeTab(Main.tab_food);
     }
 
     public void registerItemModel() {
