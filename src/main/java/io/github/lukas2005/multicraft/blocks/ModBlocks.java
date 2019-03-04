@@ -16,7 +16,7 @@ public class ModBlocks {
     public static HashMap<String, Block> ModBlocks = new HashMap<>();
 
     public static final BlockAdobeBrick ADOBE_BRICK = new BlockAdobeBrick();
-    public static final BlockColoredPlanks COLORED_PLANKS = new BlockColoredPlanks(); //#BUGGED TODO: fix Colored Planks
+    public static final BlockColoredPlanks COLORED_PLANKS = new BlockColoredPlanks(); //#BUGGED TODO: fix Colored Planks texture
     public static final BlockRockPath ROCK_PATH = new BlockRockPath();
 
     public static void register(IForgeRegistry<Block> registry) {
@@ -40,6 +40,7 @@ public class ModBlocks {
         COLORED_PLANKS.registerItemModel(Item.getItemFromBlock(COLORED_PLANKS));
         ROCK_PATH.registerItemModel(Item.getItemFromBlock(ROCK_PATH));
     }
+
 
     /* old code
 

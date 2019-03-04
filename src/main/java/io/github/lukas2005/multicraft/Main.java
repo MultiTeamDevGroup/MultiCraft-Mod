@@ -3,6 +3,7 @@ package io.github.lukas2005.multicraft;
 import io.github.lukas2005.multicraft.blocks.ModBlocks;
 import io.github.lukas2005.multicraft.items.ModItems;
 import io.github.lukas2005.multicraft.proxy.CommonProxy;
+import io.github.lukas2005.multicraft.proxy.IProxy;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -38,7 +39,7 @@ public class Main {
         @Override
         public ItemStack getTabIconItem()
         {
-            return new ItemStack(ModBlocks.COLORED_PLANKS);
+            return new ItemStack(ModBlocks.ADOBE_BRICK);
         }
     };
 
@@ -71,6 +72,7 @@ public class Main {
 
     @SidedProxy(serverSide = SERVER_PROXY, clientSide = CLIENT_PROXY)
     public static CommonProxy proxy;
+    public static IProxy proxy2;
 
     public static final Random random = new Random(); // "random" > final, lol
     public static ArrayList<Entity[]> attachedMinecarts = new ArrayList<>();

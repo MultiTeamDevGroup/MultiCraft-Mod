@@ -7,6 +7,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemCloth;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
@@ -36,7 +37,7 @@ public class BlockBase extends Block {
     }
 
     public Item createItemBlock() {
-        return new ItemBlock(this).setRegistryName(getRegistryName());
+        return new ItemCloth(this).setRegistryName(getRegistryName());
     }
 
     /**

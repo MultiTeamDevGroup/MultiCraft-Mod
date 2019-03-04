@@ -1,13 +1,6 @@
 package io.github.lukas2005.multicraft;
 
-import io.github.lukas2005.multicraft.blocks.ModBlocks;
-import io.github.lukas2005.multicraft.blocks.blockclasses.BlockColoredPlanks;
-import io.github.lukas2005.multicraft.items.ModItems;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -30,10 +23,10 @@ public class EventHandler {
         );
         Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Main.MODID));
     }
-*/
+
     @SubscribeEvent
     public static void registerItem(RegistryEvent.Register<Item> e) {
-        new ModItems();
+        ModItems.init();
         for (Item item : ModItems.ModItems.values()) {
             e.getRegistry().register(item);
         }
@@ -56,7 +49,7 @@ public class EventHandler {
 
         ModCrafting.init();
     }
-/*
+
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent e) {
         for (Item item : ModItems.ModItems.values()) {
@@ -67,12 +60,12 @@ public class EventHandler {
             Main.proxy.registerBlockRender(block);
         }
     }
-
+*/
     @SubscribeEvent
     public static void registerIRecipes(RegistryEvent.Register<IRecipe> e) {
         e.getRegistry().register(new ColoredPlanksRecipe().setRegistryName(Main.MODID, "planks_recipe"));
     }
-
+/*
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent e) {
         if (e.phase == TickEvent.Phase.END) {
