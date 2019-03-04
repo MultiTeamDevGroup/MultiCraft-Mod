@@ -11,7 +11,7 @@ public class ItemFoodBase extends ItemFood {
         this.name = name;
         setRegistryName(name);
         setUnlocalizedName(Main.MODID + "." + name);
-        setCreativeTab(CreativeTabs.FOOD);
+        setCreativeTab(Main.tab_food);
     }
 
     public void registerItemModel() {

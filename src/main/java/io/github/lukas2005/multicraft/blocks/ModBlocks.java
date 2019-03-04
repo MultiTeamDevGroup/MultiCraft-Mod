@@ -7,16 +7,22 @@ import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRockPath;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraft.item.ItemCloth;
+
+import java.util.HashMap;
 
 public class ModBlocks {
+
+    public static HashMap<String, Block> ModBlocks = new HashMap<>();
+
     public static final BlockAdobeBrick ADOBE_BRICK = new BlockAdobeBrick();
-    //public static final BlockColoredPlanks COLORED_PLANKS = new BlockColoredPlanks(); #BUGGED TODO: fix Colored Planks
+    public static final BlockColoredPlanks COLORED_PLANKS = new BlockColoredPlanks(); //#BUGGED TODO: fix Colored Planks
     public static final BlockRockPath ROCK_PATH = new BlockRockPath();
 
     public static void register(IForgeRegistry<Block> registry) {
         registry.registerAll(
                 ADOBE_BRICK,
-                //COLORED_PLANKS,
+                COLORED_PLANKS,
                 ROCK_PATH
         );
     }
@@ -24,14 +30,14 @@ public class ModBlocks {
     public static void registerItems(IForgeRegistry<Item> registry) {
         registry.registerAll(
                 ADOBE_BRICK.createItemBlock(),
-                //COLORED_PLANKS.createItemBlock(),
+                COLORED_PLANKS.createItemBlock(),
                 ROCK_PATH.createItemBlock()
         );
     }
 
     public static void registerModels() {
         ADOBE_BRICK.registerItemModel(Item.getItemFromBlock(ADOBE_BRICK));
-        //COLORED_PLANKS.registerItemModel(Item.getItemFromBlock(COLORED_PLANKS));
+        COLORED_PLANKS.registerItemModel(Item.getItemFromBlock(COLORED_PLANKS));
         ROCK_PATH.registerItemModel(Item.getItemFromBlock(ROCK_PATH));
     }
 

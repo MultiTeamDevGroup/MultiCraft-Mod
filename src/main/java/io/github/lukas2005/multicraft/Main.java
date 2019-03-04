@@ -33,6 +33,15 @@ public class Main {
     public static final String SERVER_PROXY = "io.github.lukas2005.multicraft.proxy.CommonProxy";
     public static final String CLIENT_PROXY = "io.github.lukas2005.multicraft.proxy.ClientProxy";
 
+    public static CreativeTabs tab_blocks = new CreativeTabs("mod_blocks")
+    {
+        @Override
+        public ItemStack getTabIconItem()
+        {
+            return new ItemStack(ModBlocks.COLORED_PLANKS);
+        }
+    };
+
     public static CreativeTabs tab_food = new CreativeTabs("mod_food")
     {
         @Override
