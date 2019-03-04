@@ -6,12 +6,7 @@ import io.github.lukas2005.multicraft.items.armor.*;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import java.util.HashMap;
-
 public class ModItems {
-
-    public static HashMap<String, Item> ModItems = new HashMap<>();
-
     // FOODS
     public static final ItemCheese CHEESE = new ItemCheese();
     public static final ItemEmeraldApple EMERALD_APPLE = new ItemEmeraldApple();

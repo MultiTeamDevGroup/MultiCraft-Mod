@@ -2,18 +2,12 @@ package io.github.lukas2005.multicraft.blocks.blockclasses;
 
 import io.github.lukas2005.multicraft.EnumColor;
 import io.github.lukas2005.multicraft.blocks.BlockBase;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumDyeColor;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemCloth;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
@@ -24,33 +18,21 @@ import net.minecraft.world.World;
 
 public class BlockColoredPlanks extends BlockBase {
 
-    public static final PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.create("color", EnumDyeColor.class);
+    private static final PropertyEnum<EnumColor> COLOR = PropertyEnum.create("color", EnumColor.class);
 
     public BlockColoredPlanks() {
         super(Material.WOOD, "colored_planks", 1, 2f, CreativeTabs.BUILDING_BLOCKS);
         setResistance(15);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(COLOR, EnumDyeColor.WHITE));
     }
 
     @Override
     protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, new IProperty[] {COLOR});
-    }
-
-    @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-    {
-        return MapColor.getBlockColor((EnumDyeColor)state.getValue(COLOR));
-    }
-
-    public int getMetadata(int damage)
-    {
-        return damage;
+        return new BlockStateContainer(this, COLOR);
     }
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(COLOR, EnumDyeColor.byMetadata(meta));
+        return getDefaultState().withProperty(COLOR, EnumColor.byMetadata(meta));
     }
 
     @Override
@@ -70,7 +52,7 @@ public class BlockColoredPlanks extends BlockBase {
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return ((EnumDyeColor)state.getValue(COLOR)).getMetadata();
+        return state.getValue(COLOR).getMetadata();
     }
 
     @Override

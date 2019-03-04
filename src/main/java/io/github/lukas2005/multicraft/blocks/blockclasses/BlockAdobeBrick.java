@@ -1,10 +1,8 @@
 package io.github.lukas2005.multicraft.blocks.blockclasses;
 
 import io.github.lukas2005.multicraft.blocks.BlockBase;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.registries.IForgeRegistryEntry;
 
 public class BlockAdobeBrick extends BlockBase {
     public BlockAdobeBrick() {
