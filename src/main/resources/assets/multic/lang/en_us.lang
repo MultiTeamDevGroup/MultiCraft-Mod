@@ -70,3 +70,4 @@ message.multic.chain.pair_success=Pairing succeeded!
 itemGroup.mod_misc=MultiCraft [Items]
 itemGroup.mod_tools=MultiCraft [Tools]
 itemGroup.mod_food=MultiCraft [Food]
+itemGroup.mod_blocks=MultiCraft [Blocks]

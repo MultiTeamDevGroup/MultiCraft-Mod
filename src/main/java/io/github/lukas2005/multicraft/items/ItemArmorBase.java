@@ -13,6 +13,7 @@ public class ItemArmorBase extends ItemArmor {
         setRegistryName(name);
         setUnlocalizedName(Main.MODID + "." + name);
         this.name = name;
+        setCreativeTab(Main.tab_tools);
     }
 
     public void registerItemModel() {

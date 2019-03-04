@@ -1,6 +1,16 @@
 package io.github.lukas2005.multicraft;
 
+import io.github.lukas2005.multicraft.blocks.ModBlocks;
+import io.github.lukas2005.multicraft.blocks.blockclasses.BlockColoredPlanks;
+import io.github.lukas2005.multicraft.items.ModItems;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber(modid = Main.MODID)
 public class EventHandler {
@@ -20,10 +30,10 @@ public class EventHandler {
         );
         Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Main.MODID));
     }
-
+*/
     @SubscribeEvent
     public static void registerItem(RegistryEvent.Register<Item> e) {
-        ModItems.init();
+        new ModItems();
         for (Item item : ModItems.ModItems.values()) {
             e.getRegistry().register(item);
         }
@@ -46,7 +56,7 @@ public class EventHandler {
 
         ModCrafting.init();
     }
-
+/*
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent e) {
         for (Item item : ModItems.ModItems.values()) {

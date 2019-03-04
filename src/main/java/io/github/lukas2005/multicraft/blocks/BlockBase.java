@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
 import java.util.ArrayList;
 
@@ -27,6 +28,7 @@ public class BlockBase extends Block {
 
         setUnlocalizedName(Main.MODID + "." + name);
         setRegistryName(name);
+        setCreativeTab(Main.tab_blocks);
     }
 
     public void registerItemModel(Item itemBlock) {
