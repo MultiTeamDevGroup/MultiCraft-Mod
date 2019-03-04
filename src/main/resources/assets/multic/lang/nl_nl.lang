@@ -13,7 +13,7 @@ item.multic.chain.name=Ketting
 item.multic.polar_bear_leather.name=Ijsbeer vacht
 item.multic.wither_bone.name=Wither been
 item.multic.wither_bone_meal.name=Been stof
-item.multic.silver_fish_scale.name=Zilvervis meter
+item.multic.light_gray_fish_scale.name=Zilvervis meter
 item.multic.adobe_brick.name=Adobe baksteen
 
 # Armor
@@ -38,12 +38,12 @@ item.multic.chisel.name=
 tile.multic.colored_planks.white.name=Witte planken
 tile.multic.colored_planks.orange.name=Oranje planken
 tile.multic.colored_planks.magenta.name=Magenta planken
-tile.multic.colored_planks.light_blue.name=Licht blauwe planken
+tile.multic.colored_planks.lightBlue.name=Licht blauwe planken
 tile.multic.colored_planks.yellow.name=Gele planken
 tile.multic.colored_planks.lime.name=Lime planken
 tile.multic.colored_planks.pink.name=Roze planken
 tile.multic.colored_planks.gray.name=Grijze planken
-tile.multic.colored_planks.silver.name=Licht grijze planken
+tile.multic.colored_planks.light_gray.name=Licht grijze planken
 tile.multic.colored_planks.cyan.name=Cyan planken
 tile.multic.colored_planks.purple.name=Paarse planken
 tile.multic.colored_planks.blue.name=Blauwe planken

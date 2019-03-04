@@ -60,12 +60,12 @@ public class EventHandler {
             Main.proxy.registerBlockRender(block);
         }
     }
-*/
+
     @SubscribeEvent
     public static void registerIRecipes(RegistryEvent.Register<IRecipe> e) {
         e.getRegistry().register(new ColoredPlanksRecipe().setRegistryName(Main.MODID, "planks_recipe"));
     }
-/*
+
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent e) {
         if (e.phase == TickEvent.Phase.END) {

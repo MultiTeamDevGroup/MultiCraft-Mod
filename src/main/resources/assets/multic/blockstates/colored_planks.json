@@ -40,7 +40,7 @@
 					"all": "multic:blocks/colored_planks/colored_planks_light_blue"
 				}
 			},
-			"silver": {
+			"light_gray": {
 				"textures": {
 					"all": "multic:blocks/colored_planks/colored_planks_light_gray"
 				}
