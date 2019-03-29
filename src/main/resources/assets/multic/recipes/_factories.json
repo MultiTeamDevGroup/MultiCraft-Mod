@@ -1,0 +1,7 @@
+{
+  "ingredients": {},
+  "recipes": {
+    "shapeless_crafting": "io.github.lukas2005.multicraft.crafting.ShapelessCraftingFactory"
+  },
+  "conditions": {}
+}

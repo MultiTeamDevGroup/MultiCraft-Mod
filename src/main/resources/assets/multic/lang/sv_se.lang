@@ -12,7 +12,7 @@ item.multic.chain.name=Kedja
 item.multic.polar_bear_leather.name=Isbjörns läder
 item.multic.wither_bone.name=Wither ben
 item.multic.wither_bone_meal.name=Wither benmjöl
-item.multic.light_gray_fish_scale.name=light_grayfisk fjäll
+item.multic.silver_fish_scale.name=silverfisk fjäll
 tile.multic.rust_dust.name=Rostdamm
 item.multic.adobe_brick.name=Soltorkat tegel
 
@@ -41,7 +41,7 @@ tile.multic.colored_planks.yellow.name=Gula plankor
 tile.multic.colored_planks.lime.name=Lime plankor
 tile.multic.colored_planks.pink.name=Rosa plankor
 tile.multic.colored_planks.gray.name=Grå plankor
-tile.multic.colored_planks.light_gray.name=Ljusgrå plankor
+tile.multic.colored_planks.silver.name=Ljusgrå plankor
 tile.multic.colored_planks.cyan.name=Turkosa plankor
 tile.multic.colored_planks.purple.name=Lila plankor
 tile.multic.colored_planks.blue.name=Blå plankor

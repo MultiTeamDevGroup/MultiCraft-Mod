@@ -10,6 +10,6 @@ import static io.github.lukas2005.multicraft.blocks.ModBlocks.COLORED_PLANKS;
 
 public class CommonProxy {
     public void registerItemRenderer(Item item, int meta, String id) {
-        COLORED_PLANKS.registerItemModel(item);
+        //COLORED_PLANKS.registerItemModel(item);
     }
 }

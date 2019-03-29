@@ -12,7 +12,7 @@ item.multic.chain.name=Chain
 item.multic.polar_bear_leather.name=Polar Bear Leather
 item.multic.wither_bone.name=Wither Bone
 item.multic.wither_bone_meal.name=Wither Bone Meal
-item.multic.light_gray_fish_scale.name=light_grayfish Scale
+item.multic.silver_fish_scale.name=silverfish Scale
 item.multic.rust_dust.name=Rust Dust
 item.multic.adobe_brick.name=Adobe Brick
 
@@ -42,7 +42,7 @@ tile.multic.colored_planks.yellow.name=Yellow Planks
 tile.multic.colored_planks.lime.name=Lime Planks
 tile.multic.colored_planks.pink.name=Pink Planks
 tile.multic.colored_planks.gray.name=Gray Planks
-tile.multic.colored_planks.light_gray.name=Light Gray Planks
+tile.multic.colored_planks.silver.name=Light Gray Planks
 tile.multic.colored_planks.cyan.name=Cyan Planks
 tile.multic.colored_planks.purple.name=Purple Planks
 tile.multic.colored_planks.blue.name=Blue Planks
@@ -50,6 +50,7 @@ tile.multic.colored_planks.brown.name=Brown Planks
 tile.multic.colored_planks.green.name=Green Planks
 tile.multic.colored_planks.red.name=Red Planks
 tile.multic.colored_planks.black.name=Black Planks
+
 tile.multic.rock_path.name=Andesite Path
 tile.multic.ancient_stone.name=Ancient Stone
 tile.multic.volcanic_stone.name=Volcanic Stone
@@ -67,6 +68,7 @@ message.multic.chain.pair_failed=Pairing failed!
 message.multic.chain.pair_success=Pairing succeeded!
 
 # Others
+itemGroup.mod_all=MultiCrarft
 itemGroup.mod_misc=MultiCraft [Items]
 itemGroup.mod_tools=MultiCraft [Tools]
 itemGroup.mod_food=MultiCraft [Food]

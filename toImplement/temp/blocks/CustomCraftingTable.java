@@ -29,7 +29,7 @@ public class CustomCraftingTable extends Block {
         super(Material.WOOD);
         this.setCreativeTab(CreativeTabs.DECORATIONS);
         setRegistryName(Blocks.CRAFTING_TABLE.getRegistryName());
-        setUnlocalizedName(Blocks.CRAFTING_TABLE.getUnlocalizedName().substring(5));
+        setTranslationKey(Blocks.CRAFTING_TABLE.getTranslationKey().substring(5));
     }
 
     @Nullable
@@ -88,7 +88,7 @@ public class CustomCraftingTable extends Block {
          */
         public ITextComponent getDisplayName()
         {
-            return new TextComponentTranslation(Blocks.CRAFTING_TABLE.getUnlocalizedName() + ".name");
+            return new TextComponentTranslation(Blocks.CRAFTING_TABLE.getTranslationKey() + ".name");
         }
 
         public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn)

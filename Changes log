@@ -1,0 +1,25 @@
+
+
+A big Update  --  [Read the warning at the end]
+
+    Added recipe type to make the Shears + book crafting -- Working on
+	Added Shears + Book Crafting -- Working on
+	Fixed most of the Colored Planks problems
+	Added Ruby Ore
+	Added Ruby
+	Added Ruby generation
+	Now is possible to make a Andesite path with Pickaxe [same way to make a grass path]
+	Parrot loot changed.
+	Added Leather scrap
+	Added a temporary Item to be the creative Tab Icon
+	Now is only 1 creative tab
+	[Missing ruby translation name]
+
+	    ...And some other small changes.
+
+			WARNING! There is a feature that is for testing, it makes shears with random damage appears on the inventory
+			when the slot where it appears is empty and a book to [but without a random damage]. This is a feature added
+			to test the crafting that its being worked on. Please do not use the version to play survival. When a stable
+			one comes han you can do it. On unofficial ones probaly will have test features like that one.
+
+THE LOG WAS SO BIG THAT I NEEDED TO MAKE A FILE TO PUT IT.

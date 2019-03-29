@@ -16,7 +16,7 @@ public class NBTTagListIterator implements Iterator<NBTBase>, Iterable<NBTBase> 
 
     @Override
     public boolean hasNext() {
-        return !list.hasNoTags() && list.get(index) != null;
+        return !list.isEmpty() && list.get(index) != null;
     }
 
     @Override

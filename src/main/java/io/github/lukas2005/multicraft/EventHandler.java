@@ -1,12 +1,111 @@
 package io.github.lukas2005.multicraft;
 
-import net.minecraft.item.crafting.IRecipe;
+import io.github.lukas2005.multicraft.blocks.ModBlocks;
+import io.github.lukas2005.multicraft.blocks.blockclasses.BlockColoredPlanks;
+import io.github.lukas2005.multicraft.items.ModItems;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockStone;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.InventoryCrafting;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
+
+import java.util.Random;
+
+import static net.minecraft.init.Blocks.STONE;
+import static net.minecraft.util.EnumHand.MAIN_HAND;
 
 @Mod.EventBusSubscriber(modid = Main.MODID)
 public class EventHandler {
+
+    static BlockPos pos;
+    static InventoryCrafting inv;
+
+    //NEW CODE
+
+    static int dragEvent;
+    static EntityPlayer player;
+    static World world;
+
+
+    @SubscribeEvent
+    public static void RightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+        ItemStack itemstack = event.getEntityPlayer().getHeldItem(MAIN_HAND);
+
+        if (itemstack.getItem() instanceof ItemPickaxe) {
+
+            if (!event.getEntityPlayer().canPlayerEdit(event.getPos().offset(event.getFace()), event.getFace(), itemstack)) {
+                event.setResult(Event.Result.DENY);
+            } else {
+                IBlockState iblockstate = event.getWorld().getBlockState(event.getPos());
+                Block block = iblockstate.getBlock();
+                IBlockState state = event.getWorld().getBlockState(event.getPos());
+
+                if (state.getBlock() == Blocks.STONE && state.getValue(BlockStone.VARIANT) == BlockStone.EnumType.ANDESITE) {
+
+                    if (event.getFace() != EnumFacing.DOWN && event.getWorld().getBlockState(event.getPos().up()).getMaterial() == Material.AIR && block == STONE) {
+                        IBlockState iblockstate1 = ModBlocks.ROCK_PATH.getDefaultState();
+                        event.getEntityPlayer().swingArm(MAIN_HAND);
+                        event.getWorld().playSound(event.getEntityPlayer(), event.getPos(), SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+                        if (!event.getWorld().isRemote) {
+                            event.getWorld().setBlockState(event.getPos(), iblockstate1, 11);
+                            itemstack.damageItem(1, event.getEntityPlayer());
+                        }
+
+                        event.setResult(Event.Result.DENY);
+                    } else {
+                        event.setResult(Event.Result.ALLOW);
+                    }
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onTickEvent(TickEvent.PlayerTickEvent event) {
+        Random rand2 = new Random();
+        int value2 = rand2.nextInt(64);
+
+        Random rand = new Random();
+        int value = rand.nextInt(239);
+        if (event.player.inventory.mainInventory.get(17) == ItemStack.EMPTY) {
+            event.player.inventory.mainInventory.set(17, new ItemStack(Items.SHEARS, 1, value));
+        }
+        if (event.player.inventory.mainInventory.get(16) == ItemStack.EMPTY) {
+            event.player.inventory.mainInventory.set(16, new ItemStack(Items.BOOK, 1, 0));
+        }
+    }
+
+    /*@SubscribeEvent
+    public static void OnCraftedEvent(PlayerEvent.ItemCraftedEvent event) {
+            ItemStack s = inv.getStackInSlot(9);
+            if (s.equals(new ItemStack(Items.PAPER, 3))) {
+                world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ModItems.LEATHER_SCRAP, 2, 0)));
+            }
+            else {
+                System.out.println("Fail");
+            }
+
+    }*/
+
     /* old code #NOKEEP #NOKEEP-FILE #NEEDSMOVE
     @SubscribeEvent
     public static void registerBlock(RegistryEvent.Register<Block> e) {
@@ -23,10 +122,10 @@ public class EventHandler {
         );
         Loader.instance().setActiveModContainer(FMLCommonHandler.instance().findContainerFor(Main.MODID));
     }
-
+*/
     @SubscribeEvent
     public static void registerItem(RegistryEvent.Register<Item> e) {
-        ModItems.init();
+        new ModItems();
         for (Item item : ModItems.ModItems.values()) {
             e.getRegistry().register(item);
         }
@@ -40,16 +139,16 @@ public class EventHandler {
                     }
 
                     @Override
-                    public String getUnlocalizedName(ItemStack stack) { return getUnlocalizedName()+"."+EnumColor.byMetadata(stack.getMetadata()).getName(); }
-                }.setHasSubtypes(true).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
+                    public String getTranslationKey(ItemStack stack) { return getTranslationKey()+"."+EnumColor.byMetadata(stack.getMetadata()).getName(); }
+                }.setHasSubtypes(true).setRegistryName(block.getRegistryName()).setTranslationKey(block.getTranslationKey()));
             } else {
-                e.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setUnlocalizedName(block.getUnlocalizedName()));
+                e.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()).setTranslationKey(block.getTranslationKey()));
             }
         }
 
-        ModCrafting.init();
+        //ColoredWoodRecipe.init();
     }
-
+/*
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent e) {
         for (Item item : ModItems.ModItems.values()) {

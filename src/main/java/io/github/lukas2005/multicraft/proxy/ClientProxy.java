@@ -1,17 +1,47 @@
 package io.github.lukas2005.multicraft.proxy;
 
+import io.github.lukas2005.multicraft.EnumColor;
 import io.github.lukas2005.multicraft.Main;
+import io.github.lukas2005.multicraft.blocks.ModBlocks;
+import io.github.lukas2005.multicraft.blocks.blockclasses.BlockColoredPlanks;
+import io.github.lukas2005.multicraft.items.ModItems;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class ClientProxy extends CommonProxy {
-    @Override
+public class ClientProxy {
+
     public void registerItemRenderer(Item item, int meta, String id) {
-        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(Main.MODID + ":" + id, "inventory"));
+        new ResourceLocation(item.getRegistryName().getNamespace(), item.getRegistryName().getPath() + "suffix");
+        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+
+        if(id == "colored_planks") {
+            for (EnumDyeColor color : EnumDyeColor.values()) {
+                ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 1, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 2, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 3, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 4, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 5, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 6, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 7, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 8, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 9, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 10, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 11, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 12, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 13, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 14, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+                ModelLoader.setCustomModelResourceLocation(item, 15, new ModelResourceLocation(Main.MODID + ":" + color.getName() + "_" + id, "inventory"));
+            }
+        }
+
     }
 
     /* old code #NOKEEP #NEEDSMOVE

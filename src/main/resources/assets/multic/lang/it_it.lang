@@ -12,7 +12,7 @@ item.multic.chain.name=Catena
 item.multic.polar_bear_leather.name=Pelle di Orso Polare
 item.multic.wither_bone.name=Osso Rinsecchito
 item.multic.wither_bone_meal.name=Polvere di Osso Rinsecchito
-item.multic.light_gray_fish_scale.name=Squama del pesciolino d'argento
+item.multic.silver_fish_scale.name=Squama del pesciolino d'argento
 item.multic.rust_dust.name=Polvere di Ruggine
 item.multic.adobe_brick.name=Mattone di Fango
 
@@ -42,7 +42,7 @@ tile.multic.colored_planks.yellow.name=Assi di Legno Gialle
 tile.multic.colored_planks.lime.name=Assi di Legno Lime
 tile.multic.colored_planks.pink.name=Assi di Legno Rosa
 tile.multic.colored_planks.gray.name=Assi di Legno Grigie
-tile.multic.colored_planks.light_gray.name=Assi di Legno Grigio Chiaro
+tile.multic.colored_planks.silver.name=Assi di Legno Grigio Chiaro
 tile.multic.colored_planks.cyan.name=Assi di Legno Ciano
 tile.multic.colored_planks.purple.name=Assi di Legno Viola
 tile.multic.colored_planks.blue.name=Assi di Legno Blu

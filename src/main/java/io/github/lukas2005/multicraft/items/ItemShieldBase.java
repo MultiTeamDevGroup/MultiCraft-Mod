@@ -14,14 +14,14 @@ public class ItemShieldBase extends ItemShield {
         setMaxDamage(maxDamage);
 
         this.name = name;
-        setUnlocalizedName(Main.MODID + "." + name);
+        setTranslationKey(Main.MODID + "." + name);
         setRegistryName(name);
-        setCreativeTab(Main.tab_tools);
+        setCreativeTab(Main.tab);
     }
 
     @Override
     public String getItemStackDisplayName(ItemStack stack) {
-        return new TextComponentTranslation(getUnlocalizedName() + ".name").getFormattedText();
+        return new TextComponentTranslation(getTranslationKey() + ".name").getFormattedText();
     }
 
     public void registerItemModel() {

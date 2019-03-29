@@ -4,6 +4,7 @@ import io.github.lukas2005.multicraft.blocks.blockclasses.BlockAdobeBrick;
 
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockColoredPlanks;
 import io.github.lukas2005.multicraft.blocks.blockclasses.BlockRockPath;
+import io.github.lukas2005.multicraft.blocks.blockclasses.RubyOre;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -18,12 +19,14 @@ public class ModBlocks {
     public static final BlockAdobeBrick ADOBE_BRICK = new BlockAdobeBrick();
     public static final BlockColoredPlanks COLORED_PLANKS = new BlockColoredPlanks(); //#BUGGED TODO: fix Colored Planks texture
     public static final BlockRockPath ROCK_PATH = new BlockRockPath();
+    public static final RubyOre RUBY_ORE = new RubyOre();
 
     public static void register(IForgeRegistry<Block> registry) {
         registry.registerAll(
                 ADOBE_BRICK,
                 COLORED_PLANKS,
-                ROCK_PATH
+                ROCK_PATH,
+                RUBY_ORE
         );
     }
 
@@ -31,7 +34,8 @@ public class ModBlocks {
         registry.registerAll(
                 ADOBE_BRICK.createItemBlock(),
                 COLORED_PLANKS.createItemBlock(),
-                ROCK_PATH.createItemBlock()
+                ROCK_PATH.createItemBlock(),
+                RUBY_ORE.createItemBlock()
         );
     }
 
@@ -39,6 +43,7 @@ public class ModBlocks {
         ADOBE_BRICK.registerItemModel(Item.getItemFromBlock(ADOBE_BRICK));
         COLORED_PLANKS.registerItemModel(Item.getItemFromBlock(COLORED_PLANKS));
         ROCK_PATH.registerItemModel(Item.getItemFromBlock(ROCK_PATH));
+        RUBY_ORE.registerItemModel(Item.getItemFromBlock(RUBY_ORE));
     }
 
 

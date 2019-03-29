@@ -8,6 +8,8 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 
 public class BlockAdobeBrick extends BlockBase {
     public BlockAdobeBrick() {
-        super(Material.ROCK, "block_adobe_brick", 2, 9f, CreativeTabs.BUILDING_BLOCKS);
+        super(Material.ROCK, "block_adobe_brick", 3f, CreativeTabs.BUILDING_BLOCKS);
+        setHarvestLevel("pickaxe", 1);
     }
+
 }

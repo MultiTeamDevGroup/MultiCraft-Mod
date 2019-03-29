@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "multic:blocks/colored_planks/colored_planks_red"
+  }
+}

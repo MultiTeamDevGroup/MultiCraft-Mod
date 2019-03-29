@@ -11,9 +11,9 @@ public class ItemArmorBase extends ItemArmor {
     public ItemArmorBase(ArmorMaterial material, EntityEquipmentSlot slot, String name, int layer) {
         super(material, layer, slot);
         setRegistryName(name);
-        setUnlocalizedName(Main.MODID + "." + name);
+        setTranslationKey(Main.MODID + "." + name);
         this.name = name;
-        setCreativeTab(Main.tab_tools);
+        setCreativeTab(Main.tab);
     }
 
     public void registerItemModel() {

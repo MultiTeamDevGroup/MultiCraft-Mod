@@ -20,7 +20,7 @@ class BlockFallingSnowBlock extends BlockFalling {
         setTickRandomly(true);
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setRegistryName("falling_snow_block");
-        setUnlocalizedName(Main.MODID + "." + "falling_snow_block");
+        setTranslationKey(Main.MODID + "." + "falling_snow_block");
     }
 
     /**

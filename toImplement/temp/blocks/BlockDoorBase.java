@@ -16,7 +16,7 @@ public class BlockDoorBase extends BlockDoor {
         this.name = name;
         super.setCreativeTab(tab);
 
-        setUnlocalizedName(Main.MODID + "." + name);
+        setTranslationKey(Main.MODID + "." + name);
         setRegistryName(name);
     }
 

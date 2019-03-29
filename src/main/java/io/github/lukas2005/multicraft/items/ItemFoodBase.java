@@ -10,8 +10,8 @@ public class ItemFoodBase extends ItemFood {
         super(hungerBars, saturation, isWolfFood);
         this.name = name;
         setRegistryName(name);
-        setUnlocalizedName(Main.MODID + "." + name);
-        setCreativeTab(Main.tab_food);
+        setTranslationKey(Main.MODID + "." + name);
+        setCreativeTab(Main.tab);
     }
 
     public void registerItemModel() {

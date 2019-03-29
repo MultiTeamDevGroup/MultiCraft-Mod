@@ -16,7 +16,7 @@ public class ModCrafting {
         // Smelting
         GameRegistry.addSmelting(ModItems.RAW_PARROT_MEAT, new ItemStack(ModItems.COOKED_PARROT_MEAT), 0.35f);
 
-        // Crafting (Shapeless)
+        // crafting (Shapeless)
         // TODO: Fix this recipe
         addShapelessRecipe(new ItemStack(Items.POTIONITEM, 1, 8260), ModItems.BAT_WING, Items.POTIONITEM);
 
@@ -44,7 +44,7 @@ public class ModCrafting {
 
         addShapelessRecipe(lingeringPotionItemStack, potionItemStack, new ItemStack(Items.DRAGON_BREATH));
 
-        // Crafting (Shaped)
+        // crafting (Shaped)
         nbt = new NBTTagCompound();
         displayNBT = new NBTTagCompound();
         displayNBT.setString("LocName", "Tipped Arrow of Levitation");
@@ -68,19 +68,19 @@ public class ModCrafting {
     }
 
     private static void addShapedRecipe(ItemStack output, Object... shape) {
-        GameRegistry.addShapedRecipe(new ResourceLocation(Main.MODID, output.getItem().getRegistryName().getResourcePath()+"_recipe"), null, output, shape);
+        GameRegistry.addShapedRecipe(new ResourceLocation(Main.MODID, output.getItem().getRegistryName().getPath()+"_recipe"), null, output, shape);
     }
 
     private static void addShapelessRecipe(ItemStack output, Item... items) {
         Ingredient[] ingredients = new Ingredient[items.length];
         for (int i = 0; i < ingredients.length; i++) ingredients[i] = Ingredient.fromItem(items[i]);
-        GameRegistry.addShapelessRecipe(new ResourceLocation(Main.MODID, output.getItem().getRegistryName().getResourcePath()+"_recipe"), null, output, ingredients);
+        GameRegistry.addShapelessRecipe(new ResourceLocation(Main.MODID, output.getItem().getRegistryName().getPath()+"_recipe"), null, output, ingredients);
     }
 
     private static void addShapelessRecipe(ItemStack output, ItemStack... items) {
         Ingredient[] ingredients = new Ingredient[items.length];
         for (int i = 0; i < ingredients.length; i++) ingredients[i] = Ingredient.fromStacks(items[i]);
-        GameRegistry.addShapelessRecipe(new ResourceLocation(Main.MODID, output.getItem().getRegistryName().getResourcePath()+"_recipe"), null, output, ingredients);
+        GameRegistry.addShapelessRecipe(new ResourceLocation(Main.MODID, output.getItem().getRegistryName().getPath()+"_recipe"), null, output, ingredients);
     }
 
 //    /**

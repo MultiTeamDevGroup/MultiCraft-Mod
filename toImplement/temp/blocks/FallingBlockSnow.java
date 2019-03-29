@@ -41,7 +41,7 @@ public class FallingBlockSnow extends BlockFalling {
         this.setCreativeTab(CreativeTabs.DECORATIONS);
 
         this.setRegistryName(Blocks.SNOW_LAYER.getRegistryName());
-        this.setUnlocalizedName(Blocks.SNOW_LAYER.getUnlocalizedName().substring(5));
+        this.setTranslationKey(Blocks.SNOW_LAYER.getTranslationKey().substring(5));
     }
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)

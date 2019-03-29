@@ -9,7 +9,7 @@ public class ItemBase extends Item {
 
     public ItemBase(String name, CreativeTabs tab) {
         this.name = name;
-        setUnlocalizedName(Main.MODID + "." + name);
+        setTranslationKey(Main.MODID + "." + name);
         setRegistryName(name);
         setCreativeTab(Main.tab);
     }

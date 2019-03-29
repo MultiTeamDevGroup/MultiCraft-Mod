@@ -1,8 +1,8 @@
 package io.github.lukas2005.multicraft.items;
 
+import io.github.lukas2005.multicraft.items.armor.*;
 import io.github.lukas2005.multicraft.items.itemclasses.*;
 import io.github.lukas2005.multicraft.items.itemclasses.simple.*;
-import io.github.lukas2005.multicraft.items.armor.*;
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -31,6 +31,9 @@ public class ModItems {
     // VARIOUS THINGS
     public static final ItemChain CHAIN = new ItemChain();
     public static final ItemWitherBoneMeal WITHER_BONE_MEAL = new ItemWitherBoneMeal();
+    public static final ItemRuby RUBY = new ItemRuby();
+    public static final TabIcon TAB_ICON = new TabIcon();
+    public static final LeatherScrap LEATHER_SCRAP = new LeatherScrap();
 
     // SHIELDS
     public static final ItemIronShield IRON_SHIELD = new ItemIronShield();
@@ -68,7 +71,10 @@ public class ModItems {
                 FUR_COSTUME_CHESTPLATE,
                 FUR_COSTUME_LEGGINGS,
                 FUR_COSTUME_BOOTS,
-                POLAR_BEAR_HOOD
+                POLAR_BEAR_HOOD,
+                RUBY,
+                TAB_ICON,
+                LEATHER_SCRAP
         );
     }
 
@@ -86,6 +92,8 @@ public class ModItems {
         RUST_DUST.registerItemModel();
         SILVERFISH_SCALE.registerItemModel();
         WITHER_BONE.registerItemModel();
+        RUBY.registerItemModel();
+        TAB_ICON.registerItemModel();
 
         CHAIN.registerItemModel();
         WITHER_BONE_MEAL.registerItemModel();
@@ -99,6 +107,7 @@ public class ModItems {
         FUR_COSTUME_LEGGINGS.registerItemModel();
         FUR_COSTUME_BOOTS.registerItemModel();
         POLAR_BEAR_HOOD.registerItemModel();
+        LEATHER_SCRAP.registerItemModel();
     }
 
 

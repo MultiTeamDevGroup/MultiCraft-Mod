@@ -19,17 +19,16 @@ import java.util.ArrayList;
 public class BlockBase extends Block {
     protected String name;
 
-    public BlockBase(Material material, String name, Integer harvestLevel, Float hardness, CreativeTabs tab) {
+    public BlockBase(Material material, String name, Float hardness, CreativeTabs tab) {
         super(material);
         super.setCreativeTab(tab);
 
         this.name = name;
-        setHarvestLevel("Iron", harvestLevel);
         setHardness(hardness);
 
-        setUnlocalizedName(Main.MODID + "." + name);
+        setTranslationKey(Main.MODID + "." + name);
         setRegistryName(name);
-        setCreativeTab(Main.tab_blocks);
+        setCreativeTab(Main.tab);
     }
 
     public void registerItemModel(Item itemBlock) {
@@ -37,7 +36,7 @@ public class BlockBase extends Block {
     }
 
     public Item createItemBlock() {
-        return new ItemCloth(this).setRegistryName(getRegistryName());
+        return new ItemBlock(this).setRegistryName(getRegistryName());
     }
 
     /**

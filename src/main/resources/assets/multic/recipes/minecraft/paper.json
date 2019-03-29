@@ -1,20 +1,17 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "   ",
-    "SB ",
-    "   "
-  ],
-  "key": {
-    "S": {
-      "item": "minecraft:shears"
-    },
-    "B": {
-      "item": "minecraft:book"
-    }
-  },
+  "type": "multic:shapeless_crafting",
+  "group": "minecraft:paper",
+  "damage_tool": true,
   "result": {
     "item": "minecraft:paper",
     "count": 3
-  }
+  },
+  "ingredients": [
+    {
+      "item": "#shears"
+    },
+    {
+      "item": "minecraft:book"
+    }
+  ]
 }

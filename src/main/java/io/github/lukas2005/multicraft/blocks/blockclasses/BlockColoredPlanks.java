@@ -2,6 +2,7 @@ package io.github.lukas2005.multicraft.blocks.blockclasses;
 
 import io.github.lukas2005.multicraft.EnumColor;
 import io.github.lukas2005.multicraft.blocks.BlockBase;
+import io.github.lukas2005.multicraft.blocks.ColoredBlockBase;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -20,15 +21,16 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockColoredPlanks extends BlockBase {
+public class BlockColoredPlanks extends ColoredBlockBase {
 
     public static final PropertyEnum<EnumColor> COLOR = PropertyEnum.create("color", EnumColor.class);
 
     public BlockColoredPlanks() {
-        super(Material.WOOD, "colored_planks", 1, 2f, CreativeTabs.BUILDING_BLOCKS);
+        super(Material.WOOD, "colored_planks", 2f, CreativeTabs.BUILDING_BLOCKS);
+        setHarvestLevel("axe", 0);
         setResistance(15);
         this.getMetadata(0);
-        this.getUnlocalizedName();
+        this.getTranslationKey();
         this.setDefaultState(this.blockState.getBaseState().withProperty(COLOR, EnumColor.BLACK));
     }
 
@@ -90,9 +92,9 @@ public class BlockColoredPlanks extends BlockBase {
         return new ItemStack(this, 1, getMetaFromState(state));
     }
 
-    public String getUnlocalizedName(ItemStack stack)
+    public String getTranslationKey(ItemStack stack)
     {
-        return super.getUnlocalizedName() + "." + EnumDyeColor.byMetadata(stack.getMetadata()).getUnlocalizedName();
+        return super.getTranslationKey() + "." + EnumDyeColor.byMetadata(stack.getMetadata()).getTranslationKey();
     }
 
 }

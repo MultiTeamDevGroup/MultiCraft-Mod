@@ -1,0 +1,87 @@
+{
+	"parent": "block/cube_all",
+	"variants": {
+		"color": {
+			"black": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_black"
+				}
+			},
+			"blue": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_blue"
+				}
+			},
+			"brown": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_brown"
+				}
+			},
+			"cyan": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_cyan"
+				}
+			},
+			"gray": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_gray"
+				}
+			},
+			"green": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_green"
+				}
+			},
+			"light_blue": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_light_blue"
+				}
+			},
+			"silver": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_light_gray"
+				}
+			},
+			"lime": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_lime"
+				}
+			},
+			"magenta": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_magenta"
+				}
+			},
+			"orange": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_orange"
+				}
+			},
+			"pink": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_pink"
+				}
+			},
+			"purple": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_purple"
+				}
+			},
+			"red": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_red"
+				}
+			},
+			"white": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_white"
+				}
+			},
+			"yellow": {
+				"textures": {
+					"all": "multic:blocks/colored_planks/colored_planks_yellow"
+				}
+			}			
+		}
+	}
+}
